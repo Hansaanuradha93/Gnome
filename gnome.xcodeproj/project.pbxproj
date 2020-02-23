@@ -33,6 +33,10 @@
 		47AB5CE524022EA90081858E /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDE24022EA80081858E /* Poppins-Light.otf */; };
 		47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDF24022EA90081858E /* Poppins-Thin.otf */; };
 		47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */; };
+		47AB5CEC2402520C0081858E /* RecentlyPlayedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB5CEA2402520C0081858E /* RecentlyPlayedTableViewCell.swift */; };
+		47AB5CED2402520C0081858E /* RecentlyPlayedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CEB2402520C0081858E /* RecentlyPlayedTableViewCell.xib */; };
+		47AB5CF124025FB20081858E /* SmallSongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB5CEF24025FB20081858E /* SmallSongCollectionViewCell.swift */; };
+		47AB5CF224025FB20081858E /* SmallSongCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CF024025FB20081858E /* SmallSongCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		47AB5CDE24022EA80081858E /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
 		47AB5CDF24022EA90081858E /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
 		47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		47AB5CEA2402520C0081858E /* RecentlyPlayedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedTableViewCell.swift; sourceTree = "<group>"; };
+		47AB5CEB2402520C0081858E /* RecentlyPlayedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyPlayedTableViewCell.xib; sourceTree = "<group>"; };
+		47AB5CEF24025FB20081858E /* SmallSongCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSongCollectionViewCell.swift; sourceTree = "<group>"; };
+		47AB5CF024025FB20081858E /* SmallSongCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallSongCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 		47634B5E23FA9DDE0049A37A /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				47AB5CE8240251830081858E /* Custom Views */,
 				47634B6323FA9E460049A37A /* ExploreViewController.swift */,
 				47634B6523FA9E760049A37A /* ExploreViewModel.swift */,
 				47634B7923FA9F980049A37A /* Explore.storyboard */,
@@ -207,6 +216,33 @@
 			name = Poppins;
 			sourceTree = "<group>";
 		};
+		47AB5CE8240251830081858E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				47AB5CE9240251C70081858E /* Recently Played */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		47AB5CE9240251C70081858E /* Recently Played */ = {
+			isa = PBXGroup;
+			children = (
+				47AB5CEE24025F810081858E /* Small Song Cell */,
+				47AB5CEA2402520C0081858E /* RecentlyPlayedTableViewCell.swift */,
+				47AB5CEB2402520C0081858E /* RecentlyPlayedTableViewCell.xib */,
+			);
+			path = "Recently Played";
+			sourceTree = "<group>";
+		};
+		47AB5CEE24025F810081858E /* Small Song Cell */ = {
+			isa = PBXGroup;
+			children = (
+				47AB5CEF24025FB20081858E /* SmallSongCollectionViewCell.swift */,
+				47AB5CF024025FB20081858E /* SmallSongCollectionViewCell.xib */,
+			);
+			path = "Small Song Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,12 +308,14 @@
 				47634B7A23FA9F980049A37A /* Explore.storyboard in Resources */,
 				47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */,
 				47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */,
+				47AB5CF224025FB20081858E /* SmallSongCollectionViewCell.xib in Resources */,
 				47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */,
 				47634B8023FA9FB90049A37A /* Library.storyboard in Resources */,
 				47AB5CE224022EA90081858E /* Poppins-Regular.otf in Resources */,
 				47634B7E23FA9FAF0049A37A /* Search.storyboard in Resources */,
 				47AB5CE424022EA90081858E /* Poppins-ExtraBold.otf in Resources */,
 				47AB5CE524022EA90081858E /* Poppins-Light.otf in Resources */,
+				47AB5CED2402520C0081858E /* RecentlyPlayedTableViewCell.xib in Resources */,
 				47634B8223FA9FC30049A37A /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,8 +330,10 @@
 				47634B6623FA9E760049A37A /* ExploreViewModel.swift in Sources */,
 				47634B6C23FA9EE00049A37A /* SearchViewController.swift in Sources */,
 				47634B7423FA9F560049A37A /* SettingsViewController.swift in Sources */,
+				47AB5CF124025FB20081858E /* SmallSongCollectionViewCell.swift in Sources */,
 				47634B6E23FA9F050049A37A /* SearchViewModel.swift in Sources */,
 				47634B6A23FA9EC80049A37A /* TrendingViewModel.swift in Sources */,
+				47AB5CEC2402520C0081858E /* RecentlyPlayedTableViewCell.swift in Sources */,
 				47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */,
 				47634B6823FA9EA80049A37A /* TrendingViewController.swift in Sources */,
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,

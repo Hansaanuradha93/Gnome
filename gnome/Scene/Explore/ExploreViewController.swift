@@ -10,6 +10,11 @@ class ExploreViewController: UIViewController {
         return "Explore"
     }
     
+    struct Storybaord {
+        static let RecentlyPlayedTableViewCell = "RecentlyPlayedTableViewCell"
+        static let RecentlyPlayedReusableCell =  "RecentlyPlayedReusableCell"
+    }
+    
     
     static func create(viewModel: ExploreViewModel) -> ExploreViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle(for: self))
@@ -28,6 +33,7 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        mainTableView.register(UINib(nibName: Storybaord.RecentlyPlayedTableViewCell, bundle: Bundle.main), forCellReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
     }
     
     
@@ -57,13 +63,20 @@ extension ExploreViewController {
 extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "table view row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! RecentlyPlayedTableViewCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 || indexPath.row == 3{
+            return 182.0
+        } else {
+            return UITableView.automaticDimension
+        }
     }
 }
 
