@@ -85,9 +85,12 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 || indexPath.row == 3{
-            return 185.0
-        } else {
+        switch indexPath.row {
+        case 0:
+            return 190.0
+        case 1:
+            return 310.0
+        default:
             return UITableView.automaticDimension
         }
     }
