@@ -17,7 +17,7 @@ class RecommendedForYouTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecommendedForYouReusableCell)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,7 +35,8 @@ extension RecommendedForYouTableViewCell: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LargeSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecommendedForYouReusableCell, for: indexPath) as! LargeSongCollectionViewCell
+        cell.setup(cellType: .recommendecForYou)
         return cell
     }
     
