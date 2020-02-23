@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.otf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Explore View Controller-->
         <scene sceneID="xw5-9H-omC">
@@ -14,9 +19,30 @@
                     <view key="view" contentMode="scaleToFill" id="hD8-66-lrl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ5-vN-Tkv">
+                                <rect key="frame" x="16" y="57" width="129" height="48"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-gh-yra">
+                                <rect key="frame" x="16" y="125" width="398" height="737"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hVx-gh-yra" firstAttribute="top" secondItem="ZZ5-vN-Tkv" secondAttribute="bottom" constant="20" id="6ze-RO-nXJ"/>
+                            <constraint firstItem="ZZ5-vN-Tkv" firstAttribute="top" secondItem="hD8-66-lrl" secondAttribute="top" constant="57" id="HPt-Qc-2q0"/>
+                            <constraint firstItem="ZZ5-vN-Tkv" firstAttribute="leading" secondItem="hD8-66-lrl" secondAttribute="leading" constant="16" id="bO2-d6-oZG"/>
+                            <constraint firstAttribute="trailing" secondItem="hVx-gh-yra" secondAttribute="trailing" id="bT9-y7-oRw"/>
+                            <constraint firstItem="hVx-gh-yra" firstAttribute="leading" secondItem="hD8-66-lrl" secondAttribute="leading" constant="16" id="fko-NF-O2u"/>
+                            <constraint firstItem="fil-wE-spO" firstAttribute="bottom" secondItem="hVx-gh-yra" secondAttribute="bottom" id="gap-bR-cXd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fil-wE-spO"/>
                     </view>
+                    <size key="freeformSize" width="414" height="896"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QL-sX-3Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
