@@ -11,7 +11,6 @@ class ExploreViewController: UIViewController {
     }
     
     struct Storybaord {
-        static let RecentlyPlayedTableViewCell = "RecentlyPlayedTableViewCell"
         static let RecentlyPlayedReusableCell =  "RecentlyPlayedReusableCell"
     }
     
@@ -29,11 +28,10 @@ class ExploreViewController: UIViewController {
     
     
     // MARK: - ViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
         configureTableView()
-        mainTableView.register(UINib(nibName: Storybaord.RecentlyPlayedTableViewCell, bundle: Bundle.main), forCellReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
     }
     
     
@@ -55,6 +53,11 @@ extension ExploreViewController {
     
     fileprivate func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    fileprivate func registerCells() {
+        mainTableView.register(UINib(nibName: String(describing: RecentlyPlayedTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
     }
 }
 

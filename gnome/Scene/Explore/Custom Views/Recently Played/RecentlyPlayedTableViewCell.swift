@@ -2,13 +2,21 @@ import UIKit
 
 class RecentlyPlayedTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+    struct Storybaord {
+        static let RecentlyPlayedReusableCell =  "RecentlyPlayedReusableCell"
+    }
+    
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    // MARK: - Nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.register(UINib(nibName: "SmallSongCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        registerCells()
+        configureCellectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -17,18 +25,40 @@ class RecentlyPlayedTableViewCell: UITableViewCell {
     
 }
 
-extension RecentlyPlayedTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+// MARK: - Fileprivate methods
+extension RecentlyPlayedTableViewCell {
+    
+    fileprivate func registerCells() {
+        collectionView.register(UINib(nibName: String(describing: SmallSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
+    }
+    
+    fileprivate func configureCellectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+}
+
+
+// MARK: - UICollectionView
+extension RecentlyPlayedTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SmallSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! SmallSongCollectionViewCell
         return cell
     }
     
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension RecentlyPlayedTableViewCell: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 115, height: 140)
-        }
+        return CGSize(width: 115, height: 140)
+    }
     
 }
