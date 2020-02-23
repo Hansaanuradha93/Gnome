@@ -74,7 +74,8 @@ extension SceneDelegate {
     }
     
     fileprivate func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = UIColor.red
+        UINavigationBar.appearance().tintColor = UIColor.red        
     }
+    
 
 }

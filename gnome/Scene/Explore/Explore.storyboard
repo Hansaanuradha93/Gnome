@@ -43,6 +43,9 @@
                         <viewLayoutGuide key="safeArea" id="fil-wE-spO"/>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="hVx-gh-yra" id="AgJ-9u-Yim"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QL-sX-3Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
