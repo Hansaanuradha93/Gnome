@@ -7,11 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Poppins-Medium.otf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-Regular.otf">
             <string>Poppins-Regular</string>
-        </array>
-        <array key="Poppins-SemiBold.otf">
-            <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -32,7 +32,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bass Rani" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3Q-oT-dsP">
                         <rect key="frame" x="0.0" y="188" width="180" height="24"/>
-                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
