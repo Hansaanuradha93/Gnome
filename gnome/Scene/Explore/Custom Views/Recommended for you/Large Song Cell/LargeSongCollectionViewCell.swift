@@ -2,15 +2,22 @@ import UIKit
 
 class LargeSongCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
     
+    // MARK: - Nib
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+}
 
+
+// MARK: - Methods
+extension LargeSongCollectionViewCell {
+    
     func setup(cellType: CellType) {
         switch cellType {
         case .recommendecForYou:
@@ -24,4 +31,5 @@ class LargeSongCollectionViewCell: UICollectionViewCell {
             artistLabel.alpha = 1
         }
     }
+    
 }

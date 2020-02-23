@@ -2,26 +2,41 @@ import UIKit
 
 class RecommendedForYouTableViewCell: UITableViewCell {
 
-    
+    // MARK: - Properties
     struct Storybaord {
         static let RecommendedForYouReusableCell =  "RecentlyPlayedReusableCell"
     }
     
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    // MARK: - Nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecommendedForYouReusableCell)
+        configureCollectionView()
+        registerCells()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+}
+
+
+// MARK: - Fileprivate methods
+extension RecommendedForYouTableViewCell {
+    
+    fileprivate func configureCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    fileprivate func registerCells() {
+        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecommendedForYouReusableCell)
     }
     
 }
