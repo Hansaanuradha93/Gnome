@@ -21,18 +21,19 @@ extension SongCollectionViewCell {
     func setup(cellType: CellType) {
         switch cellType {
         case .recommendecForYou:
-            artistLabel.alpha = 1
-            titleLabel.text = "Love"
-            titleLabel.textAlignment = .left
+            configureCell( title: "Love", textAlignment: .left, artist: "", alpha: 1)
         case .getInspired:
-            artistLabel.alpha = 0
-            titleLabel.text = "The GaryVee Audio Experience"
-            titleLabel.textAlignment = .center
+            configureCell( title: "The GaryVee Audio Experience", textAlignment: .center, artist: "", alpha: 0)
         case .recentlyPlayed:
-            artistLabel.alpha = 1
-            titleLabel.text = "061 Marketing..."
-            titleLabel.textAlignment = .center
+            configureCell( title: "061 Marketing...", textAlignment: .center, artist: "", alpha: 1)
         }
+    }
+    
+    private func configureCell( title: String, textAlignment: NSTextAlignment, artist: String, alpha: CGFloat) {
+        artistLabel.alpha = alpha
+        artistLabel.text = artist
+        titleLabel.text = title
+        titleLabel.textAlignment = textAlignment
     }
     
 }
