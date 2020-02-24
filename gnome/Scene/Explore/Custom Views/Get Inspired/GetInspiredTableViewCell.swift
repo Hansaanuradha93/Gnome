@@ -32,7 +32,7 @@ class GetInspiredTableViewCell: UITableViewCell {
 extension GetInspiredTableViewCell {
     
     fileprivate func registerCells() {
-        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.GetInspiredReusableCell)
+        collectionView.register(UINib(nibName: String(describing: SongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.GetInspiredReusableCell)
     }
     
     fileprivate func configureCollectionView() {
@@ -51,7 +51,7 @@ extension GetInspiredTableViewCell: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.GetInspiredReusableCell, for: indexPath) as! LargeSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.GetInspiredReusableCell, for: indexPath) as! SongCollectionViewCell
         cell.setup(cellType: .getInspired)
         return cell
     }

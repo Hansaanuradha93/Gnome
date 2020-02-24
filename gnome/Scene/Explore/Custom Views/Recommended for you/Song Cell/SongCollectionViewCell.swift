@@ -1,6 +1,6 @@
 import UIKit
 
-class LargeSongCollectionViewCell: UICollectionViewCell {
+class SongCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlets
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -16,12 +16,13 @@ class LargeSongCollectionViewCell: UICollectionViewCell {
 
 
 // MARK: - Methods
-extension LargeSongCollectionViewCell {
+extension SongCollectionViewCell {
     
     func setup(cellType: CellType) {
         switch cellType {
         case .recommendecForYou:
             artistLabel.alpha = 1
+            titleLabel.text = "Love"
             titleLabel.textAlignment = .left
         case .getInspired:
             artistLabel.alpha = 0

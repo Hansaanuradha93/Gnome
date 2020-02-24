@@ -30,7 +30,7 @@ class RecentlyPlayedTableViewCell: UITableViewCell {
 extension RecentlyPlayedTableViewCell {
     
     fileprivate func registerCells() {
-        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
+        collectionView.register(UINib(nibName: String(describing: SongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
     }
     
     fileprivate func configureCellectionView() {
@@ -48,7 +48,7 @@ extension RecentlyPlayedTableViewCell: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! LargeSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! SongCollectionViewCell
         cell.setup(cellType: .recentlyPlayed)
         return cell
     }

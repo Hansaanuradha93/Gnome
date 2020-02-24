@@ -36,7 +36,7 @@ extension RecommendedForYouTableViewCell {
     }
     
     fileprivate func registerCells() {
-        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecommendedForYouReusableCell)
+        collectionView.register(UINib(nibName: String(describing: SongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecommendedForYouReusableCell)
     }
     
 }
@@ -50,7 +50,7 @@ extension RecommendedForYouTableViewCell: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecommendedForYouReusableCell, for: indexPath) as! LargeSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecommendedForYouReusableCell, for: indexPath) as! SongCollectionViewCell
         cell.setup(cellType: .recommendecForYou)
         return cell
     }
