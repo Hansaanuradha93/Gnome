@@ -30,7 +30,7 @@ class RecentlyPlayedTableViewCell: UITableViewCell {
 extension RecentlyPlayedTableViewCell {
     
     fileprivate func registerCells() {
-        collectionView.register(UINib(nibName: String(describing: SmallSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
+        collectionView.register(UINib(nibName: String(describing: LargeSongCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: Storybaord.RecentlyPlayedReusableCell)
     }
     
     fileprivate func configureCellectionView() {
@@ -48,7 +48,8 @@ extension RecentlyPlayedTableViewCell: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! SmallSongCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! LargeSongCollectionViewCell
+        cell.setup(cellType: .recentlyPlayed)
         return cell
     }
     
@@ -58,7 +59,7 @@ extension RecentlyPlayedTableViewCell: UICollectionViewDataSource, UICollectionV
 extension RecentlyPlayedTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 115, height: 140)
+        return CGSize(width: 115, height: 155)
     }
     
 }

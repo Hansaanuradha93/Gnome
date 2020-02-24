@@ -92,7 +92,7 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 190.0
+            return 195.0
         case 1:
             return 310.0
         case 2:

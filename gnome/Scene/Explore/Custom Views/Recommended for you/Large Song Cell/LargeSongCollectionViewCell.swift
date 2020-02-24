@@ -29,6 +29,8 @@ extension LargeSongCollectionViewCell {
             titleLabel.textAlignment = .center
         case .recentlyPlayed:
             artistLabel.alpha = 1
+            titleLabel.text = "061 Marketing..."
+            titleLabel.textAlignment = .center
         }
     }
     
