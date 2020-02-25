@@ -20,12 +20,14 @@ extension SongCollectionViewCell {
     
     func setup(cellType: CellType) {
         switch cellType {
-        case .recommendecForYou:
-            configureCell( title: "Love", textAlignment: .left, artist: "", alpha: 1)
-        case .getInspired:
-            configureCell( title: "The GaryVee Audio Experience", textAlignment: .center, artist: "", alpha: 0)
         case .recentlyPlayed:
-            configureCell( title: "061 Marketing...", textAlignment: .center, artist: "", alpha: 1)
+            configureCell( title: "061 Marketing...", textAlignment: .center, artist: "", alpha: 0)
+        case .recommendecForYou:
+            configureCell( title: "Love", textAlignment: .left, artist: "", alpha: 0)
+        case .getInspired:
+            configureCell( title: "The GaryVee Audio Experience", textAlignment: .center, artist: "", alpha: 1)
+        case .popularArtists:
+            configureCell( title: "Ariana Grande", textAlignment: .left, artist: "", alpha: 0)
         }
     }
     

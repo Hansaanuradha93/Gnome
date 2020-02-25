@@ -70,19 +70,26 @@ extension ExploreViewController {
 extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! RecentlyPlayedTableViewCell
+            cell.backgroundColor = .red
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storybaord.RecommendedForYouReusableCell, for: indexPath) as! RecommendedForYouTableViewCell
+            cell.backgroundColor = .blue
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: Storybaord.getInspiredReusableCell, for: indexPath) as! GetInspiredTableViewCell
+            cell.backgroundColor = .systemPink
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storybaord.RecentlyPlayedReusableCell, for: indexPath) as! RecentlyPlayedTableViewCell
+            cell.backgroundColor = .systemTeal
             return cell
         default:
             return UITableViewCell()
@@ -92,11 +99,13 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 195.0
+            return 185.0
         case 1:
             return 310.0
         case 2:
             return 304.0
+        case 3:
+            return 185.0
         default:
             return UITableView.automaticDimension
         }

@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-mY-K3V">
-                        <rect key="frame" x="0.0" y="77" width="320" height="227"/>
+                        <rect key="frame" x="0.0" y="73" width="320" height="231"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2AP-C2-LZT">
                             <size key="itemSize" width="50" height="50"/>
@@ -43,7 +43,7 @@
                     <constraint firstAttribute="trailing" secondItem="xcb-mY-K3V" secondAttribute="trailing" id="Zgt-tJ-y9U"/>
                     <constraint firstAttribute="bottom" secondItem="xcb-mY-K3V" secondAttribute="bottom" id="cmt-z7-b9c"/>
                     <constraint firstItem="95h-mn-RJw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eNw-Sj-boQ"/>
-                    <constraint firstItem="xcb-mY-K3V" firstAttribute="top" secondItem="95h-mn-RJw" secondAttribute="bottom" constant="18" id="jcb-IO-mbe"/>
+                    <constraint firstItem="xcb-mY-K3V" firstAttribute="top" secondItem="95h-mn-RJw" secondAttribute="bottom" constant="14" id="jcb-IO-mbe"/>
                 </constraints>
             </tableViewCellContentView>
             <constraints>
