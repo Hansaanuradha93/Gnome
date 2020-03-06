@@ -36,6 +36,12 @@ extension SceneDelegate {
         return UINavigationController(rootViewController: exploreVC)
     }
     
+    fileprivate func createExploreRewampNC() -> UINavigationController {
+        let exploreVC = ExploreRewampViewController.create(viewModel: ExploreRewampViewModel())
+        exploreVC.title = "Explore"
+        exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 0)
+        return UINavigationController(rootViewController: exploreVC)
+    }
     
     fileprivate func createTrendingNC() -> UINavigationController {
         let trendingVC = TrendingViewController.create(viewModel: TrendingViewModel())
@@ -69,7 +75,7 @@ extension SceneDelegate {
     fileprivate func createTabBarController() -> UITabBarController {
         let tabBar = UITabBarController()
         UITabBar.appearance().tintColor = UIColor.red
-        tabBar.viewControllers = [createExploreNC(), createTrendingNC(), createSearchNC(), createLibraryNC(), createSettingsNC()]
+        tabBar.viewControllers = [createExploreRewampNC(), createTrendingNC(), createSearchNC(), createLibraryNC(), createSettingsNC()]
         return tabBar
     }
     

@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-72" y="-13"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore Rewamp View Controller-->
         <scene sceneID="FXz-lt-pDa">
             <objects>
-                <viewController id="YXX-7U-dG6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreRewampViewController" id="YXX-7U-dG6" customClass="ExploreRewampViewController" customModule="gnome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Bw-GA-9PA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
