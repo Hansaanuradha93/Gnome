@@ -52,9 +52,9 @@ extension ExploreViewController {
     }
     
     fileprivate func setupCollectionView() {
+        collectionView.register(UINib(nibName: String(describing: ExploreCategoryCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: ExploreCategoryCell.reuseId)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: String(describing: ExploreCategoryCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: ExploreCategoryCell.reuseId)
     }
 }
 
@@ -67,7 +67,7 @@ extension ExploreViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreCategoryCell.reuseId, for: indexPath) as! ExploreCategoryCell
-        cell.contentView.backgroundColor = .red
+        cell.backgroundColor = .red
         return cell
     }
 }
@@ -75,3 +75,14 @@ extension ExploreViewController: UICollectionViewDataSource {
 
 // MARK: - Collection View Delegate
 extension ExploreViewController: UICollectionViewDelegate {}
+
+
+// MARK: - Collection View Delegate
+extension ExploreViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 180)
+    }
+    
+}
+
