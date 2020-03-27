@@ -11,13 +11,6 @@ class ExploreViewController: UIViewController {
     }
     
     
-    struct Storybaord {
-        static let RecentlyPlayedReusableCell =  "RecentlyPlayedReusableCell"
-        static let RecommendedForYouReusableCell = "RecommendedForYouReusableCell"
-        static let getInspiredReusableCell = "getInspiredReusableCell"
-    }
-    
-    
     static func create(viewModel: ExploreViewModel) -> ExploreViewController {
         let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle(for: self))
         let viewController = storyboard.instantiateViewController(withIdentifier: String(describing: ExploreViewController.self)) as? ExploreViewController
@@ -51,19 +44,22 @@ extension ExploreViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     fileprivate func setupCollectionView() {
         collectionView.register(UINib(nibName: String(describing: ExploreCategoryCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: ExploreCategoryCell.reuseId)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.dataSource   = self
+        collectionView.delegate     = self
     }
 }
 
 
 // MARK: - Collection View Data Source
 extension ExploreViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreCategoryCell.reuseId, for: indexPath) as! ExploreCategoryCell

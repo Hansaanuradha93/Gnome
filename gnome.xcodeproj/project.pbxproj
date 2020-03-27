@@ -31,8 +31,6 @@
 		47634B7E23FA9FAF0049A37A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47634B7D23FA9FAF0049A37A /* Search.storyboard */; };
 		47634B8023FA9FB90049A37A /* Library.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47634B7F23FA9FB90049A37A /* Library.storyboard */; };
 		47634B8223FA9FC30049A37A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47634B8123FA9FC30049A37A /* Settings.storyboard */; };
-		47987059241202A000E15E56 /* ExploreRewampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47987058241202A000E15E56 /* ExploreRewampViewController.swift */; };
-		4798705B2412036900E15E56 /* ExploreRewampViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798705A2412036900E15E56 /* ExploreRewampViewModel.swift */; };
 		47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDA24022EA80081858E /* Poppins-Medium.otf */; };
 		47AB5CE224022EA90081858E /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDB24022EA80081858E /* Poppins-Regular.otf */; };
 		47AB5CE324022EA90081858E /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDC24022EA80081858E /* Poppins-Bold.otf */; };
@@ -69,8 +67,6 @@
 		47634B7D23FA9FAF0049A37A /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		47634B7F23FA9FB90049A37A /* Library.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Library.storyboard; sourceTree = "<group>"; };
 		47634B8123FA9FC30049A37A /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		47987058241202A000E15E56 /* ExploreRewampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRewampViewController.swift; sourceTree = "<group>"; };
-		4798705A2412036900E15E56 /* ExploreRewampViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRewampViewModel.swift; sourceTree = "<group>"; };
 		47AB5CDA24022EA80081858E /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		47AB5CDB24022EA80081858E /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		47AB5CDC24022EA80081858E /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
@@ -187,7 +183,6 @@
 		47634B5E23FA9DDE0049A37A /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				4798705C2412038600E15E56 /* Rewamp */,
 				47AB5CE8240251830081858E /* Custom Views */,
 				47634B6323FA9E460049A37A /* ExploreViewController.swift */,
 				47634B6523FA9E760049A37A /* ExploreViewModel.swift */,
@@ -234,15 +229,6 @@
 				47634B8123FA9FC30049A37A /* Settings.storyboard */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		4798705C2412038600E15E56 /* Rewamp */ = {
-			isa = PBXGroup;
-			children = (
-				47987058241202A000E15E56 /* ExploreRewampViewController.swift */,
-				4798705A2412036900E15E56 /* ExploreRewampViewModel.swift */,
-			);
-			path = Rewamp;
 			sourceTree = "<group>";
 		};
 		47AB5CC124022AA60081858E /* Fonts */ = {
@@ -360,7 +346,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4798705B2412036900E15E56 /* ExploreRewampViewModel.swift in Sources */,
 				47634B6623FA9E760049A37A /* ExploreViewModel.swift in Sources */,
 				47634B6C23FA9EE00049A37A /* SearchViewController.swift in Sources */,
 				47634B7423FA9F560049A37A /* SettingsViewController.swift in Sources */,
@@ -373,7 +358,6 @@
 				47634B7223FA9F380049A37A /* LibraryViewModel.swift in Sources */,
 				472835DD2402CB2300327DC0 /* CellType.swift in Sources */,
 				47634B6423FA9E460049A37A /* ExploreViewController.swift in Sources */,
-				47987059241202A000E15E56 /* ExploreRewampViewController.swift in Sources */,
 				47634B7623FA9F6D0049A37A /* SettingsViewModel.swift in Sources */,
 				472835D42402B5E100327DC0 /* SongCollectionViewCell.swift in Sources */,
 				4757E921242E71630077FF83 /* ExploreCategoryCell.swift in Sources */,
