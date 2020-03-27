@@ -10,6 +10,8 @@
 		472835D42402B5E100327DC0 /* SongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472835D22402B5E100327DC0 /* SongCollectionViewCell.swift */; };
 		472835D52402B5E100327DC0 /* SongCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472835D32402B5E100327DC0 /* SongCollectionViewCell.xib */; };
 		472835DD2402CB2300327DC0 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472835DC2402CB2300327DC0 /* CellType.swift */; };
+		4757E921242E71630077FF83 /* ExploreCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757E91F242E71630077FF83 /* ExploreCategoryCell.swift */; };
+		4757E922242E71630077FF83 /* ExploreCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4757E920242E71630077FF83 /* ExploreCategoryCell.xib */; };
 		47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4623FA9AAF0049A37A /* AppDelegate.swift */; };
 		47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4823FA9AAF0049A37A /* SceneDelegate.swift */; };
 		47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47634B4F23FA9AB10049A37A /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		472835D22402B5E100327DC0 /* SongCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCollectionViewCell.swift; sourceTree = "<group>"; };
 		472835D32402B5E100327DC0 /* SongCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCollectionViewCell.xib; sourceTree = "<group>"; };
 		472835DC2402CB2300327DC0 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		4757E91F242E71630077FF83 /* ExploreCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCategoryCell.swift; sourceTree = "<group>"; };
+		4757E920242E71630077FF83 /* ExploreCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCategoryCell.xib; sourceTree = "<group>"; };
 		47634B4323FA9AAF0049A37A /* gnome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gnome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47634B4623FA9AAF0049A37A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47634B4823FA9AAF0049A37A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,19 +108,21 @@
 			path = "Song Cell";
 			sourceTree = "<group>";
 		};
-		472835D62402C40900327DC0 /* Get Inspired */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Get Inspired";
-			sourceTree = "<group>";
-		};
 		472835DB2402CB0700327DC0 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				472835DC2402CB2300327DC0 /* CellType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		4757E91E242E71300077FF83 /* Explore Category Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4757E91F242E71630077FF83 /* ExploreCategoryCell.swift */,
+				4757E920242E71630077FF83 /* ExploreCategoryCell.xib */,
+			);
+			path = "Explore Category Collection View Cell";
 			sourceTree = "<group>";
 		};
 		47634B3A23FA9AAF0049A37A = {
@@ -264,8 +270,8 @@
 		47AB5CE8240251830081858E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				4757E91E242E71300077FF83 /* Explore Category Collection View Cell */,
 				472835CC2402B1C000327DC0 /* Recommended for you */,
-				472835D62402C40900327DC0 /* Get Inspired */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				47634B5323FA9AB10049A37A /* LaunchScreen.storyboard in Resources */,
 				47AB5CE324022EA90081858E /* Poppins-Bold.otf in Resources */,
 				47634B7C23FA9FA70049A37A /* Trending.storyboard in Resources */,
+				4757E922242E71630077FF83 /* ExploreCategoryCell.xib in Resources */,
 				47634B7A23FA9F980049A37A /* Explore.storyboard in Resources */,
 				47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */,
 				47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */,
@@ -369,6 +376,7 @@
 				47987059241202A000E15E56 /* ExploreRewampViewController.swift in Sources */,
 				47634B7623FA9F6D0049A37A /* SettingsViewModel.swift in Sources */,
 				472835D42402B5E100327DC0 /* SongCollectionViewCell.swift in Sources */,
+				4757E921242E71630077FF83 /* ExploreCategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
