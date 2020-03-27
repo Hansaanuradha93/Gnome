@@ -61,6 +61,10 @@
                 <constraint firstAttribute="top" secondItem="120-0A-zdT" secondAttribute="top" id="mGc-bp-6Ex"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="collectionView" destination="KTc-eQ-3Un" id="4Fl-xN-IRE"/>
+                <outlet property="titleLabel" destination="V9i-Rf-RtV" id="Y2Q-mV-sEH"/>
+            </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </collectionViewCell>
     </objects>
