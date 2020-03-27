@@ -36,12 +36,6 @@ extension SceneDelegate {
         return UINavigationController(rootViewController: exploreVC)
     }
     
-    fileprivate func createExploreRewampNC() -> UINavigationController {
-        let exploreVC = ExploreRewampViewController.create(viewModel: ExploreRewampViewModel())
-        exploreVC.title = "Explore"
-        exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 0)
-        return UINavigationController(rootViewController: exploreVC)
-    }
     
     fileprivate func createTrendingNC() -> UINavigationController {
         let trendingVC = TrendingViewController.create(viewModel: TrendingViewModel())
@@ -50,6 +44,7 @@ extension SceneDelegate {
         return UINavigationController(rootViewController: trendingVC)
     }
     
+    
     fileprivate func createSearchNC() -> UINavigationController {
         let searchVC = SearchViewController.create(viewModel: SearchViewModel())
         searchVC.title = "Search"
@@ -57,12 +52,14 @@ extension SceneDelegate {
         return UINavigationController(rootViewController: searchVC)
     }
     
+    
     fileprivate func createLibraryNC() -> UINavigationController {
         let libraryVC = LibraryViewController.create(viewModel: LibraryViewModel())
         libraryVC.title = "Library"
         libraryVC.tabBarItem = UITabBarItem(title: "Library", image: UIImage(named: "library"), tag: 3)
         return UINavigationController(rootViewController: libraryVC)
     }
+    
     
     fileprivate func createSettingsNC() -> UINavigationController {
         let settingsVC = SettingsViewController.create(viewModel: SettingsViewModel())
@@ -75,13 +72,12 @@ extension SceneDelegate {
     fileprivate func createTabBarController() -> UITabBarController {
         let tabBar = UITabBarController()
         UITabBar.appearance().tintColor = UIColor.red
-        tabBar.viewControllers = [createExploreRewampNC(), createTrendingNC(), createSearchNC(), createLibraryNC(), createSettingsNC()]
+        tabBar.viewControllers = [createExploreNC(), createTrendingNC(), createSearchNC(), createLibraryNC(), createSettingsNC()]
         return tabBar
     }
+    
     
     fileprivate func configureNavigationBar() {
         UINavigationBar.appearance().tintColor = UIColor.red        
     }
-    
-
 }
