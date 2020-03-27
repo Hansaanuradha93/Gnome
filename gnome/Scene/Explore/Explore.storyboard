@@ -60,6 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="HIC-Yt-aUc"/>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vvA-fI-aUU" id="T2P-et-FyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQP-Lo-CSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

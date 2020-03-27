@@ -10,6 +10,7 @@ class ExploreViewController: UIViewController {
         return "Explore"
     }
     
+    
     struct Storybaord {
         static let RecentlyPlayedReusableCell =  "RecentlyPlayedReusableCell"
         static let RecommendedForYouReusableCell = "RecommendedForYouReusableCell"
@@ -26,12 +27,13 @@ class ExploreViewController: UIViewController {
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     // MARK: - ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
     }
     
     
@@ -48,4 +50,28 @@ extension ExploreViewController {
     fileprivate func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    fileprivate func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: String(describing: ExploreCategoryCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: ExploreCategoryCell.reuseId)
+    }
 }
+
+
+// MARK: - Collection View Data Source
+extension ExploreViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreCategoryCell.reuseId, for: indexPath) as! ExploreCategoryCell
+        cell.contentView.backgroundColor = .red
+        return cell
+    }
+}
+
+
+// MARK: - Collection View Delegate
+extension ExploreViewController: UICollectionViewDelegate {}
