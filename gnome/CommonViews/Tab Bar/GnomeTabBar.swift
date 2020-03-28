@@ -5,8 +5,7 @@ class GnomeTabBar: UITabBarController {
     // MARK: - View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        #warning("Need to get this colour from the asserts")
-        UITabBar.appearance().tintColor = .systemRed
+        UITabBar.appearance().tintColor = UIColor.appColor(.Pretty_Pink)
         viewControllers                 = [createExploreNC(), createTrendingNC(), createSearchNC(), createLibraryNC(), createSettingsNC()]
     }
 }

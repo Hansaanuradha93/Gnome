@@ -1,7 +1,12 @@
 import UIKit
 
 enum AssetsColor: String {
-    
+    case White
+    case Subtitle_Black
+    case Pretty_Pink
+    case Pretty_Pink_L1
+    case Pretty_Pink_L2
+    case Pretty_Pink_L3
 }
 
 

@@ -30,5 +30,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {}
     
     
-    func configureNavigationBar() { UINavigationBar.appearance().tintColor = UIColor.red }
+    func configureNavigationBar() { UINavigationBar.appearance().tintColor = UIColor.appColor(.Pretty_Pink) }
 }
