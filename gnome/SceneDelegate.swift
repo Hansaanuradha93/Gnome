@@ -11,26 +11,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = GnomeTabBar()
         window?.makeKeyAndVisible()
+        configureNavigationBar()
     }
 
+    
     func sceneDidDisconnect(_ scene: UIScene) {}
 
+    
     func sceneDidBecomeActive(_ scene: UIScene) {}
 
+    
     func sceneWillResignActive(_ scene: UIScene) {}
 
+    
     func sceneWillEnterForeground(_ scene: UIScene) {}
 
-    func sceneDidEnterBackground(_ scene: UIScene) {}
-
-
-}
-
-
-// MARK: - Fileprivate methods
-extension SceneDelegate {
     
-    fileprivate func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = UIColor.red        
-    }
+    func sceneDidEnterBackground(_ scene: UIScene) {}
+    
+    
+    func configureNavigationBar() { UINavigationBar.appearance().tintColor = UIColor.red }
 }
