@@ -13,8 +13,12 @@
 		471F9149242F332B00505D1C /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9148242F332B00505D1C /* LibraryVC.swift */; };
 		471F914B242F334200505D1C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F914A242F334200505D1C /* SettingsVC.swift */; };
 		471F914E242F3CF100505D1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F914D242F3CF100505D1C /* Constants.swift */; };
-		471F9154242F400900505D1C /* GnomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9153242F400900505D1C /* GnomeTabBar.swift */; };
+		471F9154242F400900505D1C /* GNTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9153242F400900505D1C /* GNTabBar.swift */; };
 		471F9157242F439300505D1C /* UIColot+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9156242F439300505D1C /* UIColot+Ext.swift */; };
+		471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9159242F933900505D1C /* GNTitleLabel.swift */; };
+		471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */; };
+		471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9165242FA28400505D1C /* GNBodyLabel.swift */; };
+		471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */; };
 		47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4623FA9AAF0049A37A /* AppDelegate.swift */; };
 		47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4823FA9AAF0049A37A /* SceneDelegate.swift */; };
 		47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47634B4F23FA9AB10049A37A /* Assets.xcassets */; };
@@ -35,8 +39,12 @@
 		471F9148242F332B00505D1C /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
 		471F914A242F334200505D1C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		471F914D242F3CF100505D1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		471F9153242F400900505D1C /* GnomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeTabBar.swift; sourceTree = "<group>"; };
+		471F9153242F400900505D1C /* GNTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTabBar.swift; sourceTree = "<group>"; };
 		471F9156242F439300505D1C /* UIColot+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColot+Ext.swift"; sourceTree = "<group>"; };
+		471F9159242F933900505D1C /* GNTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTitleLabel.swift; sourceTree = "<group>"; };
+		471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		471F9165242FA28400505D1C /* GNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBodyLabel.swift; sourceTree = "<group>"; };
+		471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryBodyLabel.swift; sourceTree = "<group>"; };
 		47634B4323FA9AAF0049A37A /* gnome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gnome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47634B4623FA9AAF0049A37A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47634B4823FA9AAF0049A37A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				471F9150242F3FA300505D1C /* Tab Bar */,
+				471F9158242F929C00505D1C /* Labels */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -82,7 +91,7 @@
 		471F9150242F3FA300505D1C /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
-				471F9153242F400900505D1C /* GnomeTabBar.swift */,
+				471F9153242F400900505D1C /* GNTabBar.swift */,
 			);
 			path = "Tab Bar";
 			sourceTree = "<group>";
@@ -93,6 +102,17 @@
 				471F9156242F439300505D1C /* UIColot+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		471F9158242F929C00505D1C /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				471F9159242F933900505D1C /* GNTitleLabel.swift */,
+				471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */,
+				471F9165242FA28400505D1C /* GNBodyLabel.swift */,
+				471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		47634B3A23FA9AAF0049A37A = {
@@ -288,15 +308,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				471F9143242F32A100505D1C /* ExploreVC.swift in Sources */,
+				471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */,
 				471F914B242F334200505D1C /* SettingsVC.swift in Sources */,
 				471F9147242F330D00505D1C /* SearchVC.swift in Sources */,
 				471F9149242F332B00505D1C /* LibraryVC.swift in Sources */,
 				47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */,
+				471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */,
+				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
+				471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */,
 				471F9157242F439300505D1C /* UIColot+Ext.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
-				471F9154242F400900505D1C /* GnomeTabBar.swift in Sources */,
+				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

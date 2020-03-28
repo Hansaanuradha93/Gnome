@@ -1,6 +1,6 @@
 import UIKit
 
-class GnomeTabBar: UITabBarController {
+class GNTabBar: UITabBarController {
 
     // MARK: - View Controller
     override func viewDidLoad() {
@@ -12,7 +12,7 @@ class GnomeTabBar: UITabBarController {
 
 
 // MARK: - Methods
-extension GnomeTabBar {
+extension GNTabBar {
     
     private func createExploreNC() -> UINavigationController {
         let exploreVC = ExploreVC()
