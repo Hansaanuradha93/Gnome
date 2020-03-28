@@ -9,7 +9,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createTabBarController()
+        window?.rootViewController = UIViewController()
+//        window?.rootViewController = createTabBarController()
         window?.makeKeyAndVisible()
     }
 
@@ -26,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+/*
 // MARK: - Fileprivate methods
 extension SceneDelegate {
     
@@ -81,3 +83,4 @@ extension SceneDelegate {
         UINavigationBar.appearance().tintColor = UIColor.red        
     }
 }
+*/
