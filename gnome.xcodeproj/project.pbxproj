@@ -13,6 +13,7 @@
 		471F9149242F332B00505D1C /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9148242F332B00505D1C /* LibraryVC.swift */; };
 		471F914B242F334200505D1C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F914A242F334200505D1C /* SettingsVC.swift */; };
 		471F914E242F3CF100505D1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F914D242F3CF100505D1C /* Constants.swift */; };
+		471F9154242F400900505D1C /* GnomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9153242F400900505D1C /* GnomeTabBar.swift */; };
 		47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4623FA9AAF0049A37A /* AppDelegate.swift */; };
 		47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4823FA9AAF0049A37A /* SceneDelegate.swift */; };
 		47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47634B4F23FA9AB10049A37A /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		471F9148242F332B00505D1C /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
 		471F914A242F334200505D1C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		471F914D242F3CF100505D1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		471F9153242F400900505D1C /* GnomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeTabBar.swift; sourceTree = "<group>"; };
 		47634B4323FA9AAF0049A37A /* gnome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gnome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47634B4623FA9AAF0049A37A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47634B4823FA9AAF0049A37A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		471F914F242F3F8D00505D1C /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				471F9150242F3FA300505D1C /* Tab Bar */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		471F9150242F3FA300505D1C /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				471F9153242F400900505D1C /* GnomeTabBar.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
 		47634B3A23FA9AAF0049A37A = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +104,7 @@
 		47634B4523FA9AAF0049A37A /* gnome */ = {
 			isa = PBXGroup;
 			children = (
+				471F914F242F3F8D00505D1C /* CommonViews */,
 				47634B5B23FA9AC70049A37A /* Scene */,
 				471F914C242F3CBA00505D1C /* Utilities */,
 				47634B5D23FA9AE30049A37A /* Support */,
@@ -265,6 +284,7 @@
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
+				471F9154242F400900505D1C /* GnomeTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
