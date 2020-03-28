@@ -9,8 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UIViewController()
-//        window?.rootViewController = createTabBarController()
+        window?.rootViewController = createTabBarController()
         window?.makeKeyAndVisible()
     }
 
@@ -27,12 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
-/*
+
 // MARK: - Fileprivate methods
 extension SceneDelegate {
     
     fileprivate func createExploreNC() -> UINavigationController {
-        let exploreVC = ExploreViewController.create(viewModel: ExploreViewModel())
+        let exploreVC = ExploreVC()
         exploreVC.title = "Explore"
         exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 0)
         return UINavigationController(rootViewController: exploreVC)
@@ -40,7 +39,7 @@ extension SceneDelegate {
     
     
     fileprivate func createTrendingNC() -> UINavigationController {
-        let trendingVC = TrendingViewController.create(viewModel: TrendingViewModel())
+        let trendingVC = TrendingVC()
         trendingVC.title = "Trending"
         trendingVC.tabBarItem = UITabBarItem(title: "Trending", image: UIImage(named: "trending"), tag: 1)
         return UINavigationController(rootViewController: trendingVC)
@@ -48,7 +47,7 @@ extension SceneDelegate {
     
     
     fileprivate func createSearchNC() -> UINavigationController {
-        let searchVC = SearchViewController.create(viewModel: SearchViewModel())
+        let searchVC = SearchVC()
         searchVC.title = "Search"
         searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 2)
         return UINavigationController(rootViewController: searchVC)
@@ -56,7 +55,7 @@ extension SceneDelegate {
     
     
     fileprivate func createLibraryNC() -> UINavigationController {
-        let libraryVC = LibraryViewController.create(viewModel: LibraryViewModel())
+        let libraryVC = LibraryVC()
         libraryVC.title = "Library"
         libraryVC.tabBarItem = UITabBarItem(title: "Library", image: UIImage(named: "library"), tag: 3)
         return UINavigationController(rootViewController: libraryVC)
@@ -64,7 +63,7 @@ extension SceneDelegate {
     
     
     fileprivate func createSettingsNC() -> UINavigationController {
-        let settingsVC = SettingsViewController.create(viewModel: SettingsViewModel())
+        let settingsVC = SettingsVC()
         settingsVC.title = "Settings"
         settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 4)
         return UINavigationController(rootViewController: settingsVC)
@@ -83,4 +82,3 @@ extension SceneDelegate {
         UINavigationBar.appearance().tintColor = UIColor.red        
     }
 }
-*/
