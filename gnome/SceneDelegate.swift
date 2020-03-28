@@ -33,7 +33,7 @@ extension SceneDelegate {
     fileprivate func createExploreNC() -> UINavigationController {
         let exploreVC = ExploreVC()
         exploreVC.title = "Explore"
-        exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 0)
+        exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "audiotrack"), tag: 0)
         return UINavigationController(rootViewController: exploreVC)
     }
     
@@ -41,7 +41,7 @@ extension SceneDelegate {
     fileprivate func createTrendingNC() -> UINavigationController {
         let trendingVC = TrendingVC()
         trendingVC.title = "Trending"
-        trendingVC.tabBarItem = UITabBarItem(title: "Trending", image: UIImage(named: "trending"), tag: 1)
+        trendingVC.tabBarItem = UITabBarItem(title: "Trending", image: UIImage(named: "whatshot"), tag: 1)
         return UINavigationController(rootViewController: trendingVC)
     }
     
@@ -57,7 +57,7 @@ extension SceneDelegate {
     fileprivate func createLibraryNC() -> UINavigationController {
         let libraryVC = LibraryVC()
         libraryVC.title = "Library"
-        libraryVC.tabBarItem = UITabBarItem(title: "Library", image: UIImage(named: "library"), tag: 3)
+        libraryVC.tabBarItem = UITabBarItem(title: "Library", image: UIImage(named: "library_music"), tag: 3)
         return UINavigationController(rootViewController: libraryVC)
     }
     
