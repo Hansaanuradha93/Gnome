@@ -32,40 +32,40 @@ extension SceneDelegate {
     
     fileprivate func createExploreNC() -> UINavigationController {
         let exploreVC = ExploreVC()
-        exploreVC.title = "Explore"
-        exploreVC.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "audiotrack"), tag: 0)
+        exploreVC.title = TabBar.explore
+        exploreVC.tabBarItem = UITabBarItem(title: TabBar.explore, image: Asserts.explore, tag: 0)
         return UINavigationController(rootViewController: exploreVC)
     }
     
     
     fileprivate func createTrendingNC() -> UINavigationController {
         let trendingVC = TrendingVC()
-        trendingVC.title = "Trending"
-        trendingVC.tabBarItem = UITabBarItem(title: "Trending", image: UIImage(named: "whatshot"), tag: 1)
+        trendingVC.title = TabBar.trending
+        trendingVC.tabBarItem = UITabBarItem(title: TabBar.trending, image: Asserts.trending, tag: 1)
         return UINavigationController(rootViewController: trendingVC)
     }
     
     
     fileprivate func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
-        searchVC.title = "Search"
-        searchVC.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 2)
+        searchVC.title = TabBar.search
+        searchVC.tabBarItem = UITabBarItem(title: TabBar.search, image: Asserts.search, tag: 2)
         return UINavigationController(rootViewController: searchVC)
     }
     
     
     fileprivate func createLibraryNC() -> UINavigationController {
         let libraryVC = LibraryVC()
-        libraryVC.title = "Library"
-        libraryVC.tabBarItem = UITabBarItem(title: "Library", image: UIImage(named: "library_music"), tag: 3)
+        libraryVC.title = TabBar.library
+        libraryVC.tabBarItem = UITabBarItem(title: TabBar.library, image: Asserts.library, tag: 3)
         return UINavigationController(rootViewController: libraryVC)
     }
     
     
     fileprivate func createSettingsNC() -> UINavigationController {
         let settingsVC = SettingsVC()
-        settingsVC.title = "Settings"
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 4)
+        settingsVC.title = TabBar.settings
+        settingsVC.tabBarItem = UITabBarItem(title: TabBar.settings, image: Asserts.settings, tag: 4)
         return UINavigationController(rootViewController: settingsVC)
     }
     
