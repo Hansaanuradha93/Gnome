@@ -4,10 +4,13 @@ class ExploreVC: UIViewController {
 
     
     private let titleLabel = GNTitleLabel(fontSize: 34)
+    private let flowLayout = UICollectionViewFlowLayout()
+    private var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutUI()
+        configureTitleLabel()
+        configureCollectionView()
     }
     
     
@@ -26,10 +29,11 @@ extension ExploreVC {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    private func layoutUI() {
+    private func configureTitleLabel() {
         
         view.addSubview(titleLabel)
         titleLabel.text = "Explore"
+        
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 23),
@@ -38,4 +42,33 @@ extension ExploreVC {
             titleLabel.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
+    
+    private func configureCollectionView() {
+        flowLayout.scrollDirection  = .vertical
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.addSubview(collectionView)
+        
+        collectionView.dataSource   = self
+//        collectionView.delegate     = self
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+}
+
+extension ExploreVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell z/÷÷÷
+    }
+    
+    
+    
 }

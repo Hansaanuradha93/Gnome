@@ -20,6 +20,8 @@
 		471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9165242FA28400505D1C /* GNBodyLabel.swift */; };
 		471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */; };
 		47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */; };
+		47347A3D2430664500D1B908 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3C2430664500D1B908 /* UIHelper.swift */; };
+		47347A4024306F3100D1B908 /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3F24306F3100D1B908 /* RowCell.swift */; };
 		47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4623FA9AAF0049A37A /* AppDelegate.swift */; };
 		47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4823FA9AAF0049A37A /* SceneDelegate.swift */; };
 		47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47634B4F23FA9AB10049A37A /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		471F9165242FA28400505D1C /* GNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBodyLabel.swift; sourceTree = "<group>"; };
 		471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryBodyLabel.swift; sourceTree = "<group>"; };
 		47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNThumbnaiImageView.swift; sourceTree = "<group>"; };
+		47347A3C2430664500D1B908 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		47347A3F24306F3100D1B908 /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 		47634B4323FA9AAF0049A37A /* gnome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gnome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47634B4623FA9AAF0049A37A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47634B4823FA9AAF0049A37A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				471F914D242F3CF100505D1C /* Constants.swift */,
+				47347A3C2430664500D1B908 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 				471F9150242F3FA300505D1C /* Tab Bar */,
 				471F9158242F929C00505D1C /* Labels */,
 				47347A392430581E00D1B908 /* Image Views */,
+				47347A3E24306EFF00D1B908 /* Collection View Cells */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -124,6 +130,14 @@
 				47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */,
 			);
 			path = "Image Views";
+			sourceTree = "<group>";
+		};
+		47347A3E24306EFF00D1B908 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47347A3F24306F3100D1B908 /* RowCell.swift */,
+			);
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		47634B3A23FA9AAF0049A37A = {
@@ -322,9 +336,11 @@
 				471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */,
 				471F914B242F334200505D1C /* SettingsVC.swift in Sources */,
 				471F9147242F330D00505D1C /* SearchVC.swift in Sources */,
+				47347A4024306F3100D1B908 /* RowCell.swift in Sources */,
 				471F9149242F332B00505D1C /* LibraryVC.swift in Sources */,
 				47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */,
 				471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */,
+				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
 				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,
