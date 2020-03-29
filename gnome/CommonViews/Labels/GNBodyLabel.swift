@@ -28,7 +28,7 @@ class GNBodyLabel: UILabel {
         textColor                   = .black
         textAlignment               = .left
         adjustsFontSizeToFitWidth   = true
-        minimumScaleFactor          = 0.9
+        minimumScaleFactor          = 0.75
         lineBreakMode               = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }

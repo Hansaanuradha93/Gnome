@@ -28,7 +28,7 @@ class GNSecondaryTitleLabel: UILabel {
         textColor                   = .black
         textAlignment               = .left
         adjustsFontSizeToFitWidth   = true
-        minimumScaleFactor          = 0.9
+        minimumScaleFactor          = 0.85
         lineBreakMode               = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
