@@ -2,11 +2,11 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
-    
-    private let titleLabel = GNTitleLabel(fontSize: 34)
+    private let titleLabel              = GNTitleLabel(fontSize: 34)
     private let collectionViewContainer = UIView()
-    private let flowLayout = UICollectionViewFlowLayout()
-    private var collectionView: UICollectionView!
+    private let flowLayout              = UICollectionViewFlowLayout()
+    private var collectionView          : UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +26,16 @@ class ExploreVC: UIViewController {
 extension ExploreVC {
     
     private func configureViewController() {
+        
         view.backgroundColor    = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     private func configureTitleLabel() {
         
         view.addSubview(titleLabel)
-        titleLabel.text = "Explore"
-        
+        titleLabel.text = Titles.explore
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 23),
@@ -46,6 +47,7 @@ extension ExploreVC {
 
     
     private func configureCollectionView() {
+        
         flowLayout.scrollDirection      = .vertical
         collectionView                  = UICollectionView(frame: collectionViewContainer.bounds, collectionViewLayout: flowLayout)
         collectionView.backgroundColor  = .systemBackground
@@ -66,8 +68,9 @@ extension ExploreVC {
 }
 
 
-
+// MARK: - Collection View Data Source
 extension ExploreVC: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -76,20 +79,19 @@ extension ExploreVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RowCell.reuseID, for: indexPath) as! RowCell
         return cell
     }
-    
-    
-    
 }
 
 
+// MARK: - Collection View Delegate
 extension ExploreVC: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Item selected")
     }
 }
 
 
-
+// MARK: - FlowLayout Delegate
 extension ExploreVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -11,7 +11,7 @@ enum Asserts {
 }
 
 
-enum TabBar {
+enum Titles {
     
     static let explore      = "Explore"
     static let trending     = "Trending"
