@@ -2,6 +2,7 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
+    private var viewModel               = ExploreVM()
     private let titleLabel              = GNTitleLabel(fontSize: 34)
     private let collectionViewContainer = UIView()
     private let flowLayout              = UICollectionViewFlowLayout()
@@ -71,13 +72,32 @@ extension ExploreVC {
 // MARK: - Collection View Data Source
 extension ExploreVC: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.sections.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RowCell.reuseID, for: indexPath) as! RowCell
+
+        switch viewModel.sections[indexPath.section].sectionType {
+        case .recentlyPlayed:
+            cell.setup(cellType: .recentlyPlayed)
+        case .recommendedForYou:
+            cell.setup(cellType: .recommendedForYou)
+        case .getInspired:
+            cell.setup(cellType: .getInspired)
+        case .popularArtists:
+            cell.setup(cellType: .popularArtists)
+        case .genres:
+            cell.setup(cellType: .genres)
+        }
         return cell
+
     }
 }
 
@@ -95,7 +115,18 @@ extension ExploreVC: UICollectionViewDelegate {
 extension ExploreVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        switch viewModel.sections[indexPath.section].sectionType {
+        case .recentlyPlayed:
+            return CGSize(width: collectionView.bounds.width, height: 180)
+        case .recommendedForYou:
+            return CGSize(width: collectionView.bounds.width, height: 272)
+        case .getInspired:
+            return CGSize(width: collectionView.bounds.width, height: 276)
+        case .popularArtists:
+            return CGSize(width: collectionView.bounds.width, height: 180)
+        case .genres:
+            return CGSize(width: collectionView.bounds.width, height: 110)
+        }
     }
 }
 
