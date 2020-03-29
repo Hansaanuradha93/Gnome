@@ -7,7 +7,9 @@ enum Asserts {
     static let search       = UIImage(named: "search")
     static let library      = UIImage(named: "library_music")
     static let settings     = UIImage(named: "settings")
+    static let placeholder  = UIImage(named: "library_music")
 }
+
 
 enum TabBar {
     
