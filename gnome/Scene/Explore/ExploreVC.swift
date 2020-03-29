@@ -2,18 +2,40 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
+    
+    private let titleLabel = GNTitleLabel(fontSize: 34)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        layoutUI()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureViewController()
+    }
+}
+
+
+// MARK: - Methods
+extension ExploreVC {
+    
+    private func configureViewController() {
+        view.backgroundColor    = .systemBackground
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    private func layoutUI() {
         
-        let test = GNThumbnaiImageView(frame: .zero)
-        view.addSubview(test)
+        view.addSubview(titleLabel)
+        titleLabel.text = "Explore"
         
         NSLayoutConstraint.activate([
-            test.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            test.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            test.widthAnchor.constraint(equalToConstant: 115),
-            test.heightAnchor.constraint(equalToConstant: 115)
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 23),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            titleLabel.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
 }
