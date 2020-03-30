@@ -18,12 +18,10 @@ class RowCell: UICollectionViewCell {
     private var collectionView  : UICollectionView!
     
     
-    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
-        backgroundColor = .red
     }
     
     

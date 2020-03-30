@@ -82,9 +82,11 @@ extension ExploreVC: UICollectionViewDataSource {
         return viewModel.sections.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -103,7 +105,6 @@ extension ExploreVC: UICollectionViewDataSource {
             cell.setup(cellType: .genres)
         }
         return cell
-
     }
 }
 
@@ -137,11 +138,6 @@ extension ExploreVC: UICollectionViewDelegateFlowLayout {
         case .genres:
             return CGSize(width: width, height: 110)
         }
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
     }
 }
 
