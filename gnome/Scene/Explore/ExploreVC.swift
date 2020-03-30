@@ -5,7 +5,6 @@ class ExploreVC: UIViewController {
     private var viewModel               = ExploreVM()
     private let titleLabel              = GNTitleLabel(fontSize: 34)
     private let collectionViewContainer = UIView()
-    private let flowLayout              = UICollectionViewFlowLayout()
     private var collectionView          : UICollectionView!
     
     
@@ -49,8 +48,7 @@ extension ExploreVC {
     
     private func configureCollectionView() {
         
-        flowLayout.scrollDirection      = .vertical
-        collectionView                  = UICollectionView(frame: collectionViewContainer.bounds, collectionViewLayout: flowLayout)
+        collectionView                  = UICollectionView(frame: collectionViewContainer.bounds, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
         collectionView.dataSource       = self
         collectionView.delegate         = self
@@ -65,6 +63,14 @@ extension ExploreVC {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    
+    private func createFlowLayout() -> UICollectionViewFlowLayout {
+        let flowLayout              = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection  = .vertical
+        flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
+        return flowLayout
     }
 }
 
@@ -115,17 +121,21 @@ extension ExploreVC: UICollectionViewDelegate {
 extension ExploreVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width  = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+
         switch viewModel.sections[indexPath.section].sectionType {
         case .recentlyPlayed:
-            return CGSize(width: collectionView.bounds.width, height: 180)
+            return CGSize(width: width, height: 180)
         case .recommendedForYou:
-            return CGSize(width: collectionView.bounds.width, height: 272)
+            return CGSize(width: width, height: 272)
         case .getInspired:
-            return CGSize(width: collectionView.bounds.width, height: 276)
+            return CGSize(width: width, height: 276)
         case .popularArtists:
-            return CGSize(width: collectionView.bounds.width, height: 180)
+            return CGSize(width: width, height: 180)
         case .genres:
-            return CGSize(width: collectionView.bounds.width, height: 110)
+            return CGSize(width: width, height: 110)
         }
     }
     

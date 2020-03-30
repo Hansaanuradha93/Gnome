@@ -23,6 +23,7 @@ class RowCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        backgroundColor = .red
     }
     
     
