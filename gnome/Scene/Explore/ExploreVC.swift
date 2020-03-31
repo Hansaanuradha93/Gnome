@@ -2,9 +2,9 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
-    private var viewModel               = ExploreVM()
-    private let titleLabel              = GNTitleLabel(fontSize: 34)
-    private var collectionView          : UICollectionView!
+    private var viewModel       = ExploreVM()
+    private let titleLabel      = GNTitleLabel(fontSize: 34)
+    private var collectionView  : UICollectionView!
     
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ extension ExploreVC {
     
     private func configureViewController() {
         
-        view.backgroundColor    = .systemBackground
+        view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
