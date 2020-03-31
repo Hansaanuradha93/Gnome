@@ -4,7 +4,6 @@ class ExploreVC: UIViewController {
 
     private var viewModel               = ExploreVM()
     private let titleLabel              = GNTitleLabel(fontSize: 34)
-    private let collectionViewContainer = UIView()
     private var collectionView          : UICollectionView!
     
     
@@ -48,7 +47,7 @@ extension ExploreVC {
     
     private func configureCollectionView() {
         
-        collectionView                  = UICollectionView(frame: collectionViewContainer.bounds, collectionViewLayout: createFlowLayout())
+        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
         collectionView.dataSource       = self
         collectionView.delegate         = self
