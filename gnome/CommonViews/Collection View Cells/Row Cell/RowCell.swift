@@ -14,7 +14,7 @@ class RowCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID          = "RowCell"
     private let titleLabel      = GNTitleLabel(fontSize: 22)
-    private let flowLayout      = UICollectionViewFlowLayout()
+    private let collectionViewContainer = UIView()
     private var collectionView  : UICollectionView!
     
     
@@ -37,12 +37,19 @@ class RowCell: UICollectionViewCell {
     
     private func configure() {
         addSubview(titleLabel)
+        addSubview(collectionViewContainer)
+        collectionViewContainer.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 22)
+            titleLabel.heightAnchor.constraint(equalToConstant: 22),
+            
+            collectionViewContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
+            collectionViewContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionViewContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionViewContainer.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
