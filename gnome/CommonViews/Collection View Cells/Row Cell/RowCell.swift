@@ -28,7 +28,11 @@ class RowCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+
+// MARK: - Methods
+extension RowCell {
     
     func setup(cellType: RowCellType) {
         titleLabel.text         = cellType.rawValue
