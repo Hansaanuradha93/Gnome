@@ -51,11 +51,13 @@ class RowCell: UICollectionViewCell {
         
         collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
-        
+        collectionView.dataSource       = self
+        collectionView.delegate         = self
         
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
+        collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
+
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -73,3 +75,40 @@ class RowCell: UICollectionViewCell {
         return flowLayout
     }
 }
+
+
+// MARK: - Collection View Data Source
+extension RowCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+        return cell
+    }
+}
+
+
+// MARK: - Collection View Delegate
+extension RowCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Item selected")
+    }
+}
+
+
+// MARK: - FlowLayout Delegate
+extension RowCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 115, height: 140)
+    }
+}
+
+
