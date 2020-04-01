@@ -8,6 +8,7 @@ class LargeSongCell: UICollectionViewCell {
     private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
     private let artistLabel         = GNBodyLabel(fontSize: 13)
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
