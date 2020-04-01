@@ -60,6 +60,7 @@ extension RowCell {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
+        collectionView.register(LargeSongCell.self, forCellWithReuseIdentifier: LargeSongCell.reuseID)
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -91,7 +92,7 @@ extension RowCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
         return cell
     }
 }
