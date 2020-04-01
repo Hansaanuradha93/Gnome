@@ -14,19 +14,19 @@ class GNSecondaryTitleLabel: UILabel {
     }
     
     
-    convenience init(fontSize: CGFloat) {
+    convenience init(fontSize: CGFloat, alignment: NSTextAlignment) {
         self.init(frame: .zero)
         let traits          = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.semibold]
         var descriptor      = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Poppins"])
         descriptor          = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         font                = UIFont(descriptor: descriptor, size: fontSize)
+        textAlignment       = alignment
     }
     
     
     // MARK: - Methods
     private func configure() {
         textColor                   = .black
-        textAlignment               = .left
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.85
         lineBreakMode               = .byTruncatingTail

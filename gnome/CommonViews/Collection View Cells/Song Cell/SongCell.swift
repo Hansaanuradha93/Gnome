@@ -5,7 +5,7 @@ class SongCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID              = "SongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let songTitleLabel      = GNSecondaryTitleLabel(fontSize: 15)
+    private let songTitleLabel      = GNSecondaryTitleLabel(fontSize: 15, alignment: .left)
     
     // MARK: - Initializers
     override init(frame: CGRect) {
