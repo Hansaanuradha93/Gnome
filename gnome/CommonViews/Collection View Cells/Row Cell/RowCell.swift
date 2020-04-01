@@ -58,10 +58,10 @@ extension RowCell {
         collectionView.dataSource       = self
         collectionView.delegate         = self
         
-        addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
-
+        addSubview(collectionView)
+        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -110,8 +110,8 @@ extension RowCell: UICollectionViewDelegate {
 extension RowCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 115, height: collectionView.bounds.height)
+        let height = collectionView.bounds.height
+        return CGSize(width: height, height: height)
     }
 }
 
