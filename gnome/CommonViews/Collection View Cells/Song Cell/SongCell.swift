@@ -26,8 +26,8 @@ class SongCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
             thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            thumbnailImageView.widthAnchor.constraint(equalToConstant: 144.33),
-            thumbnailImageView.heightAnchor.constraint(equalToConstant: 144.33),
+            thumbnailImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: 114.33),
             
             songTitleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 4.7),
             songTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
