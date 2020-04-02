@@ -36,6 +36,7 @@
 		47AB5CE524022EA90081858E /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDE24022EA80081858E /* Poppins-Light.otf */; };
 		47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDF24022EA90081858E /* Poppins-Thin.otf */; };
 		47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */; };
+		47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6B6F324358CE7001298C5 /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		47AB5CDE24022EA80081858E /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
 		47AB5CDF24022EA90081858E /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
 		47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		47D6B6F324358CE7001298C5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		47347A3E24306EFF00D1B908 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				47D6B6F224358CCB001298C5 /* Album Cell */,
 				475EB48E243446BF00CA04C1 /* Large Song Cell */,
 				478E37392432677A0070F54E /* Song Cell */,
 				478E3738243267680070F54E /* Row Cell */,
@@ -288,6 +291,14 @@
 			name = Poppins;
 			sourceTree = "<group>";
 		};
+		47D6B6F224358CCB001298C5 /* Album Cell */ = {
+			isa = PBXGroup;
+			children = (
+				47D6B6F324358CE7001298C5 /* AlbumCell.swift */,
+			);
+			path = "Album Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,6 +393,7 @@
 				478E373B243267970070F54E /* SongCell.swift in Sources */,
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
 				471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */,
+				47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */,
 				471F9157242F439300505D1C /* UIColot+Ext.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
