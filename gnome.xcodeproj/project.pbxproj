@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470C0B2924358FED00475321 /* GenresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470C0B2824358FED00475321 /* GenresCell.swift */; };
 		471F9143242F32A100505D1C /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9142242F32A100505D1C /* ExploreVC.swift */; };
 		471F9145242F32F400505D1C /* TrendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9144242F32F400505D1C /* TrendingVC.swift */; };
 		471F9147242F330D00505D1C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9146242F330D00505D1C /* SearchVC.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470C0B2824358FED00475321 /* GenresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCell.swift; sourceTree = "<group>"; };
 		471F9142242F32A100505D1C /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		471F9144242F32F400505D1C /* TrendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVC.swift; sourceTree = "<group>"; };
 		471F9146242F330D00505D1C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		470C0B2724358FD000475321 /* Genres Cell */ = {
+			isa = PBXGroup;
+			children = (
+				470C0B2824358FED00475321 /* GenresCell.swift */,
+			);
+			path = "Genres Cell";
+			sourceTree = "<group>";
+		};
 		471F914C242F3CBA00505D1C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		47347A3E24306EFF00D1B908 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				470C0B2724358FD000475321 /* Genres Cell */,
 				47D6B6F224358CCB001298C5 /* Album Cell */,
 				475EB48E243446BF00CA04C1 /* Large Song Cell */,
 				478E37392432677A0070F54E /* Song Cell */,
@@ -389,6 +400,7 @@
 				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
 				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
+				470C0B2924358FED00475321 /* GenresCell.swift in Sources */,
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,
 				478E373B243267970070F54E /* SongCell.swift in Sources */,
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
