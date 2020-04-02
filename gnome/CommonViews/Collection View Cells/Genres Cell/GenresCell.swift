@@ -5,6 +5,7 @@ class GenresCell: UICollectionViewCell {
     // MARK: - Properties
     private let titleLabel  = GNTitleLabel(fontSize: 20, textColour: .white)
     
+    
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)

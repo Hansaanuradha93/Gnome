@@ -6,6 +6,7 @@ class AlbumCell: UICollectionViewCell {
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
     
+    
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)

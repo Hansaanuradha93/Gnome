@@ -10,10 +10,12 @@ class ExploreVM {
         case genres                     = 4
     }
     
+    
     struct Section {
         var sectionType: SectionType
         var index: Int
     }
+    
     
     lazy var sections: [Section]        = {
         var data = [Section]()

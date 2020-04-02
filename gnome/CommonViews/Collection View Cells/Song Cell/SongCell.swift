@@ -7,6 +7,7 @@ class SongCell: UICollectionViewCell {
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let songTitleLabel      = GNSecondaryTitleLabel(fontSize: 15, alignment: .left)
     
+    
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
