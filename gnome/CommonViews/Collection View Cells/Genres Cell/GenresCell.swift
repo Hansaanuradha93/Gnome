@@ -10,7 +10,8 @@ class GenresCell: UICollectionViewCell {
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureTitleLabel()
+        configureBackground()
     }
     
     
@@ -20,9 +21,14 @@ class GenresCell: UICollectionViewCell {
     
     
     // MARK: - Methods
-    private func configure() {
+    private func configureBackground() {
+        backgroundColor = UIColor.appColor(.Pretty_Pink)
+        addCronerRadius(of: 12)
+    }
+    
+    
+    private func configureTitleLabel() {
         addSubview(titleLabel)
-        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
