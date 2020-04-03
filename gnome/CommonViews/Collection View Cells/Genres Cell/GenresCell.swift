@@ -3,6 +3,7 @@ import UIKit
 class GenresCell: UICollectionViewCell {
     
     // MARK: - Properties
+    static let reuseID      = "GenresCell"
     private let titleLabel  = GNTitleLabel(fontSize: 20, textColour: .white)
     
     
