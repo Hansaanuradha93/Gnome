@@ -15,6 +15,7 @@ class RowCell: UICollectionViewCell {
     static let reuseID          = "RowCell"
     private let titleLabel      = GNTitleLabel(fontSize: 22)
     private var collectionView  : UICollectionView!
+    var cellType                : RowCellType!
     
     
     // MARK: - Initializers
@@ -35,6 +36,7 @@ class RowCell: UICollectionViewCell {
 extension RowCell {
     
     func setup(cellType: RowCellType) {
+        self.cellType           = cellType
         titleLabel.text         = cellType.rawValue
     }
     
@@ -61,6 +63,9 @@ extension RowCell {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
         collectionView.register(LargeSongCell.self, forCellWithReuseIdentifier: LargeSongCell.reuseID)
+        collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
+        collectionView.register(GenresCell.self, forCellWithReuseIdentifier: GenresCell.reuseID)
+
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -86,14 +91,46 @@ extension RowCell {
 extension RowCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch cellType {
+        case .recentlyPlayed:
+            return 3
+        case .recommendedForYou:
+            return 5
+        case .getInspired:
+            return 4
+        case .popularArtists:
+            return 7
+        case .genres:
+            return 5
+        case .none:
+            return 0
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
-        return cell
+        switch cellType {
+        case .recentlyPlayed:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+            return cell
+        case .recommendedForYou:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
+            return cell
+        case .getInspired:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
+            return cell
+        case .popularArtists:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+            return cell
+        case .genres:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenresCell.reuseID, for: indexPath) as! GenresCell
+            return cell
+        case .none:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+            return cell
+        }
+
     }
 }
 
