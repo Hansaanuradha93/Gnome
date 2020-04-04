@@ -20,6 +20,13 @@ class LargeSongCell: UICollectionViewCell {
     }
     
     
+    func setup(song: Song) {
+        thumbnailImageView.image    = song.thumbnailImage
+        titleLabel.text             = song.title
+        artistLabel.text            = song.artist
+    }
+    
+    
     private func configure() {
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
