@@ -148,8 +148,20 @@ extension RowCell: UICollectionViewDelegate {
 extension RowCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = collectionView.bounds.height
-        return CGSize(width: height, height: height)
+        switch cellType {
+        case .recentlyPlayed:
+            return CGSize(width: 114.5, height: 140)
+        case .recommendedForYou:
+            return CGSize(width: 180, height: 232)
+        case .getInspired:
+            return CGSize(width: 180, height: 236)
+        case .popularArtists:
+            return CGSize(width: 114.5, height: 140)
+        case .genres:
+            return CGSize(width: 148, height: 170)
+        case .none:
+            return CGSize(width: 0, height: 0)
+        }
     }
 }
 
