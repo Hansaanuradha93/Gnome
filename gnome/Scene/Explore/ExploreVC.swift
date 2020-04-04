@@ -108,34 +108,26 @@ extension ExploreVC: UICollectionViewDataSource {
 }
 
 
-// MARK: - Collection View Delegate
-extension ExploreVC: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Item selected")
-    }
-}
-
-
 // MARK: - FlowLayout Delegate
-extension ExploreVC: UICollectionViewDelegateFlowLayout {
+extension ExploreVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width  = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
-
+        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        let padding: CGFloat    = 0
+        
         switch viewModel.sections[indexPath.section].sectionType {
         case .recentlyPlayed:
-            return CGSize(width: width, height: 180)
+            return CGSize(width: width, height: 180 + padding)
         case .recommendedForYou:
-            return CGSize(width: width, height: 272)
+            return CGSize(width: width, height: 272 + padding)
         case .getInspired:
-            return CGSize(width: width, height: 276)
+            return CGSize(width: width, height: 276 + padding)
         case .popularArtists:
-            return CGSize(width: width, height: 180)
+            return CGSize(width: width, height: 180 + padding)
         case .genres:
-            return CGSize(width: width, height: 110)
+            return CGSize(width: width, height: 110 + padding)
         }
     }
 }
