@@ -55,10 +55,11 @@ extension RowCell {
     
     private func configureCollectionView() {
         
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor                  = .systemBackground
+        collectionView.showsHorizontalScrollIndicator   = false
+        collectionView.dataSource                       = self
+        collectionView.delegate                         = self
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
@@ -158,7 +159,7 @@ extension RowCell: UICollectionViewDelegateFlowLayout {
         case .popularArtists:
             return CGSize(width: 114.5, height: 140)
         case .genres:
-            return CGSize(width: 148, height: 170)
+            return CGSize(width: 148, height: 70)
         case .none:
             return CGSize(width: 0, height: 0)
         }
