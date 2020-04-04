@@ -29,5 +29,11 @@ enum Temporary {
     static let song4        = UIImage(named: "song_4")
     static let song5        = UIImage(named: "song_5")
     static let song6        = UIImage(named: "song_6")
+    
+    static let largeSong1   = UIImage(named: "large_song_1")
+    static let largeSong2   = UIImage(named: "large_song_2")
+    static let largeSong3   = UIImage(named: "large_song_3")
+    static let largeSong4   = UIImage(named: "large_song_4")
+
 
 }
