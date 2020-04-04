@@ -29,6 +29,9 @@
 		47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47634B4823FA9AAF0049A37A /* SceneDelegate.swift */; };
 		47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47634B4F23FA9AB10049A37A /* Assets.xcassets */; };
 		47634B5323FA9AB10049A37A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47634B5123FA9AB10049A37A /* LaunchScreen.storyboard */; };
+		476A471D24383CED00DF07A3 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A471C24383CED00DF07A3 /* Song.swift */; };
+		476A471F24383DFB00DF07A3 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A471E24383DFB00DF07A3 /* Album.swift */; };
+		476A472124383E6E00DF07A3 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A472024383E6E00DF07A3 /* Artist.swift */; };
 		478E373B243267970070F54E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E373A243267970070F54E /* SongCell.swift */; };
 		4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793302C2436E36A00DC5326 /* UIView+Ext.swift */; };
 		47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDA24022EA80081858E /* Poppins-Medium.otf */; };
@@ -66,6 +69,9 @@
 		47634B4F23FA9AB10049A37A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47634B5223FA9AB10049A37A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47634B5423FA9AB10049A37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476A471C24383CED00DF07A3 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		476A471E24383DFB00DF07A3 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		476A472024383E6E00DF07A3 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		478E373A243267970070F54E /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		4793302C2436E36A00DC5326 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		47AB5CDA24022EA80081858E /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 		47634B4523FA9AAF0049A37A /* gnome */ = {
 			isa = PBXGroup;
 			children = (
+				476A471B24383CA200DF07A3 /* Model */,
 				471F914F242F3F8D00505D1C /* CommonViews */,
 				47634B5B23FA9AC70049A37A /* Scene */,
 				471F914C242F3CBA00505D1C /* Utilities */,
@@ -265,6 +272,16 @@
 				471F914A242F334200505D1C /* SettingsVC.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		476A471B24383CA200DF07A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				476A471C24383CED00DF07A3 /* Song.swift */,
+				476A471E24383DFB00DF07A3 /* Album.swift */,
+				476A472024383E6E00DF07A3 /* Artist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		478E3738243267680070F54E /* Row Cell */ = {
@@ -394,6 +411,7 @@
 				471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */,
 				471F914B242F334200505D1C /* SettingsVC.swift in Sources */,
 				471F9147242F330D00505D1C /* SearchVC.swift in Sources */,
+				476A471F24383DFB00DF07A3 /* Album.swift in Sources */,
 				475EB490243446EC00CA04C1 /* LargeSongCell.swift in Sources */,
 				47347A422430EC6F00D1B908 /* ExploreVM.swift in Sources */,
 				47347A4024306F3100D1B908 /* RowCell.swift in Sources */,
@@ -402,6 +420,7 @@
 				471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */,
 				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
+				476A471D24383CED00DF07A3 /* Song.swift in Sources */,
 				4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */,
 				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
 				470C0B2924358FED00475321 /* GenresCell.swift in Sources */,
@@ -410,6 +429,7 @@
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
 				471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */,
 				47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */,
+				476A472124383E6E00DF07A3 /* Artist.swift in Sources */,
 				471F9157242F439300505D1C /* UIColot+Ext.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
