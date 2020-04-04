@@ -16,13 +16,15 @@ class RowCell: UICollectionViewCell {
     private let titleLabel      = GNTitleLabel(fontSize: 22)
     private var collectionView  : UICollectionView!
     var cellType                : RowCellType!
-    var songs: [Song]           = []
+    var recentlyPlayedSongs     = [Song]()
+    var recommendedForYouSongs  = [Song]()
     
     
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         fetchSongs()
+        fetchRecommendedForYouSongs()
         configureTitleLabel()
         configureCollectionView()
     }
@@ -44,7 +46,12 @@ extension RowCell {
     
     
     private func fetchSongs() {
-        songs = Song.fetchSongs()
+        recentlyPlayedSongs     = Song.fetchSongs()
+    }
+    
+    
+    private func fetchRecommendedForYouSongs() {
+        recommendedForYouSongs  = Song.fetchRecommendedForYouSongs()
     }
     
     
@@ -101,9 +108,9 @@ extension RowCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch cellType {
         case .recentlyPlayed:
-            return songs.count
+            return recentlyPlayedSongs.count
         case .recommendedForYou:
-            return 5
+            return recommendedForYouSongs.count
         case .getInspired:
             return 4
         case .popularArtists:
@@ -121,10 +128,11 @@ extension RowCell: UICollectionViewDataSource {
         switch cellType {
         case .recentlyPlayed:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
-            cell.setup(song: songs[indexPath.item])
+            cell.setup(song: recentlyPlayedSongs[indexPath.item])
             return cell
         case .recommendedForYou:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
+            cell.setup(song: recommendedForYouSongs[indexPath.item])
             return cell
         case .getInspired:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell

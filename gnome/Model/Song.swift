@@ -22,7 +22,7 @@ struct Song {
     }
     
     
-    static func fetchLargeSongs() -> [Song] {
+    static func fetchRecommendedForYouSongs() -> [Song] {
         
         return [
             Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: "", numberOfPlays: 100000, thumbnailImage: Temporary.largeSong1),
