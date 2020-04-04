@@ -16,11 +16,13 @@ class RowCell: UICollectionViewCell {
     private let titleLabel      = GNTitleLabel(fontSize: 22)
     private var collectionView  : UICollectionView!
     var cellType                : RowCellType!
+    var songs: [Song]           = []
     
     
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        fetchSongs()
         configureTitleLabel()
         configureCollectionView()
     }
@@ -38,6 +40,11 @@ extension RowCell {
     func setup(cellType: RowCellType) {
         self.cellType           = cellType
         titleLabel.text         = cellType.rawValue
+    }
+    
+    
+    private func fetchSongs() {
+        songs = Song.fetchSongs()
     }
     
     
@@ -94,7 +101,7 @@ extension RowCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch cellType {
         case .recentlyPlayed:
-            return 3
+            return songs.count
         case .recommendedForYou:
             return 5
         case .getInspired:
@@ -114,6 +121,7 @@ extension RowCell: UICollectionViewDataSource {
         switch cellType {
         case .recentlyPlayed:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+            cell.setup(song: songs[indexPath.item])
             return cell
         case .recommendedForYou:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
