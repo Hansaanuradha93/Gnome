@@ -4,7 +4,7 @@ class GenresCell: UICollectionViewCell {
     
     // MARK: - Properties
     static let reuseID      = "GenresCell"
-    private let titleLabel  = GNTitleLabel(fontSize: 20, textColour: .white)
+    private let titleLabel  = GNTitleLabel(fontSize: 20, textColour: .white, alignment: .center)
     
     
     // MARK: - Initializer
@@ -29,6 +29,7 @@ class GenresCell: UICollectionViewCell {
     
     private func configureTitleLabel() {
         addSubview(titleLabel)
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
