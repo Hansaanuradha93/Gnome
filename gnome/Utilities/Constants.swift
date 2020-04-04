@@ -19,3 +19,15 @@ enum Titles {
     static let library      = "Library"
     static let settings     = "Settings"
 }
+
+
+enum Temporary {
+    
+    static let song1        = UIImage(named: "song_1")
+    static let song2        = UIImage(named: "song_2")
+    static let song3        = UIImage(named: "song_3")
+    static let song4        = UIImage(named: "song_4")
+    static let song5        = UIImage(named: "song_5")
+    static let song6        = UIImage(named: "song_6")
+
+}
