@@ -5,7 +5,7 @@ class SongCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID              = "SongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let songTitleLabel      = GNSecondaryTitleLabel(fontSize: 15, alignment: .left)
+    private let titleLabel      = GNSecondaryTitleLabel(fontSize: 15, alignment: .left)
     
     
     // MARK: - Initializers
@@ -20,9 +20,15 @@ class SongCell: UICollectionViewCell {
     }
     
     
+    func setup(song: Song) {
+        thumbnailImageView.image    = song.thumbnailImage
+        titleLabel.text             = song.title
+    }
+    
+    
     private func configure() {
         addSubview(thumbnailImageView)
-        addSubview(songTitleLabel)
+        addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -30,10 +36,10 @@ class SongCell: UICollectionViewCell {
             thumbnailImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             thumbnailImageView.heightAnchor.constraint(equalTo: thumbnailImageView.widthAnchor),
             
-            songTitleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 4.7),
-            songTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            songTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            songTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            titleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 4.7),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
             
         ])
     }
