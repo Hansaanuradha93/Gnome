@@ -31,6 +31,7 @@ class AlbumCell: UICollectionViewCell {
         
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
+        titleLabel.numberOfLines = 2
         
         NSLayoutConstraint.activate([
             thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
