@@ -43,6 +43,7 @@
 		47AB5CE524022EA90081858E /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDE24022EA80081858E /* Poppins-Light.otf */; };
 		47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDF24022EA90081858E /* Poppins-Thin.otf */; };
 		47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */; };
+		47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0373A243A194E00E74AFC /* TrendingVM.swift */; };
 		47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6B6F324358CE7001298C5 /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		47AB5CDE24022EA80081858E /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
 		47AB5CDF24022EA90081858E /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
 		47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		47B0373A243A194E00E74AFC /* TrendingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingVM.swift; path = gnome/Scene/Explore/TrendingVM.swift; sourceTree = SOURCE_ROOT; };
 		47D6B6F324358CE7001298C5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				471F9144242F32F400505D1C /* TrendingVC.swift */,
+				47B0373A243A194E00E74AFC /* TrendingVM.swift */,
 			);
 			path = Trending;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */,
 				476A472124383E6E00DF07A3 /* Artist.swift in Sources */,
 				471F9157242F439300505D1C /* UIColot+Ext.swift in Sources */,
+				47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
 			);
