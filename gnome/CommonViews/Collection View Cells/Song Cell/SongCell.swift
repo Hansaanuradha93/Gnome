@@ -19,10 +19,21 @@ class SongCell: UICollectionViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    func setup(song: Song) {
+    func setup<T>(item: T, cellType: RowCellType) {
         
-        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
-        titleLabel.text             = song.title
+        switch cellType {
+            
+        case .recentlyPlayed:
+            guard let song              = item as? Song else { return }
+            thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
+            titleLabel.text             = song.title
+        case .popularArtists:
+            guard let artist            = item as? Artist else { return }
+            thumbnailImageView.image    = UIImage(named: artist.thumbnailUrl)
+            titleLabel.text             = artist.name
+        default:
+            break
+        }
     }
     
     
