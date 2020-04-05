@@ -18,9 +18,7 @@ class HorizontalCollectionViewVC: UIViewController {
 // MARK: - Methods
 extension HorizontalCollectionViewVC {
     
-    private func fetchGenres() {
-        genres = Genre.fetchGenres()
-    }
+    private func fetchGenres() { genres = Genre.fetchGenres() }
     
     private func configureCollectionView() {
         
@@ -43,7 +41,6 @@ extension HorizontalCollectionViewVC {
     }
         
 
-    
     private func createFlowLayout() -> UICollectionViewFlowLayout {
         
         let flowLayout                      = UICollectionViewFlowLayout()
@@ -70,11 +67,8 @@ extension HorizontalCollectionViewVC: UICollectionViewDataSource {
 }
 
 
-
 // MARK: - FlowLayout Delegate
 extension HorizontalCollectionViewVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 115, height: 50)
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return CGSize(width: 115, height: 50) }
 }

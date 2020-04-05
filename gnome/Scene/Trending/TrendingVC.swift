@@ -80,8 +80,5 @@ extension TrendingVC {
     }
     
     
-    private func configureUIElements() {
-        
-        add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
-    }
+    private func configureUIElements() { add(childVC: HorizontalCollectionViewVC(), to: genresContainer) }
 }
