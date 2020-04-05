@@ -1,6 +1,7 @@
 import UIKit
 
 enum AssetsColor: String {
+    
     case White
     case Subtitle_Black
     case Pretty_Pink
@@ -11,7 +12,6 @@ enum AssetsColor: String {
 
 
 extension UIColor {
-    static func appColor(_ color: AssetsColor) -> UIColor? {
-        return UIColor(named: color.rawValue)
-    }
+    
+    static func appColor(_ color: AssetsColor) -> UIColor? { return UIColor(named: color.rawValue) }
 }
