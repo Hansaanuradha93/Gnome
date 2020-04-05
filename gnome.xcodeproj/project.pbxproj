@@ -44,6 +44,7 @@
 		47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDF24022EA90081858E /* Poppins-Thin.otf */; };
 		47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */; };
 		47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0373A243A194E00E74AFC /* TrendingVM.swift */; };
+		47B0373F243A246600E74AFC /* HorizontalCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0373E243A246600E74AFC /* HorizontalCollectionViewVC.swift */; };
 		47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6B6F324358CE7001298C5 /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		47AB5CDF24022EA90081858E /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
 		47AB5CE024022EA90081858E /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
 		47B0373A243A194E00E74AFC /* TrendingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingVM.swift; path = gnome/Scene/Explore/TrendingVM.swift; sourceTree = SOURCE_ROOT; };
+		47B0373E243A246600E74AFC /* HorizontalCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewVC.swift; sourceTree = "<group>"; };
 		47D6B6F324358CE7001298C5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				471F9158242F929C00505D1C /* Labels */,
 				47347A392430581E00D1B908 /* Image Views */,
 				47347A3E24306EFF00D1B908 /* Collection View Cells */,
+				47B0373D243A239300E74AFC /* View Controller */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -331,6 +334,22 @@
 			name = Poppins;
 			sourceTree = "<group>";
 		};
+		47B0373D243A239300E74AFC /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				47B03740243A256300E74AFC /* Horizontal Collection View VC */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		47B03740243A256300E74AFC /* Horizontal Collection View VC */ = {
+			isa = PBXGroup;
+			children = (
+				47B0373E243A246600E74AFC /* HorizontalCollectionViewVC.swift */,
+			);
+			path = "Horizontal Collection View VC";
+			sourceTree = "<group>";
+		};
 		47D6B6F224358CCB001298C5 /* Album Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +447,7 @@
 				471F9149242F332B00505D1C /* LibraryVC.swift in Sources */,
 				47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */,
 				471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */,
+				47B0373F243A246600E74AFC /* HorizontalCollectionViewVC.swift in Sources */,
 				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
 				476A471D24383CED00DF07A3 /* Song.swift in Sources */,

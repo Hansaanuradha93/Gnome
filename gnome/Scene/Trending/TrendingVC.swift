@@ -14,6 +14,7 @@ class TrendingVC: UIViewController {
         configureTitleLabel()
         configureGenresContainer()
         configureTopTrendingContainer()
+        configureUIElements()
     }
 }
 
@@ -46,7 +47,6 @@ extension TrendingVC {
         
         view.addSubview(genresContainer)
         genresContainer.translatesAutoresizingMaskIntoConstraints = false
-        genresContainer.backgroundColor = .red
         
         NSLayoutConstraint.activate([
             genresContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
@@ -69,5 +69,19 @@ extension TrendingVC {
             topTrendingContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             topTrendingContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    
+    private func add(childVC: UIViewController, to containerView: UIView) {
+        self.addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
+    }
+    
+    
+    private func configureUIElements() {
+        
+        add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
     }
 }
