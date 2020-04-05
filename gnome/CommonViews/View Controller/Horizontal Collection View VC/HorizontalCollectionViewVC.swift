@@ -24,10 +24,11 @@ extension HorizontalCollectionViewVC {
     
     private func configureCollectionView() {
         
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor                  = .systemBackground
+        collectionView.showsHorizontalScrollIndicator   = false
+        collectionView.dataSource                       = self
+        collectionView.delegate                         = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +74,6 @@ extension HorizontalCollectionViewVC: UICollectionViewDataSource {
 extension HorizontalCollectionViewVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 50)
+        return CGSize(width: 115, height: 50)
     }
 }
