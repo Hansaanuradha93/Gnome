@@ -17,6 +17,7 @@ class RowCell: UICollectionViewCell {
     private var recentlyPlayedSongs     = [Song]()
     private var recommendedForYouSongs  = [Song]()
     private var genres                  = [Genre]()
+    private var albums                  = [Album]()
     private var cellType                : RowCellType!
     private var collectionView          : UICollectionView!
     
@@ -28,6 +29,7 @@ class RowCell: UICollectionViewCell {
         fetchSongs()
         fetchRecommendedForYouSongs()
         fetchGenres()
+        fetchAlbums()
         configureTitleLabel()
         configureCollectionView()
     }
@@ -54,6 +56,9 @@ extension RowCell {
     
     
     private func fetchGenres() { genres = Genre.fetchGenres() }
+    
+    
+    private func fetchAlbums() { albums = Album.fetchAlbums() }
     
     
     private func configureTitleLabel() {
@@ -116,7 +121,7 @@ extension RowCell: UICollectionViewDataSource {
         case .recommendedForYou:
             return recommendedForYouSongs.count
         case .getInspired:
-            return 4
+            return albums.count
         case .popularArtists:
             return 7
         case .genres:
@@ -140,6 +145,7 @@ extension RowCell: UICollectionViewDataSource {
             return cell
         case .getInspired:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
+            cell.setup(album: albums[indexPath.item])
             return cell
         case .popularArtists:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
