@@ -12,12 +12,13 @@ class RowCell: UICollectionViewCell {
     
     
     // MARK: - Properties
-    static let reuseID          = "RowCell"
-    private let titleLabel      = GNTitleLabel(fontSize: 22)
-    private var collectionView  : UICollectionView!
-    var cellType                : RowCellType!
-    var recentlyPlayedSongs     = [Song]()
-    var recommendedForYouSongs  = [Song]()
+    static let reuseID                  = "RowCell"
+    private let titleLabel              = GNTitleLabel(fontSize: 22)
+    private var recentlyPlayedSongs     = [Song]()
+    private var recommendedForYouSongs  = [Song]()
+    private var genres                  = [Genre]()
+    private var cellType                : RowCellType!
+    private var collectionView          : UICollectionView!
     
     
     // MARK: - Initializers
@@ -25,14 +26,13 @@ class RowCell: UICollectionViewCell {
         super.init(frame: frame)
         fetchSongs()
         fetchRecommendedForYouSongs()
+        fetchGenres()
         configureTitleLabel()
         configureCollectionView()
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
 
@@ -45,14 +45,13 @@ extension RowCell {
     }
     
     
-    private func fetchSongs() {
-        recentlyPlayedSongs     = Song.fetchSongs()
-    }
+    private func fetchSongs() { recentlyPlayedSongs = Song.fetchSongs() }
     
     
-    private func fetchRecommendedForYouSongs() {
-        recommendedForYouSongs  = Song.fetchRecommendedForYouSongs()
-    }
+    private func fetchRecommendedForYouSongs() { recommendedForYouSongs = Song.fetchRecommendedForYouSongs() }
+    
+    
+    private func fetchGenres() { genres = Genre.fetchGenres() }
     
     
     private func configureTitleLabel() {
@@ -116,7 +115,7 @@ extension RowCell: UICollectionViewDataSource {
         case .popularArtists:
             return 7
         case .genres:
-            return 5
+            return genres.count
         case .none:
             return 0
         }
@@ -142,6 +141,7 @@ extension RowCell: UICollectionViewDataSource {
             return cell
         case .genres:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenresCell.reuseID, for: indexPath) as! GenresCell
+            cell.setup(genre: genres[indexPath.item])
             return cell
         case .none:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
