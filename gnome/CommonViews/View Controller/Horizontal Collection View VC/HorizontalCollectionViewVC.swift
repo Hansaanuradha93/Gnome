@@ -56,15 +56,13 @@ extension HorizontalCollectionViewVC {
 // MARK: - Collection View Data Source
 extension HorizontalCollectionViewVC: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 20 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return genres.count }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenresCell.reuseID, for: indexPath) as! GenresCell
+        cell.setup(genre: genres[indexPath.item])
         return cell
     }
 }
