@@ -10,24 +10,28 @@ class GenresCell: UICollectionViewCell {
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureTitleLabel()
         configureBackground()
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
     // MARK: - Methods
+    func setup(genre: Genre) { titleLabel.text = genre.title }
+    
+    
     private func configureBackground() {
+        
         backgroundColor = UIColor.appColor(.Pretty_Pink)
         addCronerRadius(of: 12)
     }
     
     
     private func configureTitleLabel() {
+        
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
