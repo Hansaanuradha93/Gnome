@@ -1,7 +1,9 @@
 import Foundation
 
 struct Genre {
+    
     let title: String
+    
     
     static func fetchGenres() -> [Genre] {
         

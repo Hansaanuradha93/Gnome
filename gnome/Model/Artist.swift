@@ -4,6 +4,7 @@ struct Artist {
     
     let name: String
     
+    
     static func fetchAllArtists() -> [Artist] {
         
         return [

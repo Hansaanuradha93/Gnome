@@ -6,6 +6,7 @@ struct Album {
     let artist: String
     let thumbnailUrl: String
     
+    
     static func fetchAlbums() -> [Album] {
         
         return [
