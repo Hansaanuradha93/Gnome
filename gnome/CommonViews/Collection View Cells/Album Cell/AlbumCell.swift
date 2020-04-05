@@ -20,6 +20,13 @@ class AlbumCell: UICollectionViewCell {
     
     
     // MARK: - Methods
+    func setup(album: Album) {
+        
+        titleLabel.text             = album.title
+        thumbnailImageView.image    = UIImage(named: album.thumbnailUrl)
+    }
+    
+    
     private func configure() {
         
         addSubview(thumbnailImageView)
@@ -35,7 +42,6 @@ class AlbumCell: UICollectionViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
-
         ])
     }
 }
