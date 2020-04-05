@@ -5,17 +5,17 @@ class GNTitleLabel: UILabel {
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configure()
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
     convenience init(fontSize: CGFloat, textColour: UIColor = .black, alignment: NSTextAlignment = .left) {
         self.init(frame: .zero)
+        
         let traits          = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.bold]
         var descriptor      = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Poppins"])
         descriptor          = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
@@ -27,6 +27,7 @@ class GNTitleLabel: UILabel {
     
     // MARK: - Methods
     private func configure() {
+        
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.9
         lineBreakMode               = .byTruncatingTail

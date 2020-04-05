@@ -24,6 +24,7 @@ class RowCell: UICollectionViewCell {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         fetchSongs()
         fetchRecommendedForYouSongs()
         fetchGenres()
@@ -40,6 +41,7 @@ class RowCell: UICollectionViewCell {
 extension RowCell {
     
     func setup(cellType: RowCellType) {
+        
         self.cellType           = cellType
         titleLabel.text         = cellType.rawValue
     }
@@ -55,6 +57,7 @@ extension RowCell {
     
     
     private func configureTitleLabel() {
+        
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -92,6 +95,7 @@ extension RowCell {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
+        
         let flowLayout                      = UICollectionViewFlowLayout()
         flowLayout.scrollDirection          = .horizontal
         flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -105,6 +109,7 @@ extension RowCell {
 extension RowCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         switch cellType {
         case .recentlyPlayed:
             return recentlyPlayedSongs.count
@@ -155,9 +160,7 @@ extension RowCell: UICollectionViewDataSource {
 // MARK: - Collection View Delegate
 extension RowCell: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Item selected")
-    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { print("Item selected") }
 }
 
 
@@ -165,6 +168,7 @@ extension RowCell: UICollectionViewDelegate {
 extension RowCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         switch cellType {
         case .recentlyPlayed:
             return CGSize(width: 114.5, height: 140)

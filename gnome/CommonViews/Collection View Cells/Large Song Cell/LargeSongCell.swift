@@ -11,16 +11,16 @@ class LargeSongCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configure()
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
     func setup(song: Song) {
+        
         thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
         titleLabel.text             = song.title
         artistLabel.text            = song.artist
@@ -28,6 +28,7 @@ class LargeSongCell: UICollectionViewCell {
     
     
     private func configure() {
+        
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
         addSubview(artistLabel)
