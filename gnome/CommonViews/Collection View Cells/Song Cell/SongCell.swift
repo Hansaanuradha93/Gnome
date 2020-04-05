@@ -21,7 +21,7 @@ class SongCell: UICollectionViewCell {
     
     
     func setup(song: Song) {
-        thumbnailImageView.image    = song.thumbnailImage
+        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
         titleLabel.text             = song.title
     }
     
