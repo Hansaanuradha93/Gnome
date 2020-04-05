@@ -39,5 +39,10 @@ enum Temporary {
     static let album2       = "album_2"
     static let album3       = "album_3"
     static let album4       = "album_4"
-
+    
+    static let artist1      = "artist_1"
+    static let artist2      = "artist_2"
+    static let artist3      = "artist_3"
+    static let artist4      = "artist_4"
+    static let artist5      = "artist_5"
 }
