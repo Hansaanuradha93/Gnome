@@ -3,6 +3,7 @@ import UIKit
 enum UIHelper {
     
     static func createCollectionViewFlowLayout(in view: UIView, for columns: CGFloat) -> UICollectionViewFlowLayout {
+        
         let collectionViewWidth                 = view.bounds.width
         let padding: CGFloat                    = 12
         let minimumInterItemSpacing: CGFloat    = 10

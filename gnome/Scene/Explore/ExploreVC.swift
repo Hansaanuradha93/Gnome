@@ -9,6 +9,7 @@ class ExploreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureTitleLabel()
         configureCollectionView()
     }
@@ -16,6 +17,7 @@ class ExploreVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         configureViewController()
     }
 }
@@ -66,6 +68,7 @@ extension ExploreVC {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
+        
         let flowLayout              = UICollectionViewFlowLayout()
         flowLayout.scrollDirection  = .vertical
         flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
@@ -77,14 +80,10 @@ extension ExploreVC {
 // MARK: - Collection View Data Source
 extension ExploreVC: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.sections.count
-    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { return viewModel.sections.count }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 1 }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

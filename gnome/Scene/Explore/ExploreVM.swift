@@ -12,12 +12,14 @@ class ExploreVM {
     
     
     struct Section {
+        
         var sectionType: SectionType
         var index: Int
     }
     
     
     lazy var sections: [Section]        = {
+        
         var data = [Section]()
         
         let recentlyPlayedSection       = Section(sectionType: .recentlyPlayed, index: 0)
