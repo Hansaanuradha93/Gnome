@@ -2,15 +2,6 @@ import UIKit
 
 class RowCell: UICollectionViewCell {
     
-    enum RowCellType: String {
-        case recentlyPlayed     = "Recenlty Played"
-        case recommendedForYou  = "Recommended For You"
-        case getInspired        = "Get Inspired!"
-        case popularArtists     = "Polular Artists"
-        case genres             = "Genres & Moods"
-    }
-    
-    
     // MARK: - Properties
     static let reuseID                  = "RowCell"
     private let titleLabel              = GNTitleLabel(fontSize: 22)
@@ -18,6 +9,7 @@ class RowCell: UICollectionViewCell {
     private var recommendedForYouSongs  = [Song]()
     private var genres                  = [Genre]()
     private var albums                  = [Album]()
+    private var artists                 = [Artist]()
     private var cellType                : RowCellType!
     private var collectionView          : UICollectionView!
     
@@ -30,6 +22,7 @@ class RowCell: UICollectionViewCell {
         fetchRecommendedForYouSongs()
         fetchGenres()
         fetchAlbums()
+        fetchArtists()
         configureTitleLabel()
         configureCollectionView()
     }
@@ -59,6 +52,9 @@ extension RowCell {
     
     
     private func fetchAlbums() { albums = Album.fetchAlbums() }
+    
+    
+    private func fetchArtists() { artists = Artist.fetchAllArtists() }
     
     
     private func configureTitleLabel() {
@@ -116,6 +112,7 @@ extension RowCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch cellType {
+            
         case .recentlyPlayed:
             return recentlyPlayedSongs.count
         case .recommendedForYou:
@@ -123,7 +120,7 @@ extension RowCell: UICollectionViewDataSource {
         case .getInspired:
             return albums.count
         case .popularArtists:
-            return 7
+            return artists.count
         case .genres:
             return genres.count
         case .none:
@@ -135,9 +132,10 @@ extension RowCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         switch cellType {
+            
         case .recentlyPlayed:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
-            cell.setup(song: recentlyPlayedSongs[indexPath.item])
+            cell.setup(item: recentlyPlayedSongs[indexPath.item], cellType: .recentlyPlayed)
             return cell
         case .recommendedForYou:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeSongCell.reuseID, for: indexPath) as! LargeSongCell
@@ -149,6 +147,7 @@ extension RowCell: UICollectionViewDataSource {
             return cell
         case .popularArtists:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+            cell.setup(item: artists[indexPath.item], cellType: .popularArtists)
             return cell
         case .genres:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenresCell.reuseID, for: indexPath) as! GenresCell
@@ -158,7 +157,6 @@ extension RowCell: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
             return cell
         }
-
     }
 }
 
@@ -176,6 +174,7 @@ extension RowCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         switch cellType {
+            
         case .recentlyPlayed:
             return CGSize(width: 114.5, height: 140)
         case .recommendedForYou:
