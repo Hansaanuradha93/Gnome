@@ -2,12 +2,14 @@ import UIKit
 
 class HorizontalCollectionViewVC: UIViewController {
 
+    private var genres          = [Genre]()
     private var collectionView  : UICollectionView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        fetchGenres()
         configureCollectionView()
     }
 }
@@ -15,6 +17,10 @@ class HorizontalCollectionViewVC: UIViewController {
 
 // MARK: - Methods
 extension HorizontalCollectionViewVC {
+    
+    private func fetchGenres() {
+        genres = Genre.fetchGenres()
+    }
     
     private func configureCollectionView() {
         
@@ -25,8 +31,8 @@ extension HorizontalCollectionViewVC {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
-        
+        collectionView.register(GenresCell.self, forCellWithReuseIdentifier: GenresCell.reuseID)
+
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
