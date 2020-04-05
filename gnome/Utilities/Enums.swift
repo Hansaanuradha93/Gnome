@@ -1,9 +1,10 @@
-//
-//  Enums.swift
-//  gnome
-//
-//  Created by Hansa Anuradha on 4/5/20.
-//  Copyright © 2020 Hansa Anuradha. All rights reserved.
-//
-
 import Foundation
+
+enum RowCellType: String {
+    
+    case recentlyPlayed     = "Recenlty Played"
+    case recommendedForYou  = "Recommended For You"
+    case getInspired        = "Get Inspired!"
+    case popularArtists     = "Polular Artists"
+    case genres             = "Genres & Moods"
+}
