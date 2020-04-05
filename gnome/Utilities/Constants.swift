@@ -23,17 +23,17 @@ enum Titles {
 
 enum Temporary {
     
-    static let song1        = UIImage(named: "song_1")
-    static let song2        = UIImage(named: "song_2")
-    static let song3        = UIImage(named: "song_3")
-    static let song4        = UIImage(named: "song_4")
-    static let song5        = UIImage(named: "song_5")
-    static let song6        = UIImage(named: "song_6")
+    static let song1        = "song_1"
+    static let song2        = "song_2"
+    static let song3        = "song_3"
+    static let song4        = "song_4"
+    static let song5        = "song_5"
+    static let song6        = "song_6"
     
-    static let largeSong1   = UIImage(named: "large_song_1")
-    static let largeSong2   = UIImage(named: "large_song_2")
-    static let largeSong3   = UIImage(named: "large_song_3")
-    static let largeSong4   = UIImage(named: "large_song_4")
+    static let largeSong1   = "large_song_1"
+    static let largeSong2   = "large_song_2"
+    static let largeSong3   = "large_song_3"
+    static let largeSong4   = "large_song_4"
 
 
 }
