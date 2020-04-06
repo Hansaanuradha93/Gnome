@@ -61,7 +61,6 @@ extension TrendingVC {
         
         view.addSubview(topTrendingContainer)
         topTrendingContainer.translatesAutoresizingMaskIntoConstraints = false
-        topTrendingContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             topTrendingContainer.topAnchor.constraint(equalTo: genresContainer.bottomAnchor, constant: 30),
@@ -80,5 +79,8 @@ extension TrendingVC {
     }
     
     
-    private func configureUIElements() { add(childVC: HorizontalCollectionViewVC(), to: genresContainer) }
+    private func configureUIElements() {
+        add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
+        add(childVC: TopTrendingVC(), to: topTrendingContainer)
+    }
 }
