@@ -18,6 +18,8 @@ enum Titles {
     static let search       = "Search"
     static let library      = "Library"
     static let settings     = "Settings"
+    
+    static let topTrending  = "Top Trending - 2020"
 }
 
 
