@@ -7,6 +7,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let trendingContainer   = UIView()
     private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
+    private let titleLabel          = GNTitleLabel(fontSize: 20)
     
     
     // MARK: - Initializer
@@ -14,6 +15,7 @@ class TopTrendingCell: UICollectionViewCell {
         super.init(frame: frame)
         configureThumbnailImageView()
         configureTrendingContainer()
+        configureTitleLabel()
     }
     
     
@@ -54,6 +56,20 @@ class TopTrendingCell: UICollectionViewCell {
             trendingNumberLabel.centerYAnchor.constraint(equalTo: trendingContainer.centerYAnchor),
             trendingNumberLabel.widthAnchor.constraint(equalToConstant: 18),
             trendingNumberLabel.heightAnchor.constraint(equalToConstant: 13)
+        ])
+    }
+    
+    
+    private func configureTitleLabel() {
+        
+        addSubview(titleLabel)
+        titleLabel.text = "Kohinoor"
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: trendingContainer.bottomAnchor, constant: 4),
+            titleLabel.leadingAnchor.constraint(equalTo: trendingContainer.leadingAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: 176),
+            titleLabel.heightAnchor.constraint(equalToConstant: 29)
         ])
     }
 }
