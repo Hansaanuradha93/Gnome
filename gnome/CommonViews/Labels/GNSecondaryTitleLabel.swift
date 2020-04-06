@@ -13,7 +13,7 @@ class GNSecondaryTitleLabel: UILabel {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(fontSize: CGFloat, alignment: NSTextAlignment) {
+    convenience init(fontSize: CGFloat, alignment: NSTextAlignment = .left , fontColor: UIColor = .black) {
         self.init(frame: .zero)
         
         let traits          = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.semibold]
@@ -21,13 +21,13 @@ class GNSecondaryTitleLabel: UILabel {
         descriptor          = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         font                = UIFont(descriptor: descriptor, size: fontSize)
         textAlignment       = alignment
+        textColor           = fontColor
     }
     
     
     // MARK: - Methods
     private func configure() {
         
-        textColor                   = .black
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.85
         lineBreakMode               = .byTruncatingTail

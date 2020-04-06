@@ -2,5 +2,5 @@ import UIKit
 
 extension UIView {
     
-    func addCronerRadius(of value: CGFloat) { self.layer.cornerRadius = value }
+    func addCornerRadius(of value: CGFloat) { self.layer.cornerRadius = value }
 }

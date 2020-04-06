@@ -26,7 +26,7 @@ class GenresCell: UICollectionViewCell {
     private func configureBackground() {
         
         backgroundColor = UIColor.appColor(.Pretty_Pink)
-        addCronerRadius(of: 12)
+        addCornerRadius(of: 12)
     }
     
     
