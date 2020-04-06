@@ -10,6 +10,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private let artistLabel         = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
     private let smallPlayImageView  = UIImageView(frame: .zero)
+    private let numberOfPlaysLabel  = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey)!)
     
     
     // MARK: - Initializer
@@ -20,6 +21,7 @@ class TopTrendingCell: UICollectionViewCell {
         configureTitleLabel()
         configureArtistLabel()
         configureSmallPlayImageView()
+        configureNumberOfPlaysLabel()
     }
     
     
@@ -103,6 +105,20 @@ class TopTrendingCell: UICollectionViewCell {
             smallPlayImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3.3),
             smallPlayImageView.widthAnchor.constraint(equalToConstant: 12),
             smallPlayImageView.heightAnchor.constraint(equalToConstant: 12)
+        ])
+    }
+    
+    
+    private func configureNumberOfPlaysLabel() {
+        
+        addSubview(numberOfPlaysLabel)
+        numberOfPlaysLabel.text         = "2.5M plays"
+        
+        NSLayoutConstraint.activate([
+            numberOfPlaysLabel.leadingAnchor.constraint(equalTo: smallPlayImageView.trailingAnchor, constant: 6),
+            numberOfPlaysLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8),
+            numberOfPlaysLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2.3),
+            numberOfPlaysLabel.heightAnchor.constraint(equalToConstant: 13)
         ])
     }
 }
