@@ -8,6 +8,7 @@ enum Asserts {
     static let library      = UIImage(named: "library_music")
     static let settings     = UIImage(named: "settings")
     static let placeholder  = UIImage(named: "library_music")
+    static let smallPlay    = UIImage(named: "small_play")
 }
 
 

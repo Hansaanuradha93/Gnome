@@ -9,6 +9,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private let artistLabel         = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
+    private let smallPlayImageView  = UIImageView(frame: .zero)
     
     
     // MARK: - Initializer
@@ -18,6 +19,7 @@ class TopTrendingCell: UICollectionViewCell {
         configureTrendingContainer()
         configureTitleLabel()
         configureArtistLabel()
+        configureSmallPlayImageView()
     }
     
     
@@ -86,6 +88,21 @@ class TopTrendingCell: UICollectionViewCell {
             artistLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             artistLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             artistLabel.heightAnchor.constraint(equalToConstant: 21)
+        ])
+    }
+    
+    
+    private func configureSmallPlayImageView() {
+        
+        addSubview(smallPlayImageView)
+        smallPlayImageView.translatesAutoresizingMaskIntoConstraints = false
+        smallPlayImageView.image = Asserts.smallPlay
+        
+        NSLayoutConstraint.activate([
+            smallPlayImageView.leadingAnchor.constraint(equalTo: artistLabel.leadingAnchor),
+            smallPlayImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3.3),
+            smallPlayImageView.widthAnchor.constraint(equalToConstant: 12),
+            smallPlayImageView.heightAnchor.constraint(equalToConstant: 12)
         ])
     }
 }
