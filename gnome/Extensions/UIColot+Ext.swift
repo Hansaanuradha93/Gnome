@@ -8,6 +8,7 @@ enum AssetsColor: String {
     case Pretty_Pink_L1
     case Pretty_Pink_L2
     case Pretty_Pink_L3
+    case Grey
 }
 
 

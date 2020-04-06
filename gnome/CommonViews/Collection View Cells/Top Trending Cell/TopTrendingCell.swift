@@ -8,6 +8,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let trendingContainer   = UIView()
     private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
+    private let artistLabel         = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
     
     
     // MARK: - Initializer
@@ -16,6 +17,7 @@ class TopTrendingCell: UICollectionViewCell {
         configureThumbnailImageView()
         configureTrendingContainer()
         configureTitleLabel()
+        configureArtistLabel()
     }
     
     
@@ -70,6 +72,20 @@ class TopTrendingCell: UICollectionViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: trendingContainer.leadingAnchor),
             titleLabel.widthAnchor.constraint(equalToConstant: 176),
             titleLabel.heightAnchor.constraint(equalToConstant: 29)
+        ])
+    }
+    
+    
+    private func configureArtistLabel() {
+        
+        addSubview(artistLabel)
+        artistLabel.text = "DIVINE"
+        
+        NSLayoutConstraint.activate([
+            artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            artistLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            artistLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            artistLabel.heightAnchor.constraint(equalToConstant: 21)
         ])
     }
 }

@@ -13,13 +13,14 @@ class GNSecondaryBodyLabel: UILabel {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(fontSize: CGFloat) {
+    convenience init(fontSize: CGFloat, fontColor: UIColor = .black) {
         self.init(frame: .zero)
         
         let traits          = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.medium]
         var descriptor      = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Poppins"])
         descriptor          = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         font                = UIFont(descriptor: descriptor, size: fontSize)
+        textColor           = fontColor
     }
     
     
@@ -27,7 +28,6 @@ class GNSecondaryBodyLabel: UILabel {
     private func configure() {
         
         textColor                   = .black
-        textAlignment               = .left
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.7
         lineBreakMode               = .byTruncatingTail
