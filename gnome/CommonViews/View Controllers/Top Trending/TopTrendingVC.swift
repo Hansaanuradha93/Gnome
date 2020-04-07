@@ -2,20 +2,26 @@ import UIKit
 
 class TopTrendingVC: UIViewController {
 
-    private var collectionView  : UICollectionView!
-    
+    private var collectionView      : UICollectionView!
+    private var topTrendingSongs    : [TopTrendingSong] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCollectionView()
+        fetchTopTrendingSongs()
     }
 }
 
 
 // MARK: - Methods
 extension TopTrendingVC {
+    
+    private func fetchTopTrendingSongs() {
+        topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs()
+    }
 
+    
     private func configureCollectionView() {
         
         collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
@@ -53,12 +59,13 @@ extension TopTrendingVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 10 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return topTrendingSongs.count }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTrendingCell.reuseID, for: indexPath) as! TopTrendingCell
+        cell.setup(topTrendingSong: topTrendingSongs[indexPath.item])
         return cell
     }
 }

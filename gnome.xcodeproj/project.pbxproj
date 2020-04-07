@@ -20,6 +20,7 @@
 		471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */; };
 		471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9165242FA28400505D1C /* GNBodyLabel.swift */; };
 		471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */; };
+		472B80F1243C51DD00571126 /* TopTrendingSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B80F0243C51DD00571126 /* TopTrendingSong.swift */; };
 		47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */; };
 		47347A3D2430664500D1B908 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3C2430664500D1B908 /* UIHelper.swift */; };
 		47347A4024306F3100D1B908 /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3F24306F3100D1B908 /* RowCell.swift */; };
@@ -65,6 +66,7 @@
 		471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		471F9165242FA28400505D1C /* GNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBodyLabel.swift; sourceTree = "<group>"; };
 		471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryBodyLabel.swift; sourceTree = "<group>"; };
+		472B80F0243C51DD00571126 /* TopTrendingSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTrendingSong.swift; sourceTree = "<group>"; };
 		47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNThumbnaiImageView.swift; sourceTree = "<group>"; };
 		47347A3C2430664500D1B908 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		47347A3F24306F3100D1B908 /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				476A471E24383DFB00DF07A3 /* Album.swift */,
 				476A472024383E6E00DF07A3 /* Artist.swift */,
 				475596CB2439B12C00E8FCAA /* Genre.swift */,
+				472B80F0243C51DD00571126 /* TopTrendingSong.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */,
 				471F914B242F334200505D1C /* SettingsVC.swift in Sources */,
 				47643702243ACEB700857AD4 /* TopTrendingVC.swift in Sources */,
+				472B80F1243C51DD00571126 /* TopTrendingSong.swift in Sources */,
 				471F9147242F330D00505D1C /* SearchVC.swift in Sources */,
 				476A471F24383DFB00DF07A3 /* Album.swift in Sources */,
 				475EB490243446EC00CA04C1 /* LargeSongCell.swift in Sources */,
