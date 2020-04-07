@@ -24,11 +24,11 @@ struct Song {
     static func fetchRecommendedForYouSongs() -> [Song] {
         
         return [
-            Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: Temporary.largeSong1, numberOfPlays: 100000),
-            Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.largeSong2, numberOfPlays: 500000),
-            Song(title: "X", artist: "Ed Sheeran", thumbnailUrl: Temporary.largeSong3, numberOfPlays: 800000),
-            Song(title: "Lights", artist: "Nuclea", thumbnailUrl: Temporary.largeSong4, numberOfPlays: 300000),
-            Song(title: "Gully Boy", artist: "Various Artists", thumbnailUrl: Temporary.largeSong1, numberOfPlays: 600000),
+            Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: Temporary.largeSong1, numberOfPlays: 1100000),
+            Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.largeSong2, numberOfPlays: 5300000),
+            Song(title: "X", artist: "Ed Sheeran", thumbnailUrl: Temporary.largeSong3, numberOfPlays: 4500000),
+            Song(title: "Lights", artist: "Nuclea", thumbnailUrl: Temporary.largeSong4, numberOfPlays: 3000000),
+            Song(title: "Gully Boy", artist: "Various Artists", thumbnailUrl: Temporary.largeSong1, numberOfPlays: 5100000),
             Song(title: "Shape Of You", artist: "Ed Sheeran", thumbnailUrl: Temporary.largeSong3, numberOfPlays: 1000000),
         ]
     }
