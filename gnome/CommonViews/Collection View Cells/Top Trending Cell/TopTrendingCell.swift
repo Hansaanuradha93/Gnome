@@ -11,6 +11,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let artistLabel         = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
     private let smallPlayImageView  = UIImageView(frame: .zero)
     private let numberOfPlaysLabel  = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey)!)
+    private let moreButton          = GNMoreButton(frame: .zero)
     
     
     // MARK: - Initializer
@@ -22,6 +23,7 @@ class TopTrendingCell: UICollectionViewCell {
         configureArtistLabel()
         configureSmallPlayImageView()
         configureNumberOfPlaysLabel()
+        configureMoreButton()
     }
     
     
@@ -119,6 +121,19 @@ class TopTrendingCell: UICollectionViewCell {
             numberOfPlaysLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8),
             numberOfPlaysLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2.3),
             numberOfPlaysLabel.heightAnchor.constraint(equalToConstant: 13)
+        ])
+    }
+    
+    
+    private func configureMoreButton() {
+        
+        addSubview(moreButton)
+        
+        NSLayoutConstraint.activate([
+            moreButton.topAnchor.constraint(equalTo: topAnchor),
+            moreButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            moreButton.widthAnchor.constraint(equalToConstant: 32),
+            moreButton.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
 }
