@@ -8,7 +8,7 @@ struct TopTrendingSong {
     
     static func fetchTopTrendingSongs() -> [TopTrendingSong] {
         
-        var rank: Int                           = 0
+        var rank: Int                           = 1
         var topTrendingSongs: [TopTrendingSong] = []
         
         for song in Song.fetchSongs() {

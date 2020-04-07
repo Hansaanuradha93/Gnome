@@ -64,7 +64,6 @@ class TopTrendingCell: UICollectionViewCell {
         trendingContainer.backgroundColor   = UIColor.appColor(.Pretty_Pink)
 
         trendingContainer.addSubview(trendingNumberLabel)
-        trendingNumberLabel.text            = "# 1"
         
         NSLayoutConstraint.activate([
             trendingContainer.topAnchor.constraint(equalTo: topAnchor),
@@ -74,7 +73,7 @@ class TopTrendingCell: UICollectionViewCell {
             
             trendingNumberLabel.centerXAnchor.constraint(equalTo: trendingContainer.centerXAnchor),
             trendingNumberLabel.centerYAnchor.constraint(equalTo: trendingContainer.centerYAnchor),
-            trendingNumberLabel.widthAnchor.constraint(equalToConstant: 18),
+            trendingNumberLabel.widthAnchor.constraint(equalToConstant: 40),
             trendingNumberLabel.heightAnchor.constraint(equalToConstant: 13)
         ])
     }
@@ -83,7 +82,6 @@ class TopTrendingCell: UICollectionViewCell {
     private func configureTitleLabel() {
         
         addSubview(titleLabel)
-        titleLabel.text = "Kohinoor"
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: trendingContainer.bottomAnchor, constant: 4),
@@ -97,7 +95,6 @@ class TopTrendingCell: UICollectionViewCell {
     private func configureArtistLabel() {
         
         addSubview(artistLabel)
-        artistLabel.text = "DIVINE"
         
         NSLayoutConstraint.activate([
             artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
@@ -126,7 +123,6 @@ class TopTrendingCell: UICollectionViewCell {
     private func configureNumberOfPlaysLabel() {
         
         addSubview(numberOfPlaysLabel)
-        numberOfPlaysLabel.text         = "2.5M plays"
         
         NSLayoutConstraint.activate([
             numberOfPlaysLabel.leadingAnchor.constraint(equalTo: smallPlayImageView.trailingAnchor, constant: 6),
