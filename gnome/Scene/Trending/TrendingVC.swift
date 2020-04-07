@@ -11,6 +11,7 @@ class TrendingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureViewController()
         configureTitleLabel()
         configureGenresContainer()
@@ -52,8 +53,8 @@ extension TrendingVC {
         
         NSLayoutConstraint.activate([
             genresContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            genresContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            genresContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            genresContainer.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            genresContainer.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             genresContainer.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -66,8 +67,8 @@ extension TrendingVC {
         
         NSLayoutConstraint.activate([
             topTrendingTitleLabel.topAnchor.constraint(equalTo: genresContainer.bottomAnchor, constant: 30),
-            topTrendingTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            topTrendingTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            topTrendingTitleLabel.leadingAnchor.constraint(equalTo: genresContainer.leadingAnchor),
+            topTrendingTitleLabel.trailingAnchor.constraint(equalTo: genresContainer.trailingAnchor),
             topTrendingTitleLabel.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
@@ -80,14 +81,15 @@ extension TrendingVC {
         
         NSLayoutConstraint.activate([
             topTrendingContainer.topAnchor.constraint(equalTo: topTrendingTitleLabel.bottomAnchor, constant: 14),
-            topTrendingContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            topTrendingContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            topTrendingContainer.leadingAnchor.constraint(equalTo: topTrendingTitleLabel.leadingAnchor),
+            topTrendingContainer.trailingAnchor.constraint(equalTo: topTrendingTitleLabel.trailingAnchor),
             topTrendingContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     
     private func add(childVC: UIViewController, to containerView: UIView) {
+        
         self.addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
@@ -96,6 +98,7 @@ extension TrendingVC {
     
     
     private func configureUIElements() {
+        
         add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
         add(childVC: TopTrendingVC(), to: topTrendingContainer)
     }
