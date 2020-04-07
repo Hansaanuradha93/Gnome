@@ -2,13 +2,11 @@ import UIKit
 
 class TopTrendingVC: UIViewController {
 
-    private let titleLabel      = GNTitleLabel(fontSize: 22)
     private var collectionView  : UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTitleLabel()
         configureCollectionView()
     }
 }
@@ -16,21 +14,7 @@ class TopTrendingVC: UIViewController {
 
 // MARK: - Methods
 extension TopTrendingVC {
-    
-    private func configureTitleLabel() {
-        
-        view.addSubview(titleLabel)
-        titleLabel.text = Titles.topTrending
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 32)
-        ])
-    }
-    
-    
+
     private func configureCollectionView() {
         
         collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
@@ -43,7 +27,7 @@ extension TopTrendingVC {
         collectionView.register(TopTrendingCell.self, forCellWithReuseIdentifier: TopTrendingCell.reuseID)
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)

@@ -4,6 +4,7 @@ class TrendingVC: UIViewController {
 
     private var viewModel               = TrendingVM()
     private let titleLabel              = GNTitleLabel(fontSize: 34)
+    private let topTrendingTitleLabel   = GNTitleLabel(fontSize: 22)
     private let genresContainer         = UIView()
     private let topTrendingContainer    = UIView()
     
@@ -13,6 +14,7 @@ class TrendingVC: UIViewController {
         configureViewController()
         configureTitleLabel()
         configureGenresContainer()
+        configureTopTrendingTitleLabel()
         configureTopTrendingContainer()
         configureUIElements()
     }
@@ -57,13 +59,27 @@ extension TrendingVC {
     }
     
     
+    private func configureTopTrendingTitleLabel() {
+        
+        view.addSubview(topTrendingTitleLabel)
+        topTrendingTitleLabel.text = Titles.topTrending
+        
+        NSLayoutConstraint.activate([
+            topTrendingTitleLabel.topAnchor.constraint(equalTo: genresContainer.bottomAnchor, constant: 30),
+            topTrendingTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            topTrendingTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            topTrendingTitleLabel.heightAnchor.constraint(equalToConstant: 32)
+        ])
+    }
+    
+    
     private func configureTopTrendingContainer() {
         
         view.addSubview(topTrendingContainer)
         topTrendingContainer.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            topTrendingContainer.topAnchor.constraint(equalTo: genresContainer.bottomAnchor, constant: 30),
+            topTrendingContainer.topAnchor.constraint(equalTo: topTrendingTitleLabel.bottomAnchor, constant: 14),
             topTrendingContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             topTrendingContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             topTrendingContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
