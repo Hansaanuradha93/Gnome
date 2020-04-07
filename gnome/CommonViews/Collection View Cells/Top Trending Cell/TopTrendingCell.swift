@@ -32,8 +32,6 @@ class TopTrendingCell: UICollectionViewCell {
     
     
     // MARK: - Methods
-    
-    
     func setup(topTrendingSong: TopTrendingSong) {
         
         thumbnailImageView.image    = UIImage(named: topTrendingSong.song.thumbnailUrl)

@@ -17,9 +17,7 @@ class TopTrendingVC: UIViewController {
 // MARK: - Methods
 extension TopTrendingVC {
     
-    private func fetchTopTrendingSongs() {
-        topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs()
-    }
+    private func fetchTopTrendingSongs() { topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs() }
 
     
     private func configureCollectionView() {
