@@ -9,6 +9,7 @@ enum Asserts {
     static let settings     = UIImage(named: "settings")
     static let placeholder  = UIImage(named: "library_music")
     static let smallPlay    = UIImage(named: "small_play")
+    static let more         = UIImage(named: "more_vert")
 }
 
 
