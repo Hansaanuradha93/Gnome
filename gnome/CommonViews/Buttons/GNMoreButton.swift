@@ -15,12 +15,11 @@ class GNMoreButton: UIView {
     }
     
     private func configure() {
-        
-        backgroundColor = .blue
-        
+                
         addSubview(placeholderImageView)
         addSubview(button)
         
+        translatesAutoresizingMaskIntoConstraints                           = false
         button.translatesAutoresizingMaskIntoConstraints                    = false
         placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
         
