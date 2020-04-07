@@ -3,7 +3,7 @@ import UIKit
 class GNThumbnaiImageView: UIImageView {
     
     // MARK: - Properties
-    private let placeholderImage = Asserts.placeholder
+    private let placeholderImage = CommonImages.placeholder
     
     
     // MARK: - Initializers
@@ -23,9 +23,6 @@ class GNThumbnaiImageView: UIImageView {
         clipsToBounds       = true
         image               = placeholderImage
         contentMode         = .scaleAspectFit
-        image               = self.image?.withRenderingMode(.alwaysTemplate)
-        tintColor           = UIColor.white
-        backgroundColor     = UIColor.appColor(.Pretty_Pink)
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

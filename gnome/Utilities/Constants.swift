@@ -13,6 +13,12 @@ enum Asserts {
 }
 
 
+enum CommonImages {
+    
+    static let placeholder  = UIImage(named: "placeholder")
+}
+
+
 enum Titles {
     
     static let explore      = "Explore"
@@ -32,7 +38,7 @@ enum Temporary {
     static let song3        = "song_3"
     static let song4        = "song_4"
     static let song5        = "song_5"
-    static let song6        = "song_6"
+    static let song6        = "placeholder"
     
     static let largeSong1   = "large_song_1"
     static let largeSong2   = "large_song_2"
