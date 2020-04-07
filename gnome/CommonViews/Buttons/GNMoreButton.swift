@@ -5,14 +5,17 @@ class GNMoreButton: UIView {
     let button                  = UIButton(frame: .zero)
     let placeholderImageView    = UIImageView(frame: .zero)
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func configure() {
                 

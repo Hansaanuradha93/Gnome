@@ -4,19 +4,20 @@ class TopTrendingCell: UICollectionViewCell {
     
     // MARK: - Properties
     static let reuseID              = "TopTrendingCell"
-    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let trendingContainer   = UIView()
-    private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
+    private let smallPlayImageView  = UIImageView(frame: .zero)
+    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
+    private let moreButton          = GNMoreButton(frame: .zero)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private let artistLabel         = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
-    private let smallPlayImageView  = UIImageView(frame: .zero)
     private let numberOfPlaysLabel  = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey)!)
-    private let moreButton          = GNMoreButton(frame: .zero)
+    private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     
     
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureThumbnailImageView()
         configureTrendingContainer()
         configureTitleLabel()
@@ -32,6 +33,7 @@ class TopTrendingCell: UICollectionViewCell {
     
     // MARK: - Methods
     private func configureThumbnailImageView() {
+        
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
@@ -46,11 +48,11 @@ class TopTrendingCell: UICollectionViewCell {
     private func configureTrendingContainer() {
         
         addSubview(trendingContainer)
+        
         trendingContainer.translatesAutoresizingMaskIntoConstraints = false
         trendingContainer.addCornerRadius(of: 12)
         trendingContainer.backgroundColor   = UIColor.appColor(.Pretty_Pink)
 
-        
         trendingContainer.addSubview(trendingNumberLabel)
         trendingNumberLabel.text            = "# 1"
         
