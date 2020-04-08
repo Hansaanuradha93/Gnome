@@ -103,6 +103,14 @@ extension RowCell {
         flowLayout.minimumInteritemSpacing  = 12.7
         return flowLayout
     }
+    
+    
+    func showModal() {
+        
+        let controller = MusicPlayerVC()
+        controller.modalPresentationStyle = .popover
+        self.window?.rootViewController?.present(controller, animated: true, completion: nil)
+    }
 }
 
 
@@ -164,7 +172,16 @@ extension RowCell: UICollectionViewDataSource {
 // MARK: - Collection View Delegate
 extension RowCell: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { print("Item selected") }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch cellType {
+            
+        case .recentlyPlayed:
+            showModal()
+        default:
+            print("item selected")
+        }
+    }
 }
 
 
