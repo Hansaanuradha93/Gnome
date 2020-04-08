@@ -26,6 +26,7 @@
 		47347A4024306F3100D1B908 /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3F24306F3100D1B908 /* RowCell.swift */; };
 		47347A422430EC6F00D1B908 /* ExploreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A412430EC6F00D1B908 /* ExploreVM.swift */; };
 		47547257243D7CF3002E814A /* MusicPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547256243D7CF3002E814A /* MusicPlayerVC.swift */; };
+		47547259243D7D39002E814A /* MusicPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547258243D7D39002E814A /* MusicPlayerVM.swift */; };
 		475596CC2439B12C00E8FCAA /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475596CB2439B12C00E8FCAA /* Genre.swift */; };
 		475596CE2439BFA000E8FCAA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475596CD2439BFA000E8FCAA /* Enums.swift */; };
 		475EB490243446EC00CA04C1 /* LargeSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475EB48F243446EC00CA04C1 /* LargeSongCell.swift */; };
@@ -73,6 +74,7 @@
 		47347A3F24306F3100D1B908 /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 		47347A412430EC6F00D1B908 /* ExploreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVM.swift; sourceTree = "<group>"; };
 		47547256243D7CF3002E814A /* MusicPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVC.swift; sourceTree = "<group>"; };
+		47547258243D7D39002E814A /* MusicPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVM.swift; sourceTree = "<group>"; };
 		475596CB2439B12C00E8FCAA /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		475596CD2439BFA000E8FCAA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		475EB48F243446EC00CA04C1 /* LargeSongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSongCell.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				47547256243D7CF3002E814A /* MusicPlayerVC.swift */,
+				47547258243D7D39002E814A /* MusicPlayerVM.swift */,
 			);
 			path = "Music Player";
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
 				476A471D24383CED00DF07A3 /* Song.swift in Sources */,
+				47547259243D7D39002E814A /* MusicPlayerVM.swift in Sources */,
 				4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */,
 				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
 				476BBE84243C21E800510828 /* GNMoreButton.swift in Sources */,
