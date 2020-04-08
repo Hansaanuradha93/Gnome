@@ -2,7 +2,7 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
-    private var viewModel       = ExploreVM()
+    private let viewModel       = ExploreVM()
     private let titleLabel      = GNTitleLabel(fontSize: 34)
     private var collectionView  : UICollectionView!
     

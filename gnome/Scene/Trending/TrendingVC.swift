@@ -2,7 +2,7 @@ import UIKit
 
 class TrendingVC: UIViewController {
 
-    private var viewModel               = TrendingVM()
+    private let viewModel               = TrendingVM()
     private let titleLabel              = GNTitleLabel(fontSize: 34)
     private let topTrendingTitleLabel   = GNTitleLabel(fontSize: 22)
     private let genresContainer         = UIView()
