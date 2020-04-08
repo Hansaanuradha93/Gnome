@@ -191,6 +191,13 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
+		47547255243D7CAE002E814A /* Music Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Music Player";
+			sourceTree = "<group>";
+		};
 		475EB48E243446BF00CA04C1 /* Large Song Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +238,7 @@
 		47634B5B23FA9AC70049A37A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				47547255243D7CAE002E814A /* Music Player */,
 				47634B5E23FA9DDE0049A37A /* Explore */,
 				47634B5F23FA9DF10049A37A /* Trending */,
 				47634B6023FA9DFE0049A37A /* Search */,
