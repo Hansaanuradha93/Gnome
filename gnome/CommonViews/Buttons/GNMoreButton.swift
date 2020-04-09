@@ -4,6 +4,7 @@ class GNMoreButton: UIView {
 
     let button                  = UIButton(frame: .zero)
     let placeholderImageView    = UIImageView(frame: .zero)
+    var action: (() -> Void)?
     
     
     override init(frame: CGRect) {
@@ -17,10 +18,15 @@ class GNMoreButton: UIView {
     }
     
     
+    @objc func buttonPressed() { action?() }
+    
+    
     private func configure() {
                 
         addSubview(placeholderImageView)
         addSubview(button)
+        
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         translatesAutoresizingMaskIntoConstraints                           = false
         button.translatesAutoresizingMaskIntoConstraints                    = false
