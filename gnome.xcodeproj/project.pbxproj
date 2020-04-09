@@ -40,6 +40,7 @@
 		476A471F24383DFB00DF07A3 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A471E24383DFB00DF07A3 /* Album.swift */; };
 		476A472124383E6E00DF07A3 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A472024383E6E00DF07A3 /* Artist.swift */; };
 		476BBE84243C21E800510828 /* GNMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476BBE83243C21E800510828 /* GNMoreButton.swift */; };
+		478CA792243EC94A00FBDE87 /* GNCollapseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */; };
 		478E373B243267970070F54E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E373A243267970070F54E /* SongCell.swift */; };
 		4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793302C2436E36A00DC5326 /* UIView+Ext.swift */; };
 		47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDA24022EA80081858E /* Poppins-Medium.otf */; };
@@ -90,6 +91,7 @@
 		476A471E24383DFB00DF07A3 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		476A472024383E6E00DF07A3 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		476BBE83243C21E800510828 /* GNMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNMoreButton.swift; sourceTree = "<group>"; };
+		478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNCollapseButton.swift; sourceTree = "<group>"; };
 		478E373A243267970070F54E /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		4793302C2436E36A00DC5326 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		47AB5CDA24022EA80081858E /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				476BBE83243C21E800510828 /* GNMoreButton.swift */,
+				478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				47643705243AD42F00857AD4 /* TopTrendingCell.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
+				478CA792243EC94A00FBDE87 /* GNCollapseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
