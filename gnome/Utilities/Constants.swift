@@ -11,6 +11,7 @@ enum Asserts {
     static let smallPlay    = UIImage(named: "small_play")
     static let more         = UIImage(named: "more_vert")
     static let collapse     = UIImage(named: "collapse")
+    static let option       = UIImage(named: "more_horiz")
 }
 
 

@@ -41,6 +41,7 @@
 		476A472124383E6E00DF07A3 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A472024383E6E00DF07A3 /* Artist.swift */; };
 		476BBE84243C21E800510828 /* GNMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476BBE83243C21E800510828 /* GNMoreButton.swift */; };
 		478CA792243EC94A00FBDE87 /* GNCollapseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */; };
+		478CA794243ECC9200FBDE87 /* GNOptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478CA793243ECC9200FBDE87 /* GNOptionsButton.swift */; };
 		478E373B243267970070F54E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E373A243267970070F54E /* SongCell.swift */; };
 		4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793302C2436E36A00DC5326 /* UIView+Ext.swift */; };
 		47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDA24022EA80081858E /* Poppins-Medium.otf */; };
@@ -92,6 +93,7 @@
 		476A472024383E6E00DF07A3 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		476BBE83243C21E800510828 /* GNMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNMoreButton.swift; sourceTree = "<group>"; };
 		478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNCollapseButton.swift; sourceTree = "<group>"; };
+		478CA793243ECC9200FBDE87 /* GNOptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNOptionsButton.swift; sourceTree = "<group>"; };
 		478E373A243267970070F54E /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		4793302C2436E36A00DC5326 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		47AB5CDA24022EA80081858E /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				476BBE83243C21E800510828 /* GNMoreButton.swift */,
 				478CA791243EC94A00FBDE87 /* GNCollapseButton.swift */,
+				478CA793243ECC9200FBDE87 /* GNOptionsButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				47634B4723FA9AAF0049A37A /* AppDelegate.swift in Sources */,
 				471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */,
 				47B0373F243A246600E74AFC /* HorizontalCollectionViewVC.swift in Sources */,
+				478CA794243ECC9200FBDE87 /* GNOptionsButton.swift in Sources */,
 				47547257243D7CF3002E814A /* MusicPlayerVC.swift in Sources */,
 				47347A3D2430664500D1B908 /* UIHelper.swift in Sources */,
 				47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */,
