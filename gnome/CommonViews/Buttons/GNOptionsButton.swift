@@ -6,15 +6,14 @@ class GNOptionsButton: UIView {
     let placeholderImageView    = UIImageView(frame: .zero)
     var action: (() -> Void)?
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
     @objc func buttonPressed() { action?() }
