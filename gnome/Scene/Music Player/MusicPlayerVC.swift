@@ -7,7 +7,23 @@ class MusicPlayerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        view.backgroundColor = .red
+        configureViewController()
+    }
+}
+
+
+// MARK: - Methods
+extension MusicPlayerVC {
+    
+    private func configureViewController() {
+        
+        view.backgroundColor = .systemBackground
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
