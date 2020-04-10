@@ -2,16 +2,16 @@ import UIKit
 
 enum Asserts {
     
-    static let explore      = UIImage(named: "explore")
-    static let trending     = UIImage(named: "whatshot")
-    static let search       = UIImage(named: "search")
-    static let library      = UIImage(named: "library_music")
-    static let settings     = UIImage(named: "settings")
-    static let placeholder  = UIImage(named: "library_music")
-    static let smallPlay    = UIImage(named: "small_play")
-    static let more         = UIImage(named: "more_vert")
-    static let collapse     = UIImage(named: "collapse")
-    static let option       = UIImage(named: "more_horiz")
+    static let explore      = UIImage(named: "explore")!
+    static let trending     = UIImage(named: "whatshot")!
+    static let search       = UIImage(named: "search")!
+    static let library      = UIImage(named: "library_music")!
+    static let settings     = UIImage(named: "settings")!
+    static let placeholder  = UIImage(named: "library_music")!
+    static let smallPlay    = UIImage(named: "small_play")!
+    static let more         = UIImage(named: "more_vert")!
+    static let collapse     = UIImage(named: "collapse")!
+    static let option       = UIImage(named: "more_horiz")!
 }
 
 
