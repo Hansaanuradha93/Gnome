@@ -1,7 +1,7 @@
 import UIKit
 
-class GNCollapseButton: UIView {
-    
+class GNAssertButton: UIView {
+
     let button                  = UIButton(frame: .zero)
     let placeholderImageView    = UIImageView(frame: .zero)
     var action: (() -> Void)?
@@ -13,12 +13,18 @@ class GNCollapseButton: UIView {
     }
     
     
+    convenience init(assert: UIImage) {
+        self.init(frame: .zero)
+        placeholderImageView.image = assert
+    }
+    
+    
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
     @objc func buttonPressed() { action?() }
     
-
+    
     private func configure() {
                 
         addSubview(placeholderImageView)
@@ -29,9 +35,7 @@ class GNCollapseButton: UIView {
         translatesAutoresizingMaskIntoConstraints                           = false
         button.translatesAutoresizingMaskIntoConstraints                    = false
         placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
-        
-        placeholderImageView.image = Asserts.collapse
-        
+                
         NSLayoutConstraint.activate([
             placeholderImageView.topAnchor.constraint(equalTo: topAnchor),
             placeholderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
