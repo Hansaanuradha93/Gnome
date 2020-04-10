@@ -2,10 +2,11 @@ import UIKit
 
 class MusicPlayerVC: UIViewController {
 
-    private let viewModel = MusicPlayerVM()
-    private let collapseButton = GNAssertButton(assert: Asserts.collapse)
-    private let optionButton = GNAssertButton(assert: Asserts.option)
+    private let viewModel       = MusicPlayerVM()
+    private let collapseButton  = GNAssertButton(assert: Asserts.collapse)
+    private let optionButton    = GNAssertButton(assert: Asserts.option)
     private let nowPlayingLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +39,19 @@ extension MusicPlayerVC {
         view.addSubview(collapseButton)
         view.addSubview(optionButton)
         
-        optionButton.alpha = 0.5
+        optionButton.alpha          = 0.5
+        let topPadding: CGFloat     = 69
+        let sidePadding: CGFloat    = 29
+
         
         NSLayoutConstraint.activate([
-            collapseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 69),
-            collapseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 29),
+            collapseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: topPadding),
+            collapseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: sidePadding),
             collapseButton.widthAnchor.constraint(equalToConstant: 16.98),
             collapseButton.heightAnchor.constraint(equalToConstant: 10.48),
             
             optionButton.topAnchor.constraint(equalTo: collapseButton.topAnchor),
-            optionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -29),
+            optionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -sidePadding),
             optionButton.widthAnchor.constraint(equalToConstant: 16),
             optionButton.heightAnchor.constraint(equalToConstant: 14)
         ])
@@ -57,8 +61,8 @@ extension MusicPlayerVC {
     private func configureNowPlayingLabel() {
         
         view.addSubview(nowPlayingLabel)
-        nowPlayingLabel.alpha = 0.6
-        nowPlayingLabel.text = "NOW PLAYING FROM"
+        nowPlayingLabel.alpha   = 0.6
+        nowPlayingLabel.text    = Titles.nowPlaying
         
         NSLayoutConstraint.activate([
             nowPlayingLabel.topAnchor.constraint(equalTo: collapseButton.topAnchor),

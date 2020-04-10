@@ -23,13 +23,18 @@ enum CommonImages {
 
 enum Titles {
     
+    // MARK: - Tab Bar
     static let explore      = "Explore"
     static let trending     = "Trending"
     static let search       = "Search"
     static let library      = "Library"
     static let settings     = "Settings"
     
+    // MARK: - Trending Scene
     static let topTrending  = "Top Trending - 2020"
+    
+    // MARK: - Music Player Scene
+    static let nowPlaying   = "NOW PLAYING FROM"
 }
 
 
