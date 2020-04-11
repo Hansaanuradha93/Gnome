@@ -4,7 +4,7 @@ class SongContainerVC: UIViewController {
 
     private let viewModel           = SongContainerVM()
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let songTitleLabel      = GNTitleLabel(fontSize: 22, alignment: .center)
+    private let songTitleLabel      = GNTitleLabel(fontSize: 20, alignment: .center)
     private let artistLabel         = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
     private let albumTitleLabel     = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
     
@@ -39,12 +39,22 @@ class SongContainerVC: UIViewController {
         super.viewWillAppear(animated)
         
         configureViewController()
+        setupUI(with: song)
     }
 }
 
 
 // MARK: - Methods
 extension SongContainerVC {
+    
+    
+    private func setupUI(with song: Song?) {
+        guard let song              = song else { return }
+        albumTitleLabel.text        = song.album
+        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
+        songTitleLabel.text         = song.title
+        artistLabel.text            = song.artist
+    }
     
     private func configureViewController() {
         
@@ -56,7 +66,6 @@ extension SongContainerVC {
     private func configureAlbumTitleLabel() {
         
         view.addSubview(albumTitleLabel)
-        albumTitleLabel.text = "Album Title"
         
         NSLayoutConstraint.activate([
             albumTitleLabel.topAnchor.constraint(equalTo: view.topAnchor),
@@ -83,7 +92,6 @@ extension SongContainerVC {
     private func configureSongTitleLabel() {
         
         view.addSubview(songTitleLabel)
-        songTitleLabel.text = "Song Title"
         
         NSLayoutConstraint.activate([
             songTitleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 30),
@@ -96,7 +104,6 @@ extension SongContainerVC {
         
         view.addSubview(artistLabel)
         artistLabel.alpha   = 0.6
-        artistLabel.text    = "Artist Name"
         
         NSLayoutConstraint.activate([
             artistLabel.topAnchor.constraint(equalTo: songTitleLabel.bottomAnchor, constant: 3),
