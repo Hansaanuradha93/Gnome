@@ -8,6 +8,21 @@ class MusicPlayerVC: UIViewController {
     private let nowPlayingLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center)
     private let songContainer   = UIView()
     private let playContainer   = UIView()
+    private var song: Song!
+    
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    
+    convenience init(song: Song) {
+        self.init()
+        self.song = song
+    }
     
     
     override func viewDidLoad() {
@@ -17,6 +32,7 @@ class MusicPlayerVC: UIViewController {
         configureNowPlayingLabel()
         configureSongContaier()
         configurePlayerContainer()
+        configureUIElements()
     }
     
     
@@ -81,7 +97,6 @@ extension MusicPlayerVC {
         
         view.addSubview(songContainer)
         songContainer.translatesAutoresizingMaskIntoConstraints = false
-        songContainer.backgroundColor = .red
         
         NSLayoutConstraint.activate([
             songContainer.topAnchor.constraint(equalTo: nowPlayingLabel.bottomAnchor, constant: 12),
@@ -118,6 +133,6 @@ extension MusicPlayerVC {
     
     private func configureUIElements() {
         
-        add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
+        add(childVC: SongContainerVC(song: song), to: songContainer)
     }
 }

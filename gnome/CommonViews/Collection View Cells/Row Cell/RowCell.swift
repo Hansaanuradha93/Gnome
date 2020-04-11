@@ -105,9 +105,9 @@ extension RowCell {
     }
     
     
-    func showModal() {
+    func showModal(with song: Song) {
         
-        let controller = MusicPlayerVC()
+        let controller = MusicPlayerVC(song: song)
         controller.modalPresentationStyle = .popover
         self.window?.rootViewController?.present(controller, animated: true, completion: nil)
     }
@@ -177,7 +177,7 @@ extension RowCell: UICollectionViewDelegate {
         switch cellType {
             
         case .recentlyPlayed:
-            showModal()
+            showModal(with: recentlyPlayedSongs[indexPath.item])
         default:
             print("item selected")
         }
