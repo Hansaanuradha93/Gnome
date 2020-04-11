@@ -105,4 +105,19 @@ extension MusicPlayerVC {
             playContainer.heightAnchor.constraint(equalToConstant: 197)
         ])
     }
+    
+    
+    private func add(childVC: UIViewController, to containerView: UIView) {
+        
+        self.addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
+    }
+    
+    
+    private func configureUIElements() {
+        
+        add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
+    }
 }

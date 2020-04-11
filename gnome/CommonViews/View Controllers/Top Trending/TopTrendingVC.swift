@@ -2,6 +2,7 @@ import UIKit
 
 class TopTrendingVC: UIViewController {
 
+    private let viewModel           = TopTrendingVM()
     private var collectionView      : UICollectionView!
     private var topTrendingSongs    : [TopTrendingSong] = []
     
