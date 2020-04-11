@@ -3,8 +3,11 @@ import UIKit
 class SongContainerVC: UIViewController {
 
     private let viewModel           = SongContainerVM()
-    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
+    private let songTitleLabel      = GNTitleLabel(fontSize: 22, alignment: .center)
+    private let artistLabel         = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
+    private let albumTitleLabel     = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
+    
     var song: Song!
     
     
@@ -25,8 +28,10 @@ class SongContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTitleLabel()
+        configureAlbumTitleLabel()
         configureThumbnailImageView()
+        configureSongTitleLabel()
+        configureArtistLabel()
     }
     
     
@@ -48,28 +53,54 @@ extension SongContainerVC {
     }
     
     
-    private func configureTitleLabel() {
+    private func configureAlbumTitleLabel() {
         
-        view.addSubview(titleLabel)
-        titleLabel.text = "Song Title"
+        view.addSubview(albumTitleLabel)
+        albumTitleLabel.text = "Album Title"
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            albumTitleLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            albumTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
     
     private func configureThumbnailImageView() {
         
-        let padding: CGFloat = 29
+        let padding: CGFloat    = 29
+        let dimension: CGFloat  = 317
         view.addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
-            thumbnailImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
+            thumbnailImageView.topAnchor.constraint(equalTo: albumTitleLabel.bottomAnchor, constant: padding),
             thumbnailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            thumbnailImageView.widthAnchor.constraint(equalToConstant: 317),
-            thumbnailImageView.heightAnchor.constraint(equalToConstant: 317)
+            thumbnailImageView.widthAnchor.constraint(equalToConstant: dimension),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: dimension)
+        ])
+    }
+    
+    
+    private func configureSongTitleLabel() {
+        
+        view.addSubview(songTitleLabel)
+        songTitleLabel.text = "Song Title"
+        
+        NSLayoutConstraint.activate([
+            songTitleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 30),
+            songTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    
+    private func configureArtistLabel() {
+        
+        view.addSubview(artistLabel)
+        artistLabel.alpha   = 0.6
+        artistLabel.text    = "Artist Name"
+        
+        NSLayoutConstraint.activate([
+            artistLabel.topAnchor.constraint(equalTo: songTitleLabel.bottomAnchor, constant: 3),
+            artistLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }
