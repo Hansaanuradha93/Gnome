@@ -7,6 +7,7 @@ class MusicPlayerVC: UIViewController {
     private let optionButton    = GNAssertButton(assert: Asserts.option)
     private let nowPlayingLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center)
     private let songContainer   = UIView()
+    private let playContainer   = UIView()
     
     
     override func viewDidLoad() {
@@ -15,6 +16,7 @@ class MusicPlayerVC: UIViewController {
         configureButtons()
         configureNowPlayingLabel()
         configureSongContaier()
+        configurePlayerContainer()
     }
     
     
@@ -76,6 +78,7 @@ extension MusicPlayerVC {
     
     
     private func configureSongContaier() {
+        
         view.addSubview(songContainer)
         songContainer.translatesAutoresizingMaskIntoConstraints = false
         songContainer.backgroundColor = .red
@@ -85,6 +88,21 @@ extension MusicPlayerVC {
             songContainer.leadingAnchor.constraint(equalTo: collapseButton.leadingAnchor),
             songContainer.trailingAnchor.constraint(equalTo: optionButton.trailingAnchor),
             songContainer.heightAnchor.constraint(equalToConstant: 451)
+        ])
+    }
+    
+    
+    private func configurePlayerContainer() {
+        
+        view.addSubview(playContainer)
+        playContainer.translatesAutoresizingMaskIntoConstraints = false
+        playContainer.backgroundColor = .blue
+        
+        NSLayoutConstraint.activate([
+            playContainer.topAnchor.constraint(equalTo: songContainer.bottomAnchor, constant: 20),
+            playContainer.leadingAnchor.constraint(equalTo: songContainer.leadingAnchor),
+            playContainer.trailingAnchor.constraint(equalTo: songContainer.trailingAnchor),
+            playContainer.heightAnchor.constraint(equalToConstant: 197)
         ])
     }
 }
