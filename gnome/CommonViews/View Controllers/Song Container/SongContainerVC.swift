@@ -2,8 +2,9 @@ import UIKit
 
 class SongContainerVC: UIViewController {
 
-    private let viewModel   = SongContainerVM()
-    private let titleLabel  = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
+    private let viewModel           = SongContainerVM()
+    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
+    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     var song: Song!
     
     
@@ -25,6 +26,7 @@ class SongContainerVC: UIViewController {
         super.viewDidLoad()
         
         configureTitleLabel()
+        configureThumbnailImageView()
     }
     
     
@@ -54,6 +56,20 @@ extension SongContainerVC {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    
+    private func configureThumbnailImageView() {
+        
+        let padding: CGFloat = 29
+        view.addSubview(thumbnailImageView)
+        
+        NSLayoutConstraint.activate([
+            thumbnailImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: padding),
+            thumbnailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            thumbnailImageView.widthAnchor.constraint(equalToConstant: 317),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: 317)
         ])
     }
 }
