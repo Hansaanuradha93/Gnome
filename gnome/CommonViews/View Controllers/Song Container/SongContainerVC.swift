@@ -22,6 +22,23 @@ class SongContainerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureViewController()
+    }
+}
+
+
+// MARK: - Methods
+extension SongContainerVC {
+    
+    private func configureViewController() {
+        
+        view.backgroundColor = .systemBackground
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
