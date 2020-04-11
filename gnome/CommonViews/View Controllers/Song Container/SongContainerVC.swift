@@ -47,8 +47,8 @@ class SongContainerVC: UIViewController {
 // MARK: - Methods
 extension SongContainerVC {
     
-    
     private func setupUI(with song: Song?) {
+        
         guard let song              = song else { return }
         albumTitleLabel.text        = song.album
         thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
