@@ -9,8 +9,8 @@ class TopTrendingCell: UICollectionViewCell {
     private let thumbnailImageView      = GNThumbnaiImageView(frame: .zero)
     private let moreButton              = GNAssertButton(assert: Asserts.more)
     private let titleLabel              = GNTitleLabel(fontSize: 20)
-    private let artistLabel             = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey)!)
-    private let numberOfPlaysLabel      = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey)!)
+    private let artistLabel             = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
+    private let numberOfPlaysLabel      = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey))
     private let trendingNumberLabel     = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     
     

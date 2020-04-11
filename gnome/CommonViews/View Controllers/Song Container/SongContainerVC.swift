@@ -3,6 +3,7 @@ import UIKit
 class SongContainerVC: UIViewController {
 
     private let viewModel   = SongContainerVM()
+    private let titleLabel  = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
     var song: Song!
     
     
@@ -22,6 +23,8 @@ class SongContainerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureTitleLabel()
     }
     
     
@@ -40,5 +43,17 @@ extension SongContainerVC {
         
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    private func configureTitleLabel() {
+        
+        view.addSubview(titleLabel)
+        titleLabel.text = "Song Title"
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 }
