@@ -111,8 +111,6 @@ extension MusicPlayerVC {
         
         view.addSubview(playContainer)
         playContainer.translatesAutoresizingMaskIntoConstraints = false
-        #warning("Remove the background colour")
-        playContainer.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             playContainer.topAnchor.constraint(equalTo: songContainer.bottomAnchor, constant: 20),
