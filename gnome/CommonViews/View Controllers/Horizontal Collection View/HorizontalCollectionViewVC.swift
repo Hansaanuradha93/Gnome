@@ -2,6 +2,7 @@ import UIKit
 
 class HorizontalCollectionViewVC: UIViewController {
 
+    private let viewModel       = HorizontalCollectionViewVM()
     private var genres          = [Genre]()
     private var collectionView  : UICollectionView!
 
