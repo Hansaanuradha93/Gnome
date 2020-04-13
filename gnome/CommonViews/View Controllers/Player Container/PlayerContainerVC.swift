@@ -2,7 +2,8 @@ import UIKit
 
 class PlayerContainerVC: UIViewController {
 
-    private let viewModel = PlayerContainerVM()
+    private let viewModel   = PlayerContainerVM()
+    private let sliderView  = UIView()
     
     private var song: Song!
     
@@ -22,7 +23,40 @@ class PlayerContainerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureSlider()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureViewController()
+    }
+}
 
+
+// MARK: - Methods
+extension PlayerContainerVC {
+    
+    private func configureViewController() {
+        
         view.backgroundColor = .cyan
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    private func configureSlider() {
+        
+        view.addSubview(sliderView)
+        sliderView.backgroundColor = .green
+        sliderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            sliderView.topAnchor.constraint(equalTo: view.topAnchor),
+            sliderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sliderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sliderView.heightAnchor.constraint(equalToConstant: 32)
+        ])
     }
 }
