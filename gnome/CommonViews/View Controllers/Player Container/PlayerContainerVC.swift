@@ -5,8 +5,10 @@ class PlayerContainerVC: UIViewController {
     private let viewModel           = PlayerContainerVM()
     private let sliderView          = UIView()
     private let playButton          = GNAssertButton(assert: Asserts.play)
-    private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
     private let rewindButton        = GNAssertButton(assert: Asserts.rewind)
+    private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
+    private let forwadButton        = GNAssertButton(assert: Asserts.forward)
+    private let forward30Button     = GNAssertButton(assert: Asserts.forward30)
     private var song: Song!
     
     
@@ -86,6 +88,8 @@ extension PlayerContainerVC {
         
         view.addSubview(rewindButton)
         view.addSubview(rewind30Button)
+        view.addSubview(forwadButton)
+        view.addSubview(forward30Button)
         
         NSLayoutConstraint.activate([
             rewindButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
@@ -96,7 +100,13 @@ extension PlayerContainerVC {
             rewind30Button.centerYAnchor.constraint(equalTo: rewindButton.centerYAnchor),
             rewind30Button.trailingAnchor.constraint(equalTo: rewindButton.leadingAnchor, constant: -30),
             rewind30Button.widthAnchor.constraint(equalToConstant: dimension30),
-            rewind30Button.heightAnchor.constraint(equalToConstant: dimension30)
+            rewind30Button.heightAnchor.constraint(equalToConstant: dimension30),
+            
+            forwadButton.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 25),
+            forwadButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            forwadButton.widthAnchor.constraint(equalToConstant: dimension),
+            forwadButton.heightAnchor.constraint(equalToConstant: dimension),
+            
         ])
     }
 }
