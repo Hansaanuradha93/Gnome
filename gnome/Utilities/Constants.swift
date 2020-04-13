@@ -18,6 +18,10 @@ enum Asserts {
     static let rewind30     = UIImage(named: "rewind_30")!
     static let forward      = UIImage(named: "fast_forward")!
     static let forward30    = UIImage(named: "forward_30")!
+    static let favorite     = UIImage(named: "favorite")!
+    static let repeatAgain  = UIImage(named: "repeat")!
+    static let shuffle      = UIImage(named: "shuffle")!
+    static let queueMusic   = UIImage(named: "queue_music")!
 }
 
 

@@ -9,6 +9,7 @@ class PlayerContainerVC: UIViewController {
     private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
     private let forwadButton        = GNAssertButton(assert: Asserts.forward)
     private let forward30Button     = GNAssertButton(assert: Asserts.forward30)
+    
     private var song: Song!
     
     
