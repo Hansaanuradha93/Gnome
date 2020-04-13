@@ -2,10 +2,11 @@ import UIKit
 
 class PlayerContainerVC: UIViewController {
 
-    private let viewModel   = PlayerContainerVM()
-    private let sliderView  = UIView()
-    private let playButton  = GNAssertButton(assert: Asserts.play)
-    
+    private let viewModel           = PlayerContainerVM()
+    private let sliderView          = UIView()
+    private let playButton          = GNAssertButton(assert: Asserts.play)
+    private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
+    private let rewindButton        = GNAssertButton(assert: Asserts.rewind)
     private var song: Song!
     
     
@@ -27,6 +28,7 @@ class PlayerContainerVC: UIViewController {
         
         configureSlider()
         configurePlayButton()
+        configureRewindButtons()
     }
     
     
@@ -73,6 +75,28 @@ extension PlayerContainerVC {
             playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             playButton.heightAnchor.constraint(equalToConstant: dimensions),
             playButton.widthAnchor.constraint(equalToConstant: dimensions)
+        ])
+    }
+    
+    
+    private func configureRewindButtons() {
+        
+        let dimension: CGFloat      = 36
+        let dimension30: CGFloat    = 24
+        
+        view.addSubview(rewindButton)
+        view.addSubview(rewind30Button)
+        
+        NSLayoutConstraint.activate([
+            rewindButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
+            rewindButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            rewindButton.widthAnchor.constraint(equalToConstant: dimension),
+            rewindButton.heightAnchor.constraint(equalToConstant: dimension),
+            
+            rewind30Button.centerYAnchor.constraint(equalTo: rewindButton.centerYAnchor),
+            rewind30Button.trailingAnchor.constraint(equalTo: rewindButton.leadingAnchor, constant: -30),
+            rewind30Button.widthAnchor.constraint(equalToConstant: dimension30),
+            rewind30Button.heightAnchor.constraint(equalToConstant: dimension30)
         ])
     }
 }

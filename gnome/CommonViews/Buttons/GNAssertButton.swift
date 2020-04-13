@@ -35,6 +35,8 @@ class GNAssertButton: UIView {
         translatesAutoresizingMaskIntoConstraints                           = false
         button.translatesAutoresizingMaskIntoConstraints                    = false
         placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
+        
+        placeholderImageView.contentMode                                    = .scaleAspectFit
                 
         NSLayoutConstraint.activate([
             placeholderImageView.topAnchor.constraint(equalTo: topAnchor),

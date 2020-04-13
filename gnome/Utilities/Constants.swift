@@ -14,6 +14,10 @@ enum Asserts {
     static let option       = UIImage(named: "more_horiz")!
     static let play         = UIImage(named: "play_red")!
     static let pause        = UIImage(named: "pause_red")!
+    static let rewind       = UIImage(named: "fast_rewind")!
+    static let rewind30     = UIImage(named: "rewind_30")!
+    static let forward      = UIImage(named: "fast_forward")!
+    static let forward30    = UIImage(named: "forward_30")!
 }
 
 
