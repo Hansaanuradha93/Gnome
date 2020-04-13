@@ -155,6 +155,5 @@ extension PlayerContainerVC {
         shuffleButton.alpha     = value
         repeatButton.alpha      = value
         queueMusicButton.alpha  = value
-        
     }
 }

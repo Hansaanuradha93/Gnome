@@ -15,6 +15,7 @@ class GNAssertButton: UIView {
     
     convenience init(assert: UIImage, contentMode: UIView.ContentMode = .scaleAspectFit) {
         self.init(frame: .zero)
+        
         placeholderImageView.image          = assert
         placeholderImageView.contentMode    = contentMode
     }
