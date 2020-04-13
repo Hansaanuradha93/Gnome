@@ -102,7 +102,7 @@ extension MusicPlayerVC {
             songContainer.topAnchor.constraint(equalTo: nowPlayingLabel.bottomAnchor, constant: 12),
             songContainer.leadingAnchor.constraint(equalTo: collapseButton.leadingAnchor),
             songContainer.trailingAnchor.constraint(equalTo: optionButton.trailingAnchor),
-            songContainer.heightAnchor.constraint(equalToConstant: 451)
+            songContainer.heightAnchor.constraint(equalTo: songContainer.widthAnchor, multiplier: 451 / 317)
         ])
     }
     
@@ -116,7 +116,7 @@ extension MusicPlayerVC {
             playContainer.topAnchor.constraint(equalTo: songContainer.bottomAnchor, constant: 20),
             playContainer.leadingAnchor.constraint(equalTo: songContainer.leadingAnchor),
             playContainer.trailingAnchor.constraint(equalTo: songContainer.trailingAnchor),
-            playContainer.heightAnchor.constraint(equalToConstant: 197)
+            playContainer.heightAnchor.constraint(equalTo: playContainer.widthAnchor, multiplier: 197 / 317)
         ])
     }
     

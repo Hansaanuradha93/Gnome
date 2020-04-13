@@ -108,7 +108,7 @@ extension RowCell {
     func showModal(with song: Song) {
         
         let controller = MusicPlayerVC(song: song)
-        controller.modalPresentationStyle = .popover
+        controller.modalPresentationStyle = .overCurrentContext
         self.window?.rootViewController?.present(controller, animated: true, completion: nil)
     }
 }

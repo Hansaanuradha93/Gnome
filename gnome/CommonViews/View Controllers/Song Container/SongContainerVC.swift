@@ -76,14 +76,13 @@ extension SongContainerVC {
     private func configureThumbnailImageView() {
         
         let padding: CGFloat    = 29
-        let dimension: CGFloat  = 317
         view.addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
             thumbnailImageView.topAnchor.constraint(equalTo: albumTitleLabel.bottomAnchor, constant: padding),
             thumbnailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            thumbnailImageView.widthAnchor.constraint(equalToConstant: dimension),
-            thumbnailImageView.heightAnchor.constraint(equalToConstant: dimension)
+            thumbnailImageView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            thumbnailImageView.heightAnchor.constraint(equalTo: view.widthAnchor)
         ])
     }
     
