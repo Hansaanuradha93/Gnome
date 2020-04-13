@@ -62,7 +62,8 @@ extension MusicPlayerVC {
         optionButton.alpha          = 0.5
         let topPadding: CGFloat     = 69
         let sidePadding: CGFloat    = 29
-
+        
+        collapseButton.action = { () in self.dismiss(animated: true) }
         
         NSLayoutConstraint.activate([
             collapseButton.topAnchor.constraint(equalTo: view.topAnchor, constant: topPadding),
