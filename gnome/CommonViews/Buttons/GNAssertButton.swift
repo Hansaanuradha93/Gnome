@@ -13,9 +13,10 @@ class GNAssertButton: UIView {
     }
     
     
-    convenience init(assert: UIImage) {
+    convenience init(assert: UIImage, contentMode: UIView.ContentMode = .scaleAspectFit) {
         self.init(frame: .zero)
-        placeholderImageView.image = assert
+        placeholderImageView.image          = assert
+        placeholderImageView.contentMode    = contentMode
     }
     
     
@@ -35,9 +36,7 @@ class GNAssertButton: UIView {
         translatesAutoresizingMaskIntoConstraints                           = false
         button.translatesAutoresizingMaskIntoConstraints                    = false
         placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
-        
-        placeholderImageView.contentMode                                    = .scaleAspectFit
-                
+                        
         NSLayoutConstraint.activate([
             placeholderImageView.topAnchor.constraint(equalTo: topAnchor),
             placeholderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),

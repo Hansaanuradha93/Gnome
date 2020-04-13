@@ -10,10 +10,10 @@ class PlayerContainerVC: UIViewController {
     private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
     private let forwadButton        = GNAssertButton(assert: Asserts.forward)
     private let forward30Button     = GNAssertButton(assert: Asserts.forward30)
-    private let favouriteButton     = GNAssertButton(assert: Asserts.favorite)
-    private let shuffleButton       = GNAssertButton(assert: Asserts.shuffle)
-    private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain)
-    private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic)
+    private let favouriteButton     = GNAssertButton(assert: Asserts.favorite, contentMode: .center)
+    private let shuffleButton       = GNAssertButton(assert: Asserts.shuffle, contentMode: .center)
+    private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain, contentMode: .center)
+    private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
     
     private var song: Song!
@@ -39,6 +39,7 @@ class PlayerContainerVC: UIViewController {
         configurePlayButton()
         configureRewindButtons()
         configureStackView()
+        configureOtherButtons()
     }
     
     
@@ -143,5 +144,17 @@ extension PlayerContainerVC {
             stackView.heightAnchor.constraint(equalToConstant: 45)
         ])
 
+    }
+    
+    
+    private func configureOtherButtons() {
+        
+        let value: CGFloat = 0.5
+        
+        favouriteButton.alpha   = value
+        shuffleButton.alpha     = value
+        repeatButton.alpha      = value
+        queueMusicButton.alpha  = value
+        
     }
 }
