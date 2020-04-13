@@ -107,6 +107,10 @@ extension PlayerContainerVC {
             forwadButton.widthAnchor.constraint(equalToConstant: dimension),
             forwadButton.heightAnchor.constraint(equalToConstant: dimension),
             
+            forward30Button.centerYAnchor.constraint(equalTo: forwadButton.centerYAnchor),
+            forward30Button.leadingAnchor.constraint(equalTo: forwadButton.trailingAnchor, constant: 30),
+            forward30Button.widthAnchor.constraint(equalToConstant: dimension30),
+            forward30Button.heightAnchor.constraint(equalToConstant: dimension30)
         ])
     }
 }
