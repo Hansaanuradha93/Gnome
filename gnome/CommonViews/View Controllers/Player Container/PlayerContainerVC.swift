@@ -4,11 +4,17 @@ class PlayerContainerVC: UIViewController {
 
     private let viewModel           = PlayerContainerVM()
     private let sliderView          = UIView()
+    private let stackView           = UIStackView()
     private let playButton          = GNAssertButton(assert: Asserts.play)
     private let rewindButton        = GNAssertButton(assert: Asserts.rewind)
     private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
     private let forwadButton        = GNAssertButton(assert: Asserts.forward)
     private let forward30Button     = GNAssertButton(assert: Asserts.forward30)
+    private let favouriteButton     = GNAssertButton(assert: Asserts.favorite)
+    private let shuffleButton       = GNAssertButton(assert: Asserts.shuffle)
+    private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain)
+    private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic)
+
     
     private var song: Song!
     
@@ -32,6 +38,7 @@ class PlayerContainerVC: UIViewController {
         configureSlider()
         configurePlayButton()
         configureRewindButtons()
+        configureStackView()
     }
     
     
@@ -113,5 +120,28 @@ extension PlayerContainerVC {
             forward30Button.widthAnchor.constraint(equalToConstant: dimension30),
             forward30Button.heightAnchor.constraint(equalToConstant: dimension30)
         ])
+    }
+    
+    
+    private func configureStackView() {
+        
+        stackView.axis          = .horizontal
+        stackView.distribution  = .equalSpacing
+        
+        stackView.addArrangedSubview(favouriteButton)
+        stackView.addArrangedSubview(shuffleButton)
+        stackView.addArrangedSubview(repeatButton)
+        stackView.addArrangedSubview(queueMusicButton)
+        
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 25),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 45)
+        ])
+
     }
 }
