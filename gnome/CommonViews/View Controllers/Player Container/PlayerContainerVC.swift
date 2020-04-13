@@ -56,7 +56,7 @@ extension PlayerContainerVC {
             sliderView.topAnchor.constraint(equalTo: view.topAnchor),
             sliderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             sliderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            sliderView.heightAnchor.constraint(equalToConstant: 32)
+            sliderView.heightAnchor.constraint(equalTo: sliderView.widthAnchor, multiplier: 32 / 317)
         ])
     }
 }

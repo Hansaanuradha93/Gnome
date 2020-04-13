@@ -12,6 +12,8 @@ enum Asserts {
     static let more         = UIImage(named: "more_vert")!
     static let collapse     = UIImage(named: "collapse")!
     static let option       = UIImage(named: "more_horiz")!
+    static let play         = UIImage(named: "play_red")!
+    static let pause        = UIImage(named: "pause_red")!
 }
 
 
