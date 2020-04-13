@@ -4,6 +4,7 @@ class PlayerContainerVC: UIViewController {
 
     private let viewModel   = PlayerContainerVM()
     private let sliderView  = UIView()
+    private let playButton  = GNAssertButton(assert: Asserts.play)
     
     private var song: Song!
     
@@ -25,6 +26,7 @@ class PlayerContainerVC: UIViewController {
         super.viewDidLoad()
         
         configureSlider()
+        configurePlayButton()
     }
     
     
@@ -41,7 +43,7 @@ extension PlayerContainerVC {
     
     private func configureViewController() {
         
-        view.backgroundColor = .cyan
+        view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
@@ -57,6 +59,20 @@ extension PlayerContainerVC {
             sliderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             sliderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             sliderView.heightAnchor.constraint(equalTo: sliderView.widthAnchor, multiplier: 32 / 317)
+        ])
+    }
+    
+    
+    private func configurePlayButton() {
+        
+        let dimensions: CGFloat = 70
+        view.addSubview(playButton)
+        
+        NSLayoutConstraint.activate([
+            playButton.topAnchor.constraint(equalTo: sliderView.bottomAnchor, constant: 25),
+            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playButton.heightAnchor.constraint(equalToConstant: dimensions),
+            playButton.widthAnchor.constraint(equalToConstant: dimensions)
         ])
     }
 }
