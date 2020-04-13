@@ -127,7 +127,7 @@ extension PlayerContainerVC {
     private func configureStackView() {
         
         stackView.axis          = .horizontal
-        stackView.distribution  = .equalSpacing
+        stackView.distribution  = .fillEqually
         
         stackView.addArrangedSubview(favouriteButton)
         stackView.addArrangedSubview(shuffleButton)
