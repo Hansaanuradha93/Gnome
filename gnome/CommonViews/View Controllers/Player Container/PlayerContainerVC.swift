@@ -39,6 +39,7 @@ class PlayerContainerVC: UIViewController {
         super.viewDidLoad()
         
         configureSlider()
+        configureSliderLabels()
         configurePlayButton()
         configureRewindButtons()
         configureStackView()
@@ -67,8 +68,6 @@ extension PlayerContainerVC {
     private func configureSlider() {
         
         view.addSubview(slider)
-        view.addSubview(sliderMinimumLabel)
-        view.addSubview(sliderMaximumLabel)
         
         slider.translatesAutoresizingMaskIntoConstraints = false
         
@@ -77,6 +76,19 @@ extension PlayerContainerVC {
             slider.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             slider.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             slider.heightAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 12 / 317)
+        ])
+    }
+    
+    
+    private func configureSliderLabels() {
+        
+        view.addSubview(sliderMinimumLabel)
+        view.addSubview(sliderMaximumLabel)
+        
+        
+        NSLayoutConstraint.activate([
+            sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
+            sliderMinimumLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor)
         ])
     }
     
