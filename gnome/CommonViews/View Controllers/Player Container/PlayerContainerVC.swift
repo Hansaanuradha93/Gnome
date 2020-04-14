@@ -3,8 +3,11 @@ import UIKit
 class PlayerContainerVC: UIViewController {
 
     private let viewModel           = PlayerContainerVM()
-    private let sliderView          = UIView()
+//    private let sliderView          = UIView()
     private let stackView           = UIStackView()
+    private let slider              = UISlider()
+    private let sliderMinimumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
+    private let sliderMaximumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
     private let playButton          = GNAssertButton(assert: Asserts.play)
     private let rewindButton        = GNAssertButton(assert: Asserts.rewind)
     private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
@@ -63,15 +66,17 @@ extension PlayerContainerVC {
     
     private func configureSlider() {
         
-        view.addSubview(sliderView)
-        sliderView.backgroundColor = .green
-        sliderView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(slider)
+        view.addSubview(sliderMinimumLabel)
+        view.addSubview(sliderMaximumLabel)
+        
+        slider.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            sliderView.topAnchor.constraint(equalTo: view.topAnchor),
-            sliderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            sliderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            sliderView.heightAnchor.constraint(equalTo: sliderView.widthAnchor, multiplier: 32 / 317)
+            slider.topAnchor.constraint(equalTo: view.topAnchor),
+            slider.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            slider.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            slider.heightAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 12 / 317)
         ])
     }
     
@@ -82,7 +87,7 @@ extension PlayerContainerVC {
         view.addSubview(playButton)
         
         NSLayoutConstraint.activate([
-            playButton.topAnchor.constraint(equalTo: sliderView.bottomAnchor, constant: 25),
+            playButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 25),
             playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             playButton.heightAnchor.constraint(equalToConstant: dimensions),
             playButton.widthAnchor.constraint(equalToConstant: dimensions)
