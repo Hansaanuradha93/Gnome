@@ -85,10 +85,15 @@ extension PlayerContainerVC {
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
         
+        sliderMinimumLabel.text = "2:14"
+        sliderMaximumLabel.text = "7:14"
         
         NSLayoutConstraint.activate([
             sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
-            sliderMinimumLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor)
+            sliderMinimumLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
+            
+            sliderMaximumLabel.topAnchor.constraint(equalTo: sliderMinimumLabel.topAnchor),
+            sliderMaximumLabel.trailingAnchor.constraint(equalTo: slider.trailingAnchor)
         ])
     }
     
