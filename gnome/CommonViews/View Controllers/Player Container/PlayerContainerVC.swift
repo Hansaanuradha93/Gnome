@@ -58,10 +58,8 @@ class PlayerContainerVC: UIViewController {
 // MARK: - Methods
 extension PlayerContainerVC {
     
+    @objc func sliderChanged() { sliderMinimumLabel.text = "\(slider.value)" }
     
-    @objc func sliderChanged() {
-        
-    }
     
     private func configureViewController() {
         
@@ -97,7 +95,7 @@ extension PlayerContainerVC {
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
         
-        sliderMinimumLabel.text = "\(slider.value)"
+        sliderMinimumLabel.text = "\(slider.minimumValue)"
         sliderMaximumLabel.text = "\(slider.maximumValue)"
         
         NSLayoutConstraint.activate([
