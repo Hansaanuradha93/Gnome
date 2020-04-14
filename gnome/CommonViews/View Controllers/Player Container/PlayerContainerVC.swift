@@ -58,6 +58,11 @@ class PlayerContainerVC: UIViewController {
 // MARK: - Methods
 extension PlayerContainerVC {
     
+    
+    @objc func sliderChanged() {
+        
+    }
+    
     private func configureViewController() {
         
         view.backgroundColor = .systemBackground
@@ -70,6 +75,13 @@ extension PlayerContainerVC {
         view.addSubview(slider)
         
         slider.translatesAutoresizingMaskIntoConstraints = false
+        
+        slider.minimumValue     = 0
+        slider.maximumValue     = 1000
+        slider.isContinuous     = true
+        slider.tintColor        = UIColor.appColor(.Pretty_Pink)
+        slider.value            = 500
+        slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
         
         NSLayoutConstraint.activate([
             slider.topAnchor.constraint(equalTo: view.topAnchor),
@@ -85,8 +97,8 @@ extension PlayerContainerVC {
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
         
-        sliderMinimumLabel.text = "2:14"
-        sliderMaximumLabel.text = "7:14"
+        sliderMinimumLabel.text = "\(slider.value)"
+        sliderMaximumLabel.text = "\(slider.maximumValue)"
         
         NSLayoutConstraint.activate([
             sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
