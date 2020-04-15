@@ -17,7 +17,6 @@ class PlayerContainerVC: UIViewController {
     private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain, contentMode: .center)
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
-    
     private var song: Song!
     
     
@@ -79,6 +78,7 @@ extension PlayerContainerVC {
         slider.layer.cornerRadius   = 30
         slider.value                = 500
         slider.tintColor            = UIColor.appColor(.Pretty_Pink)
+        
         slider.setThumbImage(Asserts.sliderThumb, for: .normal)
         slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
