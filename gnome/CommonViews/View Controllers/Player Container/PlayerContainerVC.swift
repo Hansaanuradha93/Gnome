@@ -3,7 +3,6 @@ import UIKit
 class PlayerContainerVC: UIViewController {
 
     private let viewModel           = PlayerContainerVM()
-//    private let sliderView          = UIView()
     private let stackView           = UIStackView()
     private let slider              = GNSlider(frame: .zero)
     private let sliderMinimumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
@@ -79,11 +78,9 @@ extension PlayerContainerVC {
         slider.isContinuous         = true
         slider.layer.cornerRadius   = 30
         slider.value                = 500
+        slider.tintColor            = UIColor.appColor(.Pretty_Pink)
         slider.setThumbImage(Asserts.sliderThumb, for: .normal)
         slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
-        slider.tintColor            = UIColor.appColor(.Pretty_Pink)
-
-//        slider.setMinimumTrackImage(Asserts.sliderTrack, for: .normal)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
         
         NSLayoutConstraint.activate([
