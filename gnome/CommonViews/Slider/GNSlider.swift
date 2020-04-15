@@ -1,21 +1,21 @@
-//
-//  GNSlider.swift
-//  gnome
-//
-//  Created by Hansa Anuradha on 4/15/20.
-//  Copyright © 2020 Hansa Anuradha. All rights reserved.
-//
-
 import UIKit
 
 class GNSlider: UISlider {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    */
-
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+   
+    
+    override func trackRect(forBounds bounds: CGRect) -> CGRect {
+        let customBounds = CGRect(origin: bounds.origin, size: CGSize(width: bounds.size.width, height: 5.0))
+        super.trackRect(forBounds: customBounds)
+        return customBounds
+    }
+    
 }
