@@ -22,6 +22,8 @@ enum Asserts {
     static let repeatAgain  = UIImage(named: "repeat")!
     static let shuffle      = UIImage(named: "shuffle")!
     static let queueMusic   = UIImage(named: "queue_music")!
+    static let sliderThumb  = UIImage(named: "slider_thumb")!
+    static let sliderTrack  = UIImage(named: "slider_track")!
 }
 
 
