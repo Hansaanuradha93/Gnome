@@ -5,7 +5,7 @@ class PlayerContainerVC: UIViewController {
     private let viewModel           = PlayerContainerVM()
 //    private let sliderView          = UIView()
     private let stackView           = UIStackView()
-    private let slider              = UISlider()
+    private let slider              = GNSlider(frame: .zero)
     private let sliderMinimumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
     private let sliderMaximumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
     private let playButton          = GNAssertButton(assert: Asserts.play)
@@ -80,7 +80,10 @@ extension PlayerContainerVC {
         slider.layer.cornerRadius   = 30
         slider.value                = 500
         slider.setThumbImage(Asserts.sliderThumb, for: .normal)
-        slider.setMinimumTrackImage(Asserts.sliderTrack, for: .normal)
+        slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
+        slider.tintColor            = UIColor.appColor(.Pretty_Pink)
+
+//        slider.setMinimumTrackImage(Asserts.sliderTrack, for: .normal)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
         
         NSLayoutConstraint.activate([
