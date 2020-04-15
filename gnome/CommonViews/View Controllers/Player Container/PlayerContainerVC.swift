@@ -74,11 +74,13 @@ extension PlayerContainerVC {
         
         slider.translatesAutoresizingMaskIntoConstraints = false
         
-        slider.minimumValue     = 0
-        slider.maximumValue     = 1000
-        slider.isContinuous     = true
-        slider.tintColor        = UIColor.appColor(.Pretty_Pink)
-        slider.value            = 500
+        slider.minimumValue         = 0
+        slider.maximumValue         = 1000
+        slider.isContinuous         = true
+        slider.layer.cornerRadius   = 30
+        slider.value                = 500
+        slider.setThumbImage(Asserts.sliderThumb, for: .normal)
+        slider.setMinimumTrackImage(Asserts.sliderTrack, for: .normal)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
         
         NSLayoutConstraint.activate([
