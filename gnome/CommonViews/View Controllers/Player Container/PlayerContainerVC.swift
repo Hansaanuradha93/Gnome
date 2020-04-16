@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 class PlayerContainerVC: UIViewController {
 
@@ -18,6 +19,7 @@ class PlayerContainerVC: UIViewController {
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
     private var song: Song!
+    private var player: AVAudioPlayer = AVAudioPlayer()
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -42,6 +44,9 @@ class PlayerContainerVC: UIViewController {
         configureRewindButtons()
         configureStackView()
         configureOtherButtons()
+        
+        prepareSongSesstion()
+        configureSongPlayer()
     }
     
     
@@ -57,6 +62,31 @@ class PlayerContainerVC: UIViewController {
 extension PlayerContainerVC {
     
     @objc func sliderChanged() { sliderMinimumLabel.text = "\(slider.value)" }
+    
+    
+    private func prepareSongSesstion() {
+        
+        guard
+            let urlString   = Bundle.main.path(forResource: "saragaye", ofType: "mp3"),
+            let url         = URL(string: urlString) else  { return }
+        
+        do {
+            player          = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            
+            let session     = AVAudioSession.sharedInstance()
+            
+            do { try session.setCategory(.playback) }
+            catch let sessionError { print("Session Error: \(sessionError)") }
+            
+        } catch let playerError { print("Song Player Error: \(playerError)") }
+    }
+    
+    
+    private func configureSongPlayer() {
+        
+        playButton.action = { () in self.player.play() }
+    }
     
     
     private func configureViewController() {
@@ -114,7 +144,7 @@ extension PlayerContainerVC {
         
         let dimensions: CGFloat = 70
         view.addSubview(playButton)
-        
+                
         NSLayoutConstraint.activate([
             playButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 25),
             playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
