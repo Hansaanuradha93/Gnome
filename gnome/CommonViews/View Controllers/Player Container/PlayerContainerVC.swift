@@ -83,10 +83,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureSongPlayer() {
-        
-        playButton.action = { () in self.player.play() }
-    }
+    private func configureSongPlayer() { playButton.action = { () in self.player.play() } }
     
     
     private func configureViewController() {
