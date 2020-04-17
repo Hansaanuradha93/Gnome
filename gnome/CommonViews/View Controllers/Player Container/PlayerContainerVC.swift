@@ -18,8 +18,9 @@ class PlayerContainerVC: UIViewController {
     private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain, contentMode: .center)
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
+    private var player              = AVAudioPlayer()
+    var hasBeenPaused: Bool         = false
     private var song: Song!
-    private var player: AVAudioPlayer = AVAudioPlayer()
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
