@@ -19,7 +19,6 @@ class PlayerContainerVC: UIViewController {
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
     private var player              = AVAudioPlayer()
-    var hasBeenPaused: Bool         = false
     private var song: Song!
     
     
@@ -30,8 +29,8 @@ class PlayerContainerVC: UIViewController {
     
     
     convenience init(song: Song) {
-        
         self.init()
+        
         self.song = song
     }
     
@@ -87,9 +86,8 @@ extension PlayerContainerVC {
     private func configureSongPlayer() {
         
         self.player.play()
-
+        
         playButton.action = { () in
-            
             
             if self.player.isPlaying {
                 self.playButton.placeholderImageView.image = Asserts.pause
@@ -98,8 +96,6 @@ extension PlayerContainerVC {
                 self.playButton.placeholderImageView.image = Asserts.play
                 self.player.play()
             }
-
-            
         }
     }
     
