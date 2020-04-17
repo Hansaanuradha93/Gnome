@@ -2,7 +2,7 @@ import UIKit
 
 class GNBodyLabel: UILabel {
 
-    //MARK: - Initializers
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         

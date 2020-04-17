@@ -224,7 +224,7 @@ extension PlayerContainerVC {
     
     private func configureOtherButtons() {
         
-        let value: CGFloat = 0.5
+        let value: CGFloat      = 0.5
         
         favouriteButton.alpha   = value
         shuffleButton.alpha     = value
