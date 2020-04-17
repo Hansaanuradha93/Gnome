@@ -90,15 +90,14 @@ extension PlayerContainerVC {
 
         playButton.action = { () in
             
-            if self.hasBeenPaused {
-                self.playButton.placeholderImageView.image = Asserts.play
-                self.player.play()
-            } else {
+            
+            if self.player.isPlaying {
                 self.playButton.placeholderImageView.image = Asserts.pause
                 self.player.pause()
+            } else {
+                self.playButton.placeholderImageView.image = Asserts.play
+                self.player.play()
             }
-            
-            self.hasBeenPaused = !self.hasBeenPaused
 
             
         }
