@@ -84,7 +84,25 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureSongPlayer() { playButton.action = { () in self.player.play() } }
+    private func configureSongPlayer() {
+        
+        self.player.play()
+
+        playButton.action = { () in
+            
+            if self.hasBeenPaused {
+                self.playButton.placeholderImageView.image = Asserts.play
+                self.player.play()
+            } else {
+                self.playButton.placeholderImageView.image = Asserts.pause
+                self.player.pause()
+            }
+            
+            self.hasBeenPaused = !self.hasBeenPaused
+
+            
+        }
+    }
     
     
     private func configureViewController() {
