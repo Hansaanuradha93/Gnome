@@ -67,7 +67,7 @@ extension PlayerContainerVC {
     private func prepareSongSesstion() {
         
         guard
-            let urlString   = Bundle.main.path(forResource: "saragaye", ofType: "mp3"),
+            let urlString   = Bundle.main.path(forResource: song.fileName, ofType: song.fileExtension),
             let url         = URL(string: urlString) else  { return }
         
         do {

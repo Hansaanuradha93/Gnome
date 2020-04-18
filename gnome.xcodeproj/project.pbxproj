@@ -25,6 +25,12 @@
 		47347A3D2430664500D1B908 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3C2430664500D1B908 /* UIHelper.swift */; };
 		47347A4024306F3100D1B908 /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3F24306F3100D1B908 /* RowCell.swift */; };
 		47347A422430EC6F00D1B908 /* ExploreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A412430EC6F00D1B908 /* ExploreVM.swift */; };
+		474DCBBE244B6A54001DC4F0 /* gullboy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */; };
+		474DCBBF244B6A54001DC4F0 /* lights.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBB9244B6A53001DC4F0 /* lights.mp3 */; };
+		474DCBC0244B6A54001DC4F0 /* shapeofyou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */; };
+		474DCBC1244B6A54001DC4F0 /* kohinoor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBB244B6A53001DC4F0 /* kohinoor.mp3 */; };
+		474DCBC2244B6A54001DC4F0 /* nuclea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBC244B6A54001DC4F0 /* nuclea.mp3 */; };
+		474DCBC3244B6A54001DC4F0 /* x.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBD244B6A54001DC4F0 /* x.mp3 */; };
 		47547257243D7CF3002E814A /* MusicPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547256243D7CF3002E814A /* MusicPlayerVC.swift */; };
 		47547259243D7D39002E814A /* MusicPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547258243D7D39002E814A /* MusicPlayerVM.swift */; };
 		475596CC2439B12C00E8FCAA /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475596CB2439B12C00E8FCAA /* Genre.swift */; };
@@ -42,7 +48,6 @@
 		4764C3DB24418A9F00134B6A /* SongContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C3DA24418A9F00134B6A /* SongContainerVC.swift */; };
 		4764C3DD24418B8D00134B6A /* TopTrendingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C3DC24418B8D00134B6A /* TopTrendingVM.swift */; };
 		4764C3DF24418BCD00134B6A /* SongContainerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C3DE24418BCD00134B6A /* SongContainerVM.swift */; };
-		4765A3BE244804260017B553 /* saragaye.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4765A3BD244804260017B553 /* saragaye.mp3 */; };
 		476692D52446B543003C4BB6 /* GNSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476692D42446B543003C4BB6 /* GNSlider.swift */; };
 		476A471D24383CED00DF07A3 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A471C24383CED00DF07A3 /* Song.swift */; };
 		476A471F24383DFB00DF07A3 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A471E24383DFB00DF07A3 /* Album.swift */; };
@@ -81,6 +86,12 @@
 		47347A3C2430664500D1B908 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		47347A3F24306F3100D1B908 /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 		47347A412430EC6F00D1B908 /* ExploreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVM.swift; sourceTree = "<group>"; };
+		474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gullboy.mp3; sourceTree = "<group>"; };
+		474DCBB9244B6A53001DC4F0 /* lights.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lights.mp3; sourceTree = "<group>"; };
+		474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shapeofyou.mp3; sourceTree = "<group>"; };
+		474DCBBB244B6A53001DC4F0 /* kohinoor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kohinoor.mp3; sourceTree = "<group>"; };
+		474DCBBC244B6A54001DC4F0 /* nuclea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nuclea.mp3; sourceTree = "<group>"; };
+		474DCBBD244B6A54001DC4F0 /* x.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = x.mp3; sourceTree = "<group>"; };
 		47547256243D7CF3002E814A /* MusicPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVC.swift; sourceTree = "<group>"; };
 		47547258243D7D39002E814A /* MusicPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVM.swift; sourceTree = "<group>"; };
 		475596CB2439B12C00E8FCAA /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -100,7 +111,6 @@
 		4764C3DA24418A9F00134B6A /* SongContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongContainerVC.swift; sourceTree = "<group>"; };
 		4764C3DC24418B8D00134B6A /* TopTrendingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTrendingVM.swift; sourceTree = "<group>"; };
 		4764C3DE24418BCD00134B6A /* SongContainerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongContainerVM.swift; sourceTree = "<group>"; };
-		4765A3BD244804260017B553 /* saragaye.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = saragaye.mp3; sourceTree = "<group>"; };
 		476692D42446B543003C4BB6 /* GNSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSlider.swift; sourceTree = "<group>"; };
 		476A471C24383CED00DF07A3 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		476A471E24383DFB00DF07A3 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -215,7 +225,12 @@
 		474DCBB7244B6604001DC4F0 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				4765A3BD244804260017B553 /* saragaye.mp3 */,
+				474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */,
+				474DCBBB244B6A53001DC4F0 /* kohinoor.mp3 */,
+				474DCBB9244B6A53001DC4F0 /* lights.mp3 */,
+				474DCBBC244B6A54001DC4F0 /* nuclea.mp3 */,
+				474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */,
+				474DCBBD244B6A54001DC4F0 /* x.mp3 */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -523,15 +538,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */,
+				474DCBC1244B6A54001DC4F0 /* kohinoor.mp3 in Resources */,
+				474DCBBE244B6A54001DC4F0 /* gullboy.mp3 in Resources */,
 				47634B5323FA9AB10049A37A /* LaunchScreen.storyboard in Resources */,
 				47AB5CE324022EA90081858E /* Poppins-Bold.otf in Resources */,
 				47AB5CE624022EA90081858E /* Poppins-Thin.otf in Resources */,
 				47AB5CE724022EA90081858E /* Poppins-SemiBold.otf in Resources */,
-				4765A3BE244804260017B553 /* saragaye.mp3 in Resources */,
 				47634B5023FA9AB10049A37A /* Assets.xcassets in Resources */,
+				474DCBC2244B6A54001DC4F0 /* nuclea.mp3 in Resources */,
 				47AB5CE224022EA90081858E /* Poppins-Regular.otf in Resources */,
 				47AB5CE424022EA90081858E /* Poppins-ExtraBold.otf in Resources */,
+				474DCBBF244B6A54001DC4F0 /* lights.mp3 in Resources */,
+				474DCBC3244B6A54001DC4F0 /* x.mp3 in Resources */,
 				47AB5CE524022EA90081858E /* Poppins-Light.otf in Resources */,
+				474DCBC0244B6A54001DC4F0 /* shapeofyou.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
