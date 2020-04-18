@@ -1,9 +1,13 @@
-//
-//  File.swift
-//  gnome
-//
-//  Created by Hansa Anuradha on 4/18/20.
-//  Copyright © 2020 Hansa Anuradha. All rights reserved.
-//
-
 import Foundation
+
+enum FileType: String {
+    case mp3 = "mp3"
+    case aac = "aac"
+    case wmv = "wmv"
+}
+
+struct File {
+    let name: String
+    let type: FileType.RawValue
+}
+
