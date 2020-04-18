@@ -14,12 +14,12 @@ struct Song {
     static func fetchSongs() -> [Song] {
         
         return [
-            Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.song1, numberOfPlays: 500000, album: "Raja Baja", fileName: "", fileExtension: ""),
-            Song(title: "Gully Boy", artist: "Various Artists", thumbnailUrl: Temporary.song2, numberOfPlays: 600000, album: "The GaryVee Audio Experience", fileName: "", fileExtension: ""),
-            Song(title: "X", artist: "Ed Sheeran", thumbnailUrl: Temporary.song3, numberOfPlays: 800000, album: "Wireframe", fileName: "", fileExtension: ""),
-            Song(title: "Shape Of You", artist: "Ed Sheeran", thumbnailUrl: Temporary.song4, numberOfPlays: 1000000, album: "Design Better Podcast", fileName: "", fileExtension: ""),
-            Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: Temporary.song5, numberOfPlays: 100000, album: "Kohinoor", fileName: "", fileExtension: ""),
-            Song(title: "Lights", artist: "Nuclea", thumbnailUrl: Temporary.song6, numberOfPlays: 300000, album: "Raja Baja", fileName: "", fileExtension: ""),
+            Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.song1, numberOfPlays: 500000, album: "Raja Baja", fileName: "nuclea", fileExtension: "mp3"),
+            Song(title: "Gully Boy", artist: "Various Artists", thumbnailUrl: Temporary.song2, numberOfPlays: 600000, album: "The GaryVee Audio Experience", fileName: "gullboy", fileExtension: "mp3"),
+            Song(title: "X", artist: "Ed Sheeran", thumbnailUrl: Temporary.song3, numberOfPlays: 800000, album: "Wireframe", fileName: "x", fileExtension: "mp3"),
+            Song(title: "Shape Of You", artist: "Ed Sheeran", thumbnailUrl: Temporary.song4, numberOfPlays: 1000000, album: "Design Better Podcast", fileName: "shapeofyou", fileExtension: "mp3"),
+            Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: Temporary.song5, numberOfPlays: 100000, album: "Kohinoor", fileName: "kohinoor", fileExtension: "mp3"),
+            Song(title: "Lights", artist: "Nuclea", thumbnailUrl: Temporary.song6, numberOfPlays: 300000, album: "Raja Baja", fileName: "lights", fileExtension: "mp3"),
         ]
     }
     
