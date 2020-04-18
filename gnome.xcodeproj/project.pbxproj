@@ -31,6 +31,7 @@
 		474DCBC1244B6A54001DC4F0 /* kohinoor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBB244B6A53001DC4F0 /* kohinoor.mp3 */; };
 		474DCBC2244B6A54001DC4F0 /* nuclea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBC244B6A54001DC4F0 /* nuclea.mp3 */; };
 		474DCBC3244B6A54001DC4F0 /* x.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBD244B6A54001DC4F0 /* x.mp3 */; };
+		474DCBC5244B6B9A001DC4F0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474DCBC4244B6B9A001DC4F0 /* File.swift */; };
 		47547257243D7CF3002E814A /* MusicPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547256243D7CF3002E814A /* MusicPlayerVC.swift */; };
 		47547259243D7D39002E814A /* MusicPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47547258243D7D39002E814A /* MusicPlayerVM.swift */; };
 		475596CC2439B12C00E8FCAA /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475596CB2439B12C00E8FCAA /* Genre.swift */; };
@@ -92,6 +93,7 @@
 		474DCBBB244B6A53001DC4F0 /* kohinoor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kohinoor.mp3; sourceTree = "<group>"; };
 		474DCBBC244B6A54001DC4F0 /* nuclea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nuclea.mp3; sourceTree = "<group>"; };
 		474DCBBD244B6A54001DC4F0 /* x.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = x.mp3; sourceTree = "<group>"; };
+		474DCBC4244B6B9A001DC4F0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		47547256243D7CF3002E814A /* MusicPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVC.swift; sourceTree = "<group>"; };
 		47547258243D7D39002E814A /* MusicPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerVM.swift; sourceTree = "<group>"; };
 		475596CB2439B12C00E8FCAA /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				476A472024383E6E00DF07A3 /* Artist.swift */,
 				475596CB2439B12C00E8FCAA /* Genre.swift */,
 				472B80F0243C51DD00571126 /* TopTrendingSong.swift */,
+				474DCBC4244B6B9A001DC4F0 /* File.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				472B80F1243C51DD00571126 /* TopTrendingSong.swift in Sources */,
 				471F9147242F330D00505D1C /* SearchVC.swift in Sources */,
 				476A471F24383DFB00DF07A3 /* Album.swift in Sources */,
+				474DCBC5244B6B9A001DC4F0 /* File.swift in Sources */,
 				4764C3DF24418BCD00134B6A /* SongContainerVM.swift in Sources */,
 				475EB490243446EC00CA04C1 /* LargeSongCell.swift in Sources */,
 				4764C3DB24418A9F00134B6A /* SongContainerVC.swift in Sources */,
