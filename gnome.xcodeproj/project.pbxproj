@@ -212,6 +212,14 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
+		474DCBB7244B6604001DC4F0 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				4765A3BD244804260017B553 /* saragaye.mp3 */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
 		47547255243D7CAE002E814A /* Music Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +265,7 @@
 		47634B4523FA9AAF0049A37A /* gnome */ = {
 			isa = PBXGroup;
 			children = (
-				4765A3BD244804260017B553 /* saragaye.mp3 */,
+				474DCBB7244B6604001DC4F0 /* Songs */,
 				476A471B24383CA200DF07A3 /* Model */,
 				471F914F242F3F8D00505D1C /* CommonViews */,
 				47634B5B23FA9AC70049A37A /* Scene */,
