@@ -82,10 +82,18 @@ extension PlayerContainerVC {
         } catch let playerError { print("Song Player Error: \(playerError)") }
     }
     
+    @objc func updateSlider() {
+        print("Playing")
+        sliderMinimumLabel.text = "\(player.currentTime)"
+    }
     
     private func configureSongPlayer() {
         
-        self.player.play()
+        player.play()
+        sliderMinimumLabel.text = "\(player.currentTime)"
+        sliderMaximumLabel.text = "\(player.duration)"
+        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
         
         playButton.action = { () in
             
@@ -138,8 +146,8 @@ extension PlayerContainerVC {
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
         
-        sliderMinimumLabel.text = "\(slider.minimumValue)"
-        sliderMaximumLabel.text = "\(slider.maximumValue)"
+//        sliderMinimumLabel.text = "\(slider.minimumValue)"
+//        sliderMaximumLabel.text = "\(slider.maximumValue)"
         
         NSLayoutConstraint.activate([
             sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),

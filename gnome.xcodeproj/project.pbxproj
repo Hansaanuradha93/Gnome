@@ -224,7 +224,7 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
-		474DCBB7244B6604001DC4F0 /* Songs */ = {
+		474DCBB7244B6604001DC4F0 /* Music */ = {
 			isa = PBXGroup;
 			children = (
 				474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */,
@@ -234,7 +234,7 @@
 				474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */,
 				474DCBBD244B6A54001DC4F0 /* x.mp3 */,
 			);
-			path = Songs;
+			path = Music;
 			sourceTree = "<group>";
 		};
 		47547255243D7CAE002E814A /* Music Player */ = {
@@ -282,7 +282,7 @@
 		47634B4523FA9AAF0049A37A /* gnome */ = {
 			isa = PBXGroup;
 			children = (
-				474DCBB7244B6604001DC4F0 /* Songs */,
+				474DCBB7244B6604001DC4F0 /* Music */,
 				476A471B24383CA200DF07A3 /* Model */,
 				471F914F242F3F8D00505D1C /* CommonViews */,
 				47634B5B23FA9AC70049A37A /* Scene */,
