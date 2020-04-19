@@ -83,13 +83,9 @@ extension PlayerContainerVC {
     }
     
     @objc func updateSlider() {
+        
         if player.isPlaying {
-            let minutes = Int(player.currentTime) / 60
-            let seconds = Int(player.currentTime) % 60 < 10 ? "0\(Int(player.currentTime) % 60)" : "\(Int(player.currentTime) % 60)"
-            
-            
-            sliderMinimumLabel.text = "\(minutes):\(seconds)"
-
+            sliderMinimumLabel.text = player.currentTime.getTimeFormat()
             slider.value = Float(Int(player.currentTime))
         }
     }
@@ -98,12 +94,9 @@ extension PlayerContainerVC {
         
         player.play()
         
-        let minutes = Int(player.duration) / 60
-        let seconds = Int(player.duration) % 60 < 10 ? "0\(Int(player.duration) % 60)" : "\(Int(player.duration) % 60)"
-        
         slider.maximumValue = Float(Int(player.duration))
-        sliderMinimumLabel.text = "0:00"
-        sliderMaximumLabel.text = "\(minutes):\(seconds)"
+        sliderMinimumLabel.text = player.currentTime.getTimeFormat()
+        sliderMaximumLabel.text = player.duration.getTimeFormat()
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
         

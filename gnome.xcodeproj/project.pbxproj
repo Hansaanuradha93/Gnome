@@ -20,6 +20,7 @@
 		471F9164242FA25800505D1C /* GNSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */; };
 		471F9166242FA28400505D1C /* GNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9165242FA28400505D1C /* GNBodyLabel.swift */; };
 		471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */; };
+		472AC81D244CC13A002F667D /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472AC81C244CC13A002F667D /* Double+Ext.swift */; };
 		472B80F1243C51DD00571126 /* TopTrendingSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B80F0243C51DD00571126 /* TopTrendingSong.swift */; };
 		47347A3B2430586200D1B908 /* GNThumbnaiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */; };
 		47347A3D2430664500D1B908 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3C2430664500D1B908 /* UIHelper.swift */; };
@@ -82,6 +83,7 @@
 		471F9163242FA25800505D1C /* GNSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		471F9165242FA28400505D1C /* GNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNBodyLabel.swift; sourceTree = "<group>"; };
 		471F9167242FA2EF00505D1C /* GNSecondaryBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSecondaryBodyLabel.swift; sourceTree = "<group>"; };
+		472AC81C244CC13A002F667D /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		472B80F0243C51DD00571126 /* TopTrendingSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTrendingSong.swift; sourceTree = "<group>"; };
 		47347A3A2430586200D1B908 /* GNThumbnaiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNThumbnaiImageView.swift; sourceTree = "<group>"; };
 		47347A3C2430664500D1B908 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				471F9156242F439300505D1C /* UIColor+Ext.swift */,
 				4793302C2436E36A00DC5326 /* UIView+Ext.swift */,
+				472AC81C244CC13A002F667D /* Double+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				47643705243AD42F00857AD4 /* TopTrendingCell.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
+				472AC81D244CC13A002F667D /* Double+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
