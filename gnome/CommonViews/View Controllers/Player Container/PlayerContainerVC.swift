@@ -61,7 +61,12 @@ class PlayerContainerVC: UIViewController {
 // MARK: - Methods
 extension PlayerContainerVC {
     
-    @objc func sliderChanged() { sliderMinimumLabel.text = "\(slider.value)" }
+    @objc func sliderChanged() {
+        
+        sliderMinimumLabel.text = Double(slider.value).getTimeFormat()
+        player.currentTime = Double(Int(slider.value))
+        player.play()
+    }
     
     
     @objc func updateSlider() {
