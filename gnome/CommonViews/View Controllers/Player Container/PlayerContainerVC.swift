@@ -84,17 +84,21 @@ extension PlayerContainerVC {
     
     @objc func updateSlider() {
         if player.isPlaying {
-            let seconds = Int(player.currentTime) % 60
-            print("Seconds: \(seconds)")
-            sliderMinimumLabel.text = "00 : \(seconds)"
-            slider.value = Float(player.currentTime)
+            let minutes = Int(player.currentTime) / 60
+            let seconds = Int(player.currentTime) % 60 < 10 ? "0\(Int(player.currentTime) % 60)" : "\(Int(player.currentTime) % 60)"
+            
+            
+            sliderMinimumLabel.text = "\(minutes):\(seconds)"
+
+            slider.value = Float(Int(player.currentTime))
         }
     }
     
     private func configureSongPlayer() {
         
         player.play()
-        sliderMinimumLabel.text = "\(player.currentTime)"
+        slider.maximumValue = Float(Int(player.duration))
+        sliderMinimumLabel.text = "0:00"
         sliderMaximumLabel.text = "\(player.duration)"
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
@@ -126,7 +130,6 @@ extension PlayerContainerVC {
         slider.translatesAutoresizingMaskIntoConstraints = false
         
         slider.minimumValue         = 0
-        slider.maximumValue         = 1000
         slider.isContinuous         = true
         slider.layer.cornerRadius   = 30
         slider.tintColor            = UIColor.appColor(.Pretty_Pink)
