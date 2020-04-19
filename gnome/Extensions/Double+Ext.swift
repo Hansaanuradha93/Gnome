@@ -1,9 +1,11 @@
-//
-//  Double+Ext.swift
-//  gnome
-//
-//  Created by Hansa Anuradha on 4/19/20.
-//  Copyright © 2020 Hansa Anuradha. All rights reserved.
-//
-
 import Foundation
+
+extension Double {
+    
+    func getTimeFormat() -> String {
+        
+        let minutes = Int(self) / 60
+        let seconds = Int(self) % 60 < 10 ? "0\(Int(self) % 60)" : "\(Int(self) % 60)"
+        return "\(minutes):\(seconds)"
+    }
+}
