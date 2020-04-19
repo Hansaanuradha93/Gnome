@@ -64,6 +64,15 @@ extension PlayerContainerVC {
     @objc func sliderChanged() { sliderMinimumLabel.text = "\(slider.value)" }
     
     
+    @objc func updateSlider() {
+        
+        if player.isPlaying {
+            sliderMinimumLabel.text = player.currentTime.getTimeFormat()
+            slider.value = Float(Int(player.currentTime))
+        }
+    }
+    
+    
     private func prepareSongSesstion() {
         
         guard
@@ -81,14 +90,7 @@ extension PlayerContainerVC {
             
         } catch let playerError { print("Song Player Error: \(playerError)") }
     }
-    
-    @objc func updateSlider() {
-        
-        if player.isPlaying {
-            sliderMinimumLabel.text = player.currentTime.getTimeFormat()
-            slider.value = Float(Int(player.currentTime))
-        }
-    }
+
     
     private func configureSongPlayer() {
         
@@ -148,9 +150,6 @@ extension PlayerContainerVC {
         
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
-        
-//        sliderMinimumLabel.text = "\(slider.minimumValue)"
-//        sliderMaximumLabel.text = "\(slider.maximumValue)"
         
         NSLayoutConstraint.activate([
             sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
