@@ -85,6 +85,7 @@ extension PlayerContainerVC {
     @objc func updateSlider() {
         print("Playing")
         sliderMinimumLabel.text = "\(player.currentTime)"
+        slider.value = Float(player.currentTime)
     }
     
     private func configureSongPlayer() {
