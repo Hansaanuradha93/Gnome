@@ -83,9 +83,10 @@ extension PlayerContainerVC {
     }
     
     @objc func updateSlider() {
-        print("Playing")
-        sliderMinimumLabel.text = "\(player.currentTime)"
-        slider.value = Float(player.currentTime)
+        if player.isPlaying {
+            sliderMinimumLabel.text = "\(player.currentTime)"
+            slider.value = Float(player.currentTime)
+        }
     }
     
     private func configureSongPlayer() {
@@ -126,7 +127,6 @@ extension PlayerContainerVC {
         slider.maximumValue         = 1000
         slider.isContinuous         = true
         slider.layer.cornerRadius   = 30
-        slider.value                = 500
         slider.tintColor            = UIColor.appColor(.Pretty_Pink)
         
         slider.setThumbImage(Asserts.sliderThumb, for: .normal)
