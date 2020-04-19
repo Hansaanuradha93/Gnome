@@ -84,7 +84,9 @@ extension PlayerContainerVC {
     
     @objc func updateSlider() {
         if player.isPlaying {
-            sliderMinimumLabel.text = "\(player.currentTime)"
+            let seconds = Int(player.currentTime) % 60
+            print("Seconds: \(seconds)")
+            sliderMinimumLabel.text = "00 : \(seconds)"
             slider.value = Float(player.currentTime)
         }
     }
