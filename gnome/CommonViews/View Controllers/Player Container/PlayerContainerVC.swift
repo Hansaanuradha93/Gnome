@@ -47,6 +47,7 @@ class PlayerContainerVC: UIViewController {
         
         prepareSongSesstion()
         configureSongPlayer()
+        configureRewindButton()
     }
     
     
@@ -64,8 +65,6 @@ extension PlayerContainerVC {
     @objc func sliderChanged() {
         
         sliderMinimumLabel.text = Double(slider.value).getTimeFormat()
-        player.currentTime = Double(Int(slider.value))
-        player.play()
     }
     
     
@@ -115,6 +114,22 @@ extension PlayerContainerVC {
             } else {
                 self.playButton.placeholderImageView.image = Asserts.play
                 self.player.play()
+            }
+        }
+    }
+    
+    
+    private func configureRewindButton() {
+        
+        rewind30Button.action           = { () in
+            
+            var time                    = self.player.currentTime
+            time                        = time - 30
+            
+            if time < 0 {
+                self.player.currentTime = 0
+            } else {
+                self.player.currentTime = time
             }
         }
     }
