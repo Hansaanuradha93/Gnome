@@ -47,7 +47,8 @@ class PlayerContainerVC: UIViewController {
         
         prepareSongSesstion()
         configureSongPlayer()
-        configureRewindButton()
+        configureForward30Button()
+        configureRewind30Button()
     }
     
     
@@ -119,18 +120,38 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureRewindButton() {
+    private func configureRewind30Button() {
         
-        rewind30Button.action           = { () in
+        rewind30Button.action               = { () in
             
-            var time                    = self.player.currentTime
-            time                        = time - 30
+            var time                        = self.player.currentTime
+            time                            = time - 30
             
             if time < 0 {
-                self.player.currentTime = 0
+                self.player.currentTime     = 0
             } else {
-                self.player.currentTime = time
+                self.player.currentTime     = time
             }
+            self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
+        }
+    }
+    
+    
+    private func configureForward30Button() {
+        
+        forward30Button.action              = { () in
+            
+            var time                        = self.player.currentTime
+            time                            = time + 30
+            
+            if time > self.player.duration {
+                self.player.currentTime     = self.player.duration
+                self.slider.value           = Float(self.player.duration)
+                self.player.stop()
+            } else {
+                self.player.currentTime     = time
+            }
+            self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
     }
     
