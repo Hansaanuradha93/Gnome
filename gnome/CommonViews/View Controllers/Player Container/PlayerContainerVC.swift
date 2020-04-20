@@ -73,7 +73,7 @@ extension PlayerContainerVC {
         
         if player.isPlaying {
             sliderMinimumLabel.text = player.currentTime.getTimeFormat()
-            slider.value = Float(Int(player.currentTime))
+            slider.value            = Float(Int(player.currentTime))
         }
     }
     
@@ -101,13 +101,13 @@ extension PlayerContainerVC {
         
         player.play()
         
-        slider.maximumValue = Float(Int(player.duration))
+        slider.maximumValue     = Float(Int(player.duration))
         sliderMinimumLabel.text = player.currentTime.getTimeFormat()
         sliderMaximumLabel.text = player.duration.getTimeFormat()
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
         
-        playButton.action = { () in
+        playButton.action       = { () in
             
             if self.player.isPlaying {
                 self.playButton.placeholderImageView.image = Asserts.pause
