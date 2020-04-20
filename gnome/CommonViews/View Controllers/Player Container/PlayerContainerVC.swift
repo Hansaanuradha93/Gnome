@@ -132,6 +132,7 @@ extension PlayerContainerVC {
             } else {
                 self.player.currentTime     = time
             }
+            self.slider.value               = Float(Int(self.player.currentTime))
             self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
     }
@@ -151,6 +152,7 @@ extension PlayerContainerVC {
             } else {
                 self.player.currentTime     = time
             }
+            self.slider.value               = Float(Int(self.player.currentTime))
             self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
     }
