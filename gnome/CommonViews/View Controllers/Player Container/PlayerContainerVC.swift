@@ -19,7 +19,8 @@ class PlayerContainerVC: UIViewController {
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
     private var player: AVAudioPlayer!
-    private var song: Song!
+    private var songs: [Song]!
+    private var index: Int!
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -28,10 +29,11 @@ class PlayerContainerVC: UIViewController {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(song: Song) {
+    convenience init(songs: [Song], index: Int) {
         self.init()
         
-        self.song = song
+        self.songs = songs
+        self.index = index
     }
     
     
@@ -84,7 +86,7 @@ extension PlayerContainerVC {
     private func prepareSongSesstion() {
         
         guard
-            let urlString   = Bundle.main.path(forResource: song.file.name, ofType: song.file.type),
+            let urlString   = Bundle.main.path(forResource: songs[index].file.name, ofType: songs[index].file.type),
             let url         = URL(string: urlString) else  { return }
         
         do {
