@@ -8,7 +8,8 @@ class MusicPlayerVC: UIViewController {
     private let nowPlayingLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center)
     private let songContainer   = UIView()
     private let playContainer   = UIView()
-    private var song: Song!
+    private var songs: [Song]!
+    private var index: Int!
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -19,9 +20,11 @@ class MusicPlayerVC: UIViewController {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(song: Song) {
+    convenience init(songs: [Song], index: Int) {
         self.init()
-        self.song = song
+        
+        self.songs = songs
+        self.index = index
     }
     
     
@@ -133,7 +136,7 @@ extension MusicPlayerVC {
     
     private func configureUIElements() {
         
-        add(childVC: SongContainerVC(song: song), to: songContainer)
-        add(childVC: PlayerContainerVC(song: song), to: playContainer)
+        add(childVC: SongContainerVC(songs: songs, index: index), to: songContainer)
+        add(childVC: PlayerContainerVC(songs: songs, index: index), to: playContainer)
     }
 }
