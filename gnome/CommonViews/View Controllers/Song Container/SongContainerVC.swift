@@ -8,7 +8,8 @@ class SongContainerVC: UIViewController {
     private let artistLabel         = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
     private let albumTitleLabel     = GNSecondaryTitleLabel(fontSize: 17, alignment: .center, fontColor: UIColor.appColor(.Pretty_Pink))
     
-    var song: Song!
+    private var songs: [Song]!
+    private var index: Int!
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -17,10 +18,11 @@ class SongContainerVC: UIViewController {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(song: Song) {
-        
+    convenience init(songs: [Song], index: Int) {
         self.init()
-        self.song = song
+        
+        self.songs = songs
+        self.index = index
     }
     
     
@@ -38,7 +40,7 @@ class SongContainerVC: UIViewController {
         super.viewWillAppear(animated)
         
         configureViewController()
-        setupUI(with: song)
+        setupUI(with: songs[index])
     }
 }
 
