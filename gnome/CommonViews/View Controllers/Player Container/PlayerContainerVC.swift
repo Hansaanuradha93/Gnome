@@ -18,7 +18,7 @@ class PlayerContainerVC: UIViewController {
     private let repeatButton        = GNAssertButton(assert: Asserts.repeatAgain, contentMode: .center)
     private let queueMusicButton    = GNAssertButton(assert: Asserts.queueMusic, contentMode: .center)
 
-    private var player              = AVAudioPlayer()
+    private var player: AVAudioPlayer!
     private var song: Song!
     
     
@@ -127,6 +127,7 @@ extension PlayerContainerVC {
         
         rewind30Button.action               = { () in
             
+            self.player.stop()
             var time                        = self.player.currentTime
             time                            = time - 30
             
@@ -135,6 +136,8 @@ extension PlayerContainerVC {
             } else {
                 self.player.currentTime     = time
             }
+            
+            self.player.play()
             self.slider.value               = Float(Int(self.player.currentTime))
             self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
@@ -145,6 +148,7 @@ extension PlayerContainerVC {
         
         forward30Button.action              = { () in
             
+            self.player.stop()
             var time                        = self.player.currentTime
             time                            = time + 30
             
@@ -155,6 +159,8 @@ extension PlayerContainerVC {
             } else {
                 self.player.currentTime     = time
             }
+            
+            self.player.play()
             self.slider.value               = Float(Int(self.player.currentTime))
             self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
