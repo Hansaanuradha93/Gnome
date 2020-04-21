@@ -66,6 +66,9 @@ extension PlayerContainerVC {
     @objc func sliderChanged() {
         
         sliderMinimumLabel.text = Double(slider.value).getTimeFormat()
+        player.stop()
+        player.currentTime = TimeInterval(slider.value)
+        player.play()
     }
     
     
