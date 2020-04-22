@@ -10,6 +10,7 @@ class SongContainerVC: UIViewController {
     
     private var songs: [Song]!
     private var index: Int!
+    private var playerContainerVC: PlayerContainerVC!
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -18,11 +19,12 @@ class SongContainerVC: UIViewController {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
-    convenience init(songs: [Song], index: Int) {
+    convenience init(songs: [Song], index: Int,controller: PlayerContainerVC) {
         self.init()
         
-        self.songs = songs
-        self.index = index
+        self.songs              = songs
+        self.index              = index
+        self.playerContainerVC  = controller
     }
     
     
@@ -33,6 +35,7 @@ class SongContainerVC: UIViewController {
         configureThumbnailImageView()
         configureSongTitleLabel()
         configureArtistLabel()
+        configurePlayerContainerVC()
     }
     
     
@@ -47,6 +50,9 @@ class SongContainerVC: UIViewController {
 
 // MARK: - Methods
 extension SongContainerVC {
+    
+    private func configurePlayerContainerVC() { playerContainerVC.playerContainerDelegate = self }
+    
     
     private func setupUI(with song: Song?) {
         
@@ -110,4 +116,11 @@ extension SongContainerVC {
             artistLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
+}
+
+
+// MARK: - PlayerContainerDelegate
+extension SongContainerVC: PlayerContainerDelegate {
+    
+    func buttonPressed(index: Int) { print("Next Songs index: \(index)") }
 }
