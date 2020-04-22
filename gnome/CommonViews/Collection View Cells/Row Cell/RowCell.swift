@@ -207,5 +207,3 @@ extension RowCell: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-
-

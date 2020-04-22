@@ -1,6 +1,12 @@
 import UIKit
 import AVFoundation
 
+protocol PlayerContainerDelegate: class {
+    
+    func buttonPressed(index: Int)
+}
+
+
 class PlayerContainerVC: UIViewController {
 
     private let viewModel           = PlayerContainerVM()
@@ -21,6 +27,7 @@ class PlayerContainerVC: UIViewController {
     private var player: AVAudioPlayer!
     private var songs: [Song]!
     private var index: Int!
+    private var playerContainerDelegate: PlayerContainerDelegate!
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -122,6 +129,19 @@ extension PlayerContainerVC {
                 self.player.play()
             }
         }
+    }
+    
+    
+    private func configureForwardRewindButtons() {
+        
+        forwadButton.action     = { () in
+            self.playerContainerDelegate.buttonPressed(index: self.index + 1)
+        }
+        
+        rewindButton.action     = { () in
+            self.playerContainerDelegate.buttonPressed(index: self.index - 1)
+        }
+
     }
     
     
