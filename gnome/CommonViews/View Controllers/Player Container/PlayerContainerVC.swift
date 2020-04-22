@@ -140,9 +140,7 @@ extension PlayerContainerVC {
                 self.index      = self.index + 1
             }
             self.playerContainerDelegate?.buttonPressed(index: self.index )
-            self.player.stop()
-            self.prepareSongSesstion(song: self.songs[self.index])
-            self.player.play()
+            self.playNextSong()
         }
         
         rewindButton.action     = { () in
@@ -151,7 +149,16 @@ extension PlayerContainerVC {
                 self.index      = self.index - 1
             }
             self.playerContainerDelegate?.buttonPressed(index: self.index)
+            self.playNextSong()
         }
+    }
+    
+    
+    private func playNextSong() {
+        
+        player.stop()
+        prepareSongSesstion(song: self.songs[self.index])
+        player.play()
     }
     
     
