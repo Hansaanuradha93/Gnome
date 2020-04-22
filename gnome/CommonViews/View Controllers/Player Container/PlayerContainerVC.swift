@@ -12,7 +12,7 @@ class PlayerContainerVC: UIViewController {
     private let sliderMinimumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
     private let sliderMaximumLabel  = GNSecondaryTitleLabel(fontSize: 11, fontColor: UIColor.appColor(.Pretty_Pink))
     private let playButton          = GNAssertButton(assert: Asserts.play)
-    private let rewindButton        = GNAssertButton(assert: Asserts.rewind)
+    private let backwardButton      = GNAssertButton(assert: Asserts.rewind)
     private let rewind30Button      = GNAssertButton(assert: Asserts.rewind30)
     private let forwadButton        = GNAssertButton(assert: Asserts.forward)
     private let forward30Button     = GNAssertButton(assert: Asserts.forward30)
@@ -55,7 +55,8 @@ class PlayerContainerVC: UIViewController {
         configureSongPlayer()
         configureForward30Button()
         configureRewind30Button()
-        configureForwardRewindButtons()
+        configureForwardButtonAction()
+        configureBackwardButtonAction()
     }
     
     
@@ -130,7 +131,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureForwardRewindButtons() {
+    private func configureForwardButtonAction() {
         
         forwadButton.action     = { () in
             
@@ -142,12 +143,14 @@ extension PlayerContainerVC {
             self.playerContainerDelegate?.buttonPressed(index: self.index )
             self.playNextSong()
         }
+    }
+    
+    
+    private func configureBackwardButtonAction() {
         
-        rewindButton.action     = { () in
+        backwardButton.action   = { () in
             
-            if self.index      != 0 {
-                self.index      = self.index - 1
-            }
+            if self.index      != 0 { self.index = self.index - 1 }
             self.playerContainerDelegate?.buttonPressed(index: self.index)
             self.playNextSong()
         }
@@ -271,19 +274,19 @@ extension PlayerContainerVC {
         let dimension: CGFloat      = 36
         let dimension30: CGFloat    = 24
         
-        view.addSubview(rewindButton)
+        view.addSubview(backwardButton)
         view.addSubview(rewind30Button)
         view.addSubview(forwadButton)
         view.addSubview(forward30Button)
         
         NSLayoutConstraint.activate([
-            rewindButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
-            rewindButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
-            rewindButton.widthAnchor.constraint(equalToConstant: dimension),
-            rewindButton.heightAnchor.constraint(equalToConstant: dimension),
+            backwardButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
+            backwardButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+            backwardButton.widthAnchor.constraint(equalToConstant: dimension),
+            backwardButton.heightAnchor.constraint(equalToConstant: dimension),
             
-            rewind30Button.centerYAnchor.constraint(equalTo: rewindButton.centerYAnchor),
-            rewind30Button.trailingAnchor.constraint(equalTo: rewindButton.leadingAnchor, constant: -30),
+            rewind30Button.centerYAnchor.constraint(equalTo: backwardButton.centerYAnchor),
+            rewind30Button.trailingAnchor.constraint(equalTo: backwardButton.leadingAnchor, constant: -30),
             rewind30Button.widthAnchor.constraint(equalToConstant: dimension30),
             rewind30Button.heightAnchor.constraint(equalToConstant: dimension30),
             
