@@ -56,9 +56,6 @@ class PlayerContainerVC: UIViewController {
         configureForward30Button()
         configureRewind30Button()
         configureForwardRewindButtons()
-        
-        print(index)
-        print(songs.count)
     }
     
     

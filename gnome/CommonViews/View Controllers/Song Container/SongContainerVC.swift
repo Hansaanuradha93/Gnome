@@ -122,5 +122,5 @@ extension SongContainerVC {
 // MARK: - PlayerContainerDelegate
 extension SongContainerVC: PlayerContainerDelegate {
     
-    func buttonPressed(index: Int) { print("Next Songs index: \(index)") }
+    func buttonPressed(index: Int) { setupUI(with: songs[index]) }
 }
