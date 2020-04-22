@@ -209,8 +209,12 @@ extension PlayerContainerVC {
             self.sliderMinimumLabel.text    = self.player.currentTime.getTimeFormat()
         }
     }
-    
-    
+}
+
+
+// MARK: - UI Imaplemetation
+extension PlayerContainerVC {
+
     private func configureViewController() {
         
         view.backgroundColor = .systemBackground
