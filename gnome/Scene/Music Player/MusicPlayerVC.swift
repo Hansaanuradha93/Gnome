@@ -136,7 +136,10 @@ extension MusicPlayerVC {
     
     private func configureUIElements() {
         
-        add(childVC: SongContainerVC(songs: songs, index: index), to: songContainer)
-        add(childVC: PlayerContainerVC(songs: songs, index: index), to: playContainer)
+        let playerContainerVC   = PlayerContainerVC(songs: songs, index: index)
+        let songContainerVC     = SongContainerVC(songs: songs, index: index, controller: playerContainerVC)
+        
+        add(childVC: playerContainerVC, to: playContainer)
+        add(childVC: songContainerVC, to: songContainer)
     }
 }
