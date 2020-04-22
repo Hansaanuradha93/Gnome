@@ -51,7 +51,7 @@ class PlayerContainerVC: UIViewController {
         configureStackView()
         configureOtherButtons()
         
-        prepareSongSesstion()
+        prepareSongSesstion(song: songs[index])
         configureSongPlayer()
         configureForward30Button()
         configureRewind30Button()
@@ -88,10 +88,10 @@ extension PlayerContainerVC {
     }
     
     
-    private func prepareSongSesstion() {
+    private func prepareSongSesstion(song: Song) {
         
         guard
-            let urlString   = Bundle.main.path(forResource: songs[index].file.name, ofType: songs[index].file.type),
+            let urlString   = Bundle.main.path(forResource: song.file.name, ofType: song.file.type),
             let url         = URL(string: urlString) else  { return }
         
         do {
@@ -140,6 +140,9 @@ extension PlayerContainerVC {
                 self.index      = self.index + 1
             }
             self.playerContainerDelegate?.buttonPressed(index: self.index )
+            self.player.stop()
+            self.prepareSongSesstion(song: self.songs[self.index])
+            self.player.play()
         }
         
         rewindButton.action     = { () in
