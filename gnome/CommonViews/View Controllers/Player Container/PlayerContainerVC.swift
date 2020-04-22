@@ -24,7 +24,7 @@ class PlayerContainerVC: UIViewController {
     private var player: AVAudioPlayer!
     private var songs: [Song]!
     private var index: Int!
-    private var playerContainerDelegate: PlayerContainerDelegate!
+    var playerContainerDelegate: PlayerContainerDelegate?
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -55,6 +55,10 @@ class PlayerContainerVC: UIViewController {
         configureSongPlayer()
         configureForward30Button()
         configureRewind30Button()
+        configureForwardRewindButtons()
+        
+        print(index)
+        print(songs.count)
     }
     
     
@@ -131,9 +135,23 @@ extension PlayerContainerVC {
     
     private func configureForwardRewindButtons() {
         
-        forwadButton.action     = { () in self.playerContainerDelegate.buttonPressed(index: self.index + 1) }
+        forwadButton.action     = { () in
+            
+            if self.index       == self.songs.count - 1 {
+                self.index      = 0
+            } else {
+                self.index      = self.index + 1
+            }
+            self.playerContainerDelegate?.buttonPressed(index: self.index )
+        }
         
-        rewindButton.action     = { () in self.playerContainerDelegate.buttonPressed(index: self.index - 1) }
+        rewindButton.action     = { () in
+            
+            if self.index      != 0 {
+                self.index      = self.index - 1
+            }
+            self.playerContainerDelegate?.buttonPressed(index: self.index)
+        }
     }
     
     
