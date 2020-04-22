@@ -163,6 +163,7 @@ extension PlayerContainerVC {
         prepareSongSesstion(song: self.songs[self.index])
         player.play()
         sliderMaximumLabel.text = player.duration.getTimeFormat()
+        slider.maximumValue     = Float(Int(player.duration))
     }
     
     
