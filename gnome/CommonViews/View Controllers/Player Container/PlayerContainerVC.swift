@@ -1,10 +1,7 @@
 import UIKit
 import AVFoundation
 
-protocol PlayerContainerDelegate: class {
-    
-    func buttonPressed(index: Int)
-}
+protocol PlayerContainerDelegate: class { func buttonPressed(index: Int)}
 
 
 class PlayerContainerVC: UIViewController {
@@ -74,9 +71,9 @@ extension PlayerContainerVC {
     
     @objc func sliderChanged() {
         
-        sliderMinimumLabel.text = Double(slider.value).getTimeFormat()
+        sliderMinimumLabel.text     = Double(slider.value).getTimeFormat()
         player.stop()
-        player.currentTime = TimeInterval(slider.value)
+        player.currentTime          = TimeInterval(slider.value)
         player.play()
     }
     
@@ -134,14 +131,9 @@ extension PlayerContainerVC {
     
     private func configureForwardRewindButtons() {
         
-        forwadButton.action     = { () in
-            self.playerContainerDelegate.buttonPressed(index: self.index + 1)
-        }
+        forwadButton.action     = { () in self.playerContainerDelegate.buttonPressed(index: self.index + 1) }
         
-        rewindButton.action     = { () in
-            self.playerContainerDelegate.buttonPressed(index: self.index - 1)
-        }
-
+        rewindButton.action     = { () in self.playerContainerDelegate.buttonPressed(index: self.index - 1) }
     }
     
     
