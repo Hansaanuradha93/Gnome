@@ -111,6 +111,13 @@ extension RowCell {
         controller.modalPresentationStyle = .overCurrentContext
         self.window?.rootViewController?.present(controller, animated: true, completion: nil)
     }
+    
+    
+    func navigateTo(viewCotroller: UIViewController) {
+        
+        viewCotroller.modalPresentationStyle = .overCurrentContext
+        self.window?.rootViewController?.present(viewCotroller, animated: true, completion: nil)
+    }
 }
 
 
@@ -178,6 +185,9 @@ extension RowCell: UICollectionViewDelegate {
             
         case .recentlyPlayed:
             showModal(with: recentlyPlayedSongs, index: indexPath.item)
+        case .popularArtists:
+            let controller = ExpanVC()
+            navigateTo(viewCotroller: controller)
         default:
             break
         }
