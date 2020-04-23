@@ -67,6 +67,8 @@
 		47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0373A243A194E00E74AFC /* TrendingVM.swift */; };
 		47B0373F243A246600E74AFC /* HorizontalCollectionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0373E243A246600E74AFC /* HorizontalCollectionViewVC.swift */; };
 		47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6B6F324358CE7001298C5 /* AlbumCell.swift */; };
+		47D8440124514627004C325E /* ExpanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8440024514627004C325E /* ExpanVC.swift */; };
+		47D8440324514639004C325E /* ExpanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8440224514639004C325E /* ExpanVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		47B0373A243A194E00E74AFC /* TrendingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendingVM.swift; path = gnome/Scene/Explore/TrendingVM.swift; sourceTree = SOURCE_ROOT; };
 		47B0373E243A246600E74AFC /* HorizontalCollectionViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewVC.swift; sourceTree = "<group>"; };
 		47D6B6F324358CE7001298C5 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		47D8440024514627004C325E /* ExpanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanVC.swift; sourceTree = "<group>"; };
+		47D8440224514639004C325E /* ExpanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,8 +329,8 @@
 		47634B5E23FA9DDE0049A37A /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				471F9142242F32A100505D1C /* ExploreVC.swift */,
-				47347A412430EC6F00D1B908 /* ExploreVM.swift */,
+				47D843FE245144EA004C325E /* Explore */,
+				47D843FF245145E3004C325E /* Expan */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -485,6 +489,24 @@
 			path = "Album Cell";
 			sourceTree = "<group>";
 		};
+		47D843FE245144EA004C325E /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				471F9142242F32A100505D1C /* ExploreVC.swift */,
+				47347A412430EC6F00D1B908 /* ExploreVM.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		47D843FF245145E3004C325E /* Expan */ = {
+			isa = PBXGroup;
+			children = (
+				47D8440024514627004C325E /* ExpanVC.swift */,
+				47D8440224514639004C325E /* ExpanVM.swift */,
+			);
+			path = Expan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -597,6 +619,7 @@
 				471F915A242F933900505D1C /* GNTitleLabel.swift in Sources */,
 				476BBE84243C21E800510828 /* GNAssertButton.swift in Sources */,
 				476692D52446B543003C4BB6 /* GNSlider.swift in Sources */,
+				47D8440124514627004C325E /* ExpanVC.swift in Sources */,
 				470C0B2924358FED00475321 /* GenresCell.swift in Sources */,
 				475596CE2439BFA000E8FCAA /* Enums.swift in Sources */,
 				47634B4923FA9AAF0049A37A /* SceneDelegate.swift in Sources */,
@@ -608,6 +631,7 @@
 				476A472124383E6E00DF07A3 /* Artist.swift in Sources */,
 				475EF21A24430AB500DC80B4 /* HorizontalCollectionViewVM.swift in Sources */,
 				471F9157242F439300505D1C /* UIColor+Ext.swift in Sources */,
+				47D8440324514639004C325E /* ExpanVM.swift in Sources */,
 				47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
 				47643705243AD42F00857AD4 /* TopTrendingCell.swift in Sources */,
