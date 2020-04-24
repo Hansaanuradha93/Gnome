@@ -76,3 +76,12 @@ extension ExpanVC: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+// MARK: - Collection View Delegate
+extension ExpanVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Lets expan this")
+    }
+}
