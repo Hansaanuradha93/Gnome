@@ -81,9 +81,7 @@ extension ExpanVC: UICollectionViewDataSource {
 // MARK: - Collection View Delegate
 extension ExpanVC: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Lets expan this")
-    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { print("Lets expan this") }
 }
 
 
@@ -96,6 +94,5 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
         let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
         
         return CGSize(width: width, height: 400)
-
     }
 }
