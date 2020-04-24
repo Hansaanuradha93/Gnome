@@ -36,7 +36,7 @@ extension ExpanVC {
         collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
         collectionView.dataSource       = self
-//        collectionView.delegate         = self
+        collectionView.delegate         = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,5 +83,19 @@ extension ExpanVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Lets expan this")
+    }
+}
+
+
+// MARK: - FlowLayout Delegate
+extension ExpanVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        
+        return CGSize(width: width, height: 400)
+
     }
 }
