@@ -16,8 +16,12 @@ class SongCell: UICollectionViewCell {
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") } 
+}
+
+
+// MARK: - Methods
+extension SongCell {
     
     func setup<T>(item: T, cellType: RowCellType) {
         
