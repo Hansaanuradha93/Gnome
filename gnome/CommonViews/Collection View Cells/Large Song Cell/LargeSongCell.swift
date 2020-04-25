@@ -9,6 +9,7 @@ class LargeSongCell: UICollectionViewCell {
     private let artistLabel         = GNBodyLabel(fontSize: 13)
     
     
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -17,7 +18,11 @@ class LargeSongCell: UICollectionViewCell {
     
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+}
+
+
+// MARK: - Methods
+extension LargeSongCell {
     
     func setup(song: Song) {
         
