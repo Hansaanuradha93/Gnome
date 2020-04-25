@@ -29,9 +29,12 @@ class TopTrendingCell: UICollectionViewCell {
     
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Methods
+extension TopTrendingCell {
     
-    
-    // MARK: - Methods
     func setup(topTrendingSong: TopTrendingSong) {
         
         thumbnailImageView.image    = UIImage(named: topTrendingSong.song.thumbnailUrl)
