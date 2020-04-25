@@ -17,9 +17,12 @@ class GenresCell: UICollectionViewCell {
     
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Methods
+extension GenresCell {
     
-    
-    // MARK: - Methods
     func setup(genre: Genre) { titleLabel.text = genre.title }
     
     
