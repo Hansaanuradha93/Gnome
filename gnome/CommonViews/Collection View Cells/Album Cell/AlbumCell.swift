@@ -17,9 +17,12 @@ class AlbumCell: UICollectionViewCell {
     
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Methods
+extension AlbumCell {
     
-    
-    // MARK: - Methods
     func setup(album: Album) {
         
         titleLabel.text             = album.title
