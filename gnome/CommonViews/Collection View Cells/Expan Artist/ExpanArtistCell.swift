@@ -5,6 +5,7 @@ class ExpanArtistCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID              = "ExpanArtistCell"
     private let thumbnailImageView  = GNThumbnaiImageView(radius: 0)
+    private let playButton          = GNAssertButton(assert: Asserts.pause)
     
     
     // MARK: - Initializer
@@ -12,6 +13,7 @@ class ExpanArtistCell: UICollectionViewCell {
         super.init(frame: frame)
         
         configureThumbnailImage()
+        configurePlayButton()
     }
     
     
@@ -35,6 +37,20 @@ extension ExpanArtistCell {
             thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             thumbnailImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             thumbnailImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35)
+        ])
+    }
+    
+    
+    private func configurePlayButton() {
+        
+        let dimensions: CGFloat = 70
+        addSubview(playButton)
+        
+        NSLayoutConstraint.activate([
+            playButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            playButton.centerYAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor),
+            playButton.widthAnchor.constraint(equalToConstant: dimensions),
+            playButton.heightAnchor.constraint(equalToConstant: dimensions)
         ])
     }
 }

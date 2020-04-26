@@ -8,9 +8,7 @@ class ExpanVC: UIViewController {
     private var artist          : Artist!
     
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
     
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -20,6 +18,7 @@ class ExpanVC: UIViewController {
         self.init()
         self.artist = artist
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
