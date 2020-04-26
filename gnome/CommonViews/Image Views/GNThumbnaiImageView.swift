@@ -17,6 +17,14 @@ class GNThumbnaiImageView: UIImageView {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     
+    
+    convenience init(radius: CGFloat) {
+        self.init(frame: .zero)
+        
+        layer.cornerRadius = radius
+    }
+    
+    
     private func configure() {
         
         layer.cornerRadius  = 15
