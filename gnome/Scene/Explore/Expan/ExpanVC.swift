@@ -69,6 +69,8 @@ extension ExpanVC {
     
     private func configureBackButton() {
         
+        backButton.action               = { () in self.dismiss(animated: true) }
+        
         let dimensions: CGFloat         = 44
         view.addSubview(backButton)
         
