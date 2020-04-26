@@ -73,4 +73,6 @@ enum Temporary {
     static let artist3      = "artist_3"
     static let artist4      = "artist_4"
     static let artist5      = "artist_5"
+    
+    static let artistLarge1 = "artist_thumbnail_1"
 }
