@@ -44,7 +44,6 @@ class GNAssertButton: UIView {
             placeholderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             placeholderImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            
             button.topAnchor.constraint(equalTo: topAnchor),
             button.leadingAnchor.constraint(equalTo: leadingAnchor),
             button.trailingAnchor.constraint(equalTo: trailingAnchor),

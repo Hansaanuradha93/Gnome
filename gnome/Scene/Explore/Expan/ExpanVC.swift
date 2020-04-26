@@ -3,6 +3,7 @@ import UIKit
 class ExpanVC: UIViewController {
 
     private let viewModel       = ExpanVM()
+    private let backButton      = GNTransparentButton(assert: Asserts.back, color: .black, transparency: 0.25, dimensions: 44)
     private var collectionView  : UICollectionView!
     private var artist          : Artist!
     
@@ -31,6 +32,7 @@ class ExpanVC: UIViewController {
         super.viewWillAppear(animated)
         
         configureViewController()
+        configureBackButton()
     }
 }
 
@@ -61,6 +63,20 @@ extension ExpanVC {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    
+    private func configureBackButton() {
+        
+        let dimensions: CGFloat         = 44
+        view.addSubview(backButton)
+        
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            backButton.heightAnchor.constraint(equalToConstant: dimensions),
+            backButton.widthAnchor.constraint(equalToConstant: dimensions)
         ])
     }
     

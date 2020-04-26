@@ -26,6 +26,7 @@
 		47347A3D2430664500D1B908 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3C2430664500D1B908 /* UIHelper.swift */; };
 		47347A4024306F3100D1B908 /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A3F24306F3100D1B908 /* RowCell.swift */; };
 		47347A422430EC6F00D1B908 /* ExploreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47347A412430EC6F00D1B908 /* ExploreVM.swift */; };
+		473A5B8C2455D58D00467817 /* GNTransparentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473A5B8B2455D58D00467817 /* GNTransparentButton.swift */; };
 		474DCBBE244B6A54001DC4F0 /* gullboy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */; };
 		474DCBBF244B6A54001DC4F0 /* lights.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBB9244B6A53001DC4F0 /* lights.mp3 */; };
 		474DCBC0244B6A54001DC4F0 /* shapeofyou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */; };
@@ -92,6 +93,7 @@
 		47347A3C2430664500D1B908 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		47347A3F24306F3100D1B908 /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 		47347A412430EC6F00D1B908 /* ExploreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVM.swift; sourceTree = "<group>"; };
+		473A5B8B2455D58D00467817 /* GNTransparentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNTransparentButton.swift; sourceTree = "<group>"; };
 		474DCBB8244B6A53001DC4F0 /* gullboy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gullboy.mp3; sourceTree = "<group>"; };
 		474DCBB9244B6A53001DC4F0 /* lights.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lights.mp3; sourceTree = "<group>"; };
 		474DCBBA244B6A53001DC4F0 /* shapeofyou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shapeofyou.mp3; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				476BBE83243C21E800510828 /* GNAssertButton.swift */,
+				473A5B8B2455D58D00467817 /* GNTransparentButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				47D8440324514639004C325E /* ExpanVM.swift in Sources */,
 				47B0373B243A194E00E74AFC /* TrendingVM.swift in Sources */,
 				471F914E242F3CF100505D1C /* Constants.swift in Sources */,
+				473A5B8C2455D58D00467817 /* GNTransparentButton.swift in Sources */,
 				47643705243AD42F00857AD4 /* TopTrendingCell.swift in Sources */,
 				471F9154242F400900505D1C /* GNTabBar.swift in Sources */,
 				472AC81D244CC13A002F667D /* Double+Ext.swift in Sources */,
