@@ -2,9 +2,23 @@ import UIKit
 
 class ExpanVC: UIViewController {
 
-    private let viewModel       = ExploreVM()
+    private let viewModel       = ExpanVM()
     private var collectionView  : UICollectionView!
+    private var artist          : Artist!
     
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    
+    convenience init(artist: Artist) {
+        self.init()
+        self.artist = artist
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +54,7 @@ extension ExpanVC {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
+        collectionView.register(ExpanArtistCell.self, forCellWithReuseIdentifier: ExpanArtistCell.reuseID)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -67,12 +81,13 @@ extension ExpanVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 5 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 1 }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistCell.reuseID, for: indexPath) as! ExpanArtistCell
+        cell.setup(artist: artist!)
         return cell
     }
 }

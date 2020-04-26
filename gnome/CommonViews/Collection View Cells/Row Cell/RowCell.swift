@@ -186,7 +186,7 @@ extension RowCell: UICollectionViewDelegate {
         case .recentlyPlayed:
             showModal(with: recentlyPlayedSongs, index: indexPath.item)
         case .popularArtists:
-            let controller = ExpanVC()
+            let controller = ExpanVC(artist: artists[indexPath.item])
             navigateTo(viewCotroller: controller)
         default:
             break
