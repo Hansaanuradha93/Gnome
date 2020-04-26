@@ -49,7 +49,7 @@ extension ExpanVC {
     
     private func configureCollectionView() {
         
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView                  = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
         collectionView.dataSource       = self
         collectionView.delegate         = self
@@ -67,6 +67,15 @@ extension ExpanVC {
     }
     
     
+    private func createFlowLayout() -> UICollectionViewFlowLayout {
+        
+        let flowLayout              = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection  = .vertical
+        flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return flowLayout
+    }
+    
+    
     private func configureBackButton() {
         
         backButton.action               = { () in self.dismiss(animated: true) }
@@ -80,15 +89,6 @@ extension ExpanVC {
             backButton.heightAnchor.constraint(equalToConstant: dimensions),
             backButton.widthAnchor.constraint(equalToConstant: dimensions)
         ])
-    }
-    
-    
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout              = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection  = .vertical
-        flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        return flowLayout
     }
 }
 
@@ -126,6 +126,6 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
         let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
         
-        return CGSize(width: width, height: 400)
+        return CGSize(width: width, height: 390)
     }
 }

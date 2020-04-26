@@ -27,16 +27,14 @@ extension ExpanArtistCell {
     }
     
     private func configureThumbnailImage() {
-        
-        let aspectRacio: CGFloat = 1148 / 791
-            
+                    
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
             thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
             thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             thumbnailImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            thumbnailImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: aspectRacio)
+            thumbnailImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35)
         ])
     }
 }
