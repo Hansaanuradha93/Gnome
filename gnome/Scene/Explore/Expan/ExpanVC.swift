@@ -56,6 +56,8 @@ extension ExpanVC {
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ExpanArtistCell.self, forCellWithReuseIdentifier: ExpanArtistCell.reuseID)
+        collectionView.register(ArtistSongCell.self, forCellWithReuseIdentifier: ArtistSongCell.reuseID)
+
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -95,17 +97,39 @@ extension ExpanVC {
 // MARK: - Collection View Data Source
 extension ExpanVC: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { return viewModel.sections.count }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 1 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let section = viewModel.sections[section]
+        
+        switch section.sectionType {
+            
+        case .albums:
+            return 0
+        default:
+            return 1
+        }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistCell.reuseID, for: indexPath) as! ExpanArtistCell
-        cell.setup(artist: artist!)
-        return cell
+        let section = viewModel.sections[indexPath.section]
+        
+        switch section.sectionType {
+            
+        case .thumbnail:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistCell.reuseID, for: indexPath) as! ExpanArtistCell
+            cell.setup(artist: artist!)
+            return cell
+        case .popularSongs:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistSongCell.reuseID, for: indexPath) as! ArtistSongCell
+            return cell
+        case .albums:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistSongCell.reuseID, for: indexPath) as! ArtistSongCell
+            return cell
+        }
     }
 }
 
@@ -122,9 +146,19 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        let section = viewModel.sections[indexPath.section]
+
         let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
         
-        return CGSize(width: width, height: 390)
+        switch section.sectionType {
+            
+        case .thumbnail:
+            return CGSize(width: width, height: 390)
+        case .popularSongs:
+            return CGSize(width: width, height: 480)
+        case .albums:
+            return CGSize(width: width, height: 0)
+        }
     }
 }
