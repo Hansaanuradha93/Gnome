@@ -56,7 +56,7 @@ extension ExpanVC {
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ExpanArtistCell.self, forCellWithReuseIdentifier: ExpanArtistCell.reuseID)
-        collectionView.register(ArtistSongCell.self, forCellWithReuseIdentifier: ArtistSongCell.reuseID)
+        collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
 
 
         NSLayoutConstraint.activate([
@@ -124,10 +124,10 @@ extension ExpanVC: UICollectionViewDataSource {
             cell.setup(artist: artist!)
             return cell
         case .popularSongs:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistSongCell.reuseID, for: indexPath) as! ArtistSongCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
             return cell
         case .albums:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistSongCell.reuseID, for: indexPath) as! ArtistSongCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
             return cell
         }
     }
