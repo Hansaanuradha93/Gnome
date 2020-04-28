@@ -40,7 +40,7 @@ extension ArtistPopularSongsCell {
         collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor  = .systemBackground
         collectionView.dataSource       = self
-//        collectionView.delegate         = self
+        collectionView.delegate         = self
         
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -75,5 +75,19 @@ extension ArtistPopularSongsCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularSongCell.reuseID, for: indexPath) as! PopularSongCell
         return cell
+    }
+}
+
+
+// MARK: - FlowLayout Delegate
+extension ArtistPopularSongsCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        
+        return CGSize(width: width, height: 70.5)
+
     }
 }
