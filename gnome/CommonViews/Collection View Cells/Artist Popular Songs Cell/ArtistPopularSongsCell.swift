@@ -44,7 +44,7 @@ extension ArtistPopularSongsCell {
         
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
+        collectionView.register(PopularSongCell.self, forCellWithReuseIdentifier: PopularSongCell.reuseID)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
@@ -73,7 +73,7 @@ extension ArtistPopularSongsCell: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularSongCell.reuseID, for: indexPath) as! PopularSongCell
         return cell
     }
 }
