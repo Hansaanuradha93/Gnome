@@ -24,9 +24,8 @@ class ExpanArtistCell: UICollectionViewCell {
 // MARK: - Methods
 extension ExpanArtistCell {
     
-    func setup(artist: Artist) {
-        thumbnailImageView.image = UIImage(named: artist.largeThumbnailUrl)
-    }
+    func setup(artist: Artist) { thumbnailImageView.image = UIImage(named: artist.largeThumbnailUrl) }
+    
     
     private func configureThumbnailImage() {
                     

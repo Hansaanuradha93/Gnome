@@ -16,6 +16,7 @@ class ExpanVC: UIViewController {
     
     convenience init(artist: Artist) {
         self.init()
+        
         self.artist = artist
     }
     

@@ -12,6 +12,7 @@ class PopularSongCell: UICollectionViewCell {
         super.init(frame: frame)
         
         configureThumbnailImageView()
+        backgroundColor = .red
     }
     
     
