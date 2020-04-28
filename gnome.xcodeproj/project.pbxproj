@@ -57,6 +57,7 @@
 		476A472124383E6E00DF07A3 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A472024383E6E00DF07A3 /* Artist.swift */; };
 		476BBE84243C21E800510828 /* GNAssertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476BBE83243C21E800510828 /* GNAssertButton.swift */; };
 		478946B024568F530038C1DD /* ArtistPopularSongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478946AF24568F530038C1DD /* ArtistPopularSongsCell.swift */; };
+		4789E86724589E8900774D9C /* PopularSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789E86624589E8900774D9C /* PopularSongCell.swift */; };
 		478E373B243267970070F54E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E373A243267970070F54E /* SongCell.swift */; };
 		4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793302C2436E36A00DC5326 /* UIView+Ext.swift */; };
 		4796A28324528CD000DA0BA5 /* ExpanArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4796A28224528CD000DA0BA5 /* ExpanArtistCell.swift */; };
@@ -127,6 +128,7 @@
 		476A472024383E6E00DF07A3 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		476BBE83243C21E800510828 /* GNAssertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNAssertButton.swift; sourceTree = "<group>"; };
 		478946AF24568F530038C1DD /* ArtistPopularSongsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistPopularSongsCell.swift; sourceTree = "<group>"; };
+		4789E86624589E8900774D9C /* PopularSongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSongCell.swift; sourceTree = "<group>"; };
 		478E373A243267970070F54E /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		4793302C2436E36A00DC5326 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4796A28224528CD000DA0BA5 /* ExpanArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanArtistCell.swift; sourceTree = "<group>"; };
@@ -227,7 +229,8 @@
 		47347A3E24306EFF00D1B908 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				478946AE24568F300038C1DD /* Artist Song Cell */,
+				4789E86524589E5800774D9C /* Popular Song Cell */,
+				478946AE24568F300038C1DD /* Artist Popular Songs Cell */,
 				4796A28124528C9E00DA0BA5 /* Expan Artist */,
 				47643703243AD3E900857AD4 /* Top Trending Cell */,
 				470C0B2724358FD000475321 /* Genres Cell */,
@@ -432,12 +435,20 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		478946AE24568F300038C1DD /* Artist Song Cell */ = {
+		478946AE24568F300038C1DD /* Artist Popular Songs Cell */ = {
 			isa = PBXGroup;
 			children = (
 				478946AF24568F530038C1DD /* ArtistPopularSongsCell.swift */,
 			);
-			path = "Artist Song Cell";
+			path = "Artist Popular Songs Cell";
+			sourceTree = "<group>";
+		};
+		4789E86524589E5800774D9C /* Popular Song Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4789E86624589E8900774D9C /* PopularSongCell.swift */,
+			);
+			path = "Popular Song Cell";
 			sourceTree = "<group>";
 		};
 		478E3738243267680070F54E /* Row Cell */ = {
@@ -655,6 +666,7 @@
 				471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */,
 				47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */,
 				4764C3DD24418B8D00134B6A /* TopTrendingVM.swift in Sources */,
+				4789E86724589E8900774D9C /* PopularSongCell.swift in Sources */,
 				476A472124383E6E00DF07A3 /* Artist.swift in Sources */,
 				475EF21A24430AB500DC80B4 /* HorizontalCollectionViewVM.swift in Sources */,
 				471F9157242F439300505D1C /* UIColor+Ext.swift in Sources */,
