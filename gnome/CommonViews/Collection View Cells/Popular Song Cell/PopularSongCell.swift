@@ -5,6 +5,7 @@ class PopularSongCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID              = "PopularSongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
+    private let titleLabel          = GNTitleLabel(fontSize: 20)
     
     
     // MARK: - Initializer
@@ -12,6 +13,7 @@ class PopularSongCell: UICollectionViewCell {
         super.init(frame: frame)
         
         configureThumbnailImageView()
+        configureTitleLabel()
         backgroundColor = .red
     }
     
@@ -33,6 +35,19 @@ extension PopularSongCell {
             thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             thumbnailImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             thumbnailImageView.widthAnchor.constraint(equalTo: heightAnchor)
+        ])
+    }
+    
+    
+    private func configureTitleLabel() {
+        
+        titleLabel.text = "Title"
+        addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 15),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)
         ])
     }
 }
