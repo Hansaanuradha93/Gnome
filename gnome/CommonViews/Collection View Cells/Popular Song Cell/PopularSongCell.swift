@@ -6,6 +6,7 @@ class PopularSongCell: UICollectionViewCell {
     static let reuseID              = "PopularSongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
+    private let numberOfPlaysLabel  = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
     
     
     // MARK: - Initializer
@@ -14,6 +15,7 @@ class PopularSongCell: UICollectionViewCell {
         
         configureThumbnailImageView()
         configureTitleLabel()
+        configureNumberOfPlaysLabel()
         backgroundColor = .red
     }
     
@@ -48,6 +50,19 @@ extension PopularSongCell {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 15),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)
+        ])
+    }
+    
+    
+    private func configureNumberOfPlaysLabel() {
+        
+        numberOfPlaysLabel.text = "1.6M plays"
+        addSubview(numberOfPlaysLabel)
+        
+        NSLayoutConstraint.activate([
+            numberOfPlaysLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            numberOfPlaysLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            numberOfPlaysLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
 }
