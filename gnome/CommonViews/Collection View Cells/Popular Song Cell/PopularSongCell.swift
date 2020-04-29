@@ -7,6 +7,7 @@ class PopularSongCell: UICollectionViewCell {
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private let numberOfPlaysLabel  = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
+    private let moreButton          = GNAssertButton(assert: Asserts.more)
     
     
     // MARK: - Initializer
@@ -16,6 +17,7 @@ class PopularSongCell: UICollectionViewCell {
         configureThumbnailImageView()
         configureTitleLabel()
         configureNumberOfPlaysLabel()
+        configureMoreButton()
         backgroundColor = .red
     }
     
@@ -63,6 +65,21 @@ extension PopularSongCell {
             numberOfPlaysLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             numberOfPlaysLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             numberOfPlaysLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+        ])
+    }
+    
+    
+    private func configureMoreButton() {
+        
+        let dimensions: CGFloat = 32
+        addSubview(moreButton)
+        
+        NSLayoutConstraint.activate([
+            moreButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            moreButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            moreButton.widthAnchor.constraint(equalToConstant: dimensions),
+            moreButton.heightAnchor.constraint(equalToConstant: dimensions)
+        
         ])
     }
 }
