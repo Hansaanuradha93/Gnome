@@ -18,7 +18,6 @@ class PopularSongCell: UICollectionViewCell {
         configureTitleLabel()
         configureNumberOfPlaysLabel()
         configureMoreButton()
-        backgroundColor = .red
     }
     
     

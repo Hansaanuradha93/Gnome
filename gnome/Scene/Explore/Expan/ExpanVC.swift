@@ -147,7 +147,7 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let section = viewModel.sections[indexPath.section]
+        let section             = viewModel.sections[indexPath.section]
 
         let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
@@ -155,7 +155,7 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
         switch section.sectionType {
             
         case .thumbnail:
-            return CGSize(width: width, height: 390)
+            return CGSize(width: UIScreen.main.bounds.size.width, height: 390)
         case .popularSongs:
             return CGSize(width: width, height: 480)
         case .albums:
