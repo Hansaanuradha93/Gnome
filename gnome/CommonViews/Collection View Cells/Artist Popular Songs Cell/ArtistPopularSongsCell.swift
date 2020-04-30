@@ -59,7 +59,7 @@ extension ArtistPopularSongsCell {
         
         let flowLayout                  = UICollectionViewFlowLayout()
         flowLayout.scrollDirection      = .horizontal
-        flowLayout.sectionInset         = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.sectionInset         = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         flowLayout.minimumLineSpacing   = 20.7
         return flowLayout
     }
@@ -82,5 +82,11 @@ extension ArtistPopularSongsCell: UICollectionViewDataSource {
 // MARK: - FlowLayout Delegate
 extension ArtistPopularSongsCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return CGSize(width: UIScreen.main.bounds.size.width, height: 70.5) }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        return CGSize(width: width, height: 70.5)
+        
+    }
 }
