@@ -87,6 +87,5 @@ extension ArtistPopularSongsCell: UICollectionViewDelegate, UICollectionViewDele
         let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
         return CGSize(width: width, height: 70.5)
-        
     }
 }
