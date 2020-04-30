@@ -7,6 +7,7 @@ class ArtistPopularSongsCell: UICollectionViewCell {
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private var collectionView      : UICollectionView!
     
+    
     // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
