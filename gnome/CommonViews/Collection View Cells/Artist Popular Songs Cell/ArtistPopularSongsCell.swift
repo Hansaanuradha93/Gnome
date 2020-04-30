@@ -30,7 +30,7 @@ extension ArtistPopularSongsCell {
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
     }
     
