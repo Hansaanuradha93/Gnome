@@ -58,6 +58,7 @@ extension ExpanVC {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
         collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
+        collectionView.register(ExpanRowCell.self, forCellWithReuseIdentifier: ExpanRowCell.reuseID)
 
 
         NSLayoutConstraint.activate([
@@ -101,17 +102,7 @@ extension ExpanVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int { return viewModel.sections.count }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let section = viewModel.sections[section]
-        
-        switch section.sectionType {
-            
-        case .albums:
-            return 0
-        default:
-            return 1
-        }
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 1}
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -128,7 +119,7 @@ extension ExpanVC: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
             return cell
         case .albums:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanRowCell.reuseID, for: indexPath) as! ExpanRowCell
             return cell
         }
     }
@@ -159,7 +150,7 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
         case .popularSongs:
             return CGSize(width: width, height: 480)
         case .albums:
-            return CGSize(width: width, height: 0)
+            return CGSize(width: width, height: 274)
         }
     }
 }

@@ -12,6 +12,7 @@ class ExpanRowCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureTitleLabel()
+        backgroundColor = .red
     }
     
     
@@ -36,4 +37,3 @@ extension ExpanRowCell {
         ])
     }
 }
-
