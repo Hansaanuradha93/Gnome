@@ -45,6 +45,7 @@ extension ExpanRowCell {
         collectionView.backgroundColor                  = .systemBackground
         collectionView.showsHorizontalScrollIndicator   = false
         collectionView.dataSource                       = self
+        collectionView.delegate                         = self
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
@@ -81,5 +82,22 @@ extension ExpanRowCell: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
         return cell
+    }
+}
+
+
+// MARK: - Collection View Delegate
+extension ExpanRowCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+}
+
+
+// MARK: - FlowLayout Delegate
+extension ExpanRowCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 180, height: 212)
     }
 }
