@@ -42,8 +42,9 @@ enum Titles {
     static let library      = "Library"
     static let settings     = "Settings"
     
-    // MARK: - Explore
+    // MARK: - Explore Scene
     static let popular      = "Popular"
+    static let albums       = "Albums"
     
     // MARK: - Trending Scene
     static let topTrending  = "Top Trending - 2020"

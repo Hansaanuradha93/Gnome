@@ -56,6 +56,7 @@ extension ExpanVC {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
         collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
         collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
         collectionView.register(ExpanRowCell.self, forCellWithReuseIdentifier: ExpanRowCell.reuseID)
@@ -128,7 +129,7 @@ extension ExpanVC: UICollectionViewDataSource {
 // MARK: - Collection View Delegate
 extension ExpanVC: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { print("Lets expan this") }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
 }
 
 
@@ -165,7 +166,7 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
         case .popularSongs:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         case .albums:
-            return UIEdgeInsets(top: 26, left: 2, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 26, left: 0, bottom: 0, right: 0)
         }
     }
 }

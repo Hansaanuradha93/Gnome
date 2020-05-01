@@ -11,9 +11,9 @@ class ExpanRowCell: UICollectionViewCell {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureTitleLabel()
         configureCollectionView()
-        backgroundColor = .red
     }
     
     
@@ -24,17 +24,15 @@ class ExpanRowCell: UICollectionViewCell {
 // MARK: - Methods
 extension ExpanRowCell {
     
-    
     private func configureTitleLabel() {
         
-        titleLabel.text = "Albums"
+        titleLabel.text = Titles.albums
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 22),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
@@ -65,7 +63,7 @@ extension ExpanRowCell {
         
         let flowLayout                      = UICollectionViewFlowLayout()
         flowLayout.scrollDirection          = .horizontal
-        flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         flowLayout.minimumInteritemSpacing  = 15
         return flowLayout
     }
@@ -96,8 +94,5 @@ extension ExpanRowCell: UICollectionViewDelegate {
 // MARK: - FlowLayout Delegate
 extension ExpanRowCell: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 180, height: 212)
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return CGSize(width: 180, height: 212) }
 }
