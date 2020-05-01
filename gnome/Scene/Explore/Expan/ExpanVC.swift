@@ -56,7 +56,7 @@ extension ExpanVC {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(ExpanArtistCell.self, forCellWithReuseIdentifier: ExpanArtistCell.reuseID)
+        collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
         collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
 
 
@@ -121,7 +121,7 @@ extension ExpanVC: UICollectionViewDataSource {
         switch section.sectionType {
             
         case .thumbnail:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistCell.reuseID, for: indexPath) as! ExpanArtistCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistThumbnailCell.reuseID, for: indexPath) as! ExpanArtistThumbnailCell
             cell.setup(artist: artist!)
             return cell
         case .popularSongs:

@@ -1,6 +1,6 @@
 import UIKit
 
-class ExpanArtistCell: UICollectionViewCell {
+class ExpanArtistThumbnailCell: UICollectionViewCell {
     
     // MARK: - Properties
     static let reuseID              = "ExpanArtistCell"
@@ -22,7 +22,7 @@ class ExpanArtistCell: UICollectionViewCell {
 
 
 // MARK: - Methods
-extension ExpanArtistCell {
+extension ExpanArtistThumbnailCell {
     
     func setup(artist: Artist) { thumbnailImageView.image = UIImage(named: artist.largeThumbnailUrl) }
     

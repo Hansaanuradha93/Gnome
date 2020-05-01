@@ -60,7 +60,7 @@
 		4789E86724589E8900774D9C /* PopularSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789E86624589E8900774D9C /* PopularSongCell.swift */; };
 		478E373B243267970070F54E /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E373A243267970070F54E /* SongCell.swift */; };
 		4793302D2436E36A00DC5326 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4793302C2436E36A00DC5326 /* UIView+Ext.swift */; };
-		4796A28324528CD000DA0BA5 /* ExpanArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4796A28224528CD000DA0BA5 /* ExpanArtistCell.swift */; };
+		4796A28324528CD000DA0BA5 /* ExpanArtistThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4796A28224528CD000DA0BA5 /* ExpanArtistThumbnailCell.swift */; };
 		47AB5CE124022EA90081858E /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDA24022EA80081858E /* Poppins-Medium.otf */; };
 		47AB5CE224022EA90081858E /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDB24022EA80081858E /* Poppins-Regular.otf */; };
 		47AB5CE324022EA90081858E /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47AB5CDC24022EA80081858E /* Poppins-Bold.otf */; };
@@ -131,7 +131,7 @@
 		4789E86624589E8900774D9C /* PopularSongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSongCell.swift; sourceTree = "<group>"; };
 		478E373A243267970070F54E /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		4793302C2436E36A00DC5326 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		4796A28224528CD000DA0BA5 /* ExpanArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanArtistCell.swift; sourceTree = "<group>"; };
+		4796A28224528CD000DA0BA5 /* ExpanArtistThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanArtistThumbnailCell.swift; sourceTree = "<group>"; };
 		47AB5CDA24022EA80081858E /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		47AB5CDB24022EA80081858E /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
 		47AB5CDC24022EA80081858E /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			children = (
 				4789E86524589E5800774D9C /* Popular Song Cell */,
 				478946AE24568F300038C1DD /* Artist Popular Songs Cell */,
-				4796A28124528C9E00DA0BA5 /* Expan Artist */,
+				4796A28124528C9E00DA0BA5 /* Expan Artist Thumbnail */,
 				47643703243AD3E900857AD4 /* Top Trending Cell */,
 				470C0B2724358FD000475321 /* Genres Cell */,
 				47D6B6F224358CCB001298C5 /* Album Cell */,
@@ -467,12 +467,12 @@
 			path = "Song Cell";
 			sourceTree = "<group>";
 		};
-		4796A28124528C9E00DA0BA5 /* Expan Artist */ = {
+		4796A28124528C9E00DA0BA5 /* Expan Artist Thumbnail */ = {
 			isa = PBXGroup;
 			children = (
-				4796A28224528CD000DA0BA5 /* ExpanArtistCell.swift */,
+				4796A28224528CD000DA0BA5 /* ExpanArtistThumbnailCell.swift */,
 			);
-			path = "Expan Artist";
+			path = "Expan Artist Thumbnail";
 			sourceTree = "<group>";
 		};
 		47AB5CC124022AA60081858E /* Fonts */ = {
@@ -662,7 +662,7 @@
 				478946B024568F530038C1DD /* ArtistPopularSongsCell.swift in Sources */,
 				478E373B243267970070F54E /* SongCell.swift in Sources */,
 				471F9145242F32F400505D1C /* TrendingVC.swift in Sources */,
-				4796A28324528CD000DA0BA5 /* ExpanArtistCell.swift in Sources */,
+				4796A28324528CD000DA0BA5 /* ExpanArtistThumbnailCell.swift in Sources */,
 				471F9168242FA2EF00505D1C /* GNSecondaryBodyLabel.swift in Sources */,
 				47D6B6F424358CE7001298C5 /* AlbumCell.swift in Sources */,
 				4764C3DD24418B8D00134B6A /* TopTrendingVM.swift in Sources */,
