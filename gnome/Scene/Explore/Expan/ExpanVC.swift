@@ -74,7 +74,6 @@ extension ExpanVC {
         
         let flowLayout              = UICollectionViewFlowLayout()
         flowLayout.scrollDirection  = .vertical
-        flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return flowLayout
     }
     
@@ -151,6 +150,21 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 480)
         case .albums:
             return CGSize(width: width, height: 274)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let section = viewModel.sections[section]
+        
+        switch section.sectionType {
+            
+        case .thumbnail:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        case .popularSongs:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        case .albums:
+            return UIEdgeInsets(top: 26, left: 0, bottom: 0, right: 0)
         }
     }
 }
