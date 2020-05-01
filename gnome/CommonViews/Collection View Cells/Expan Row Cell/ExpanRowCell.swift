@@ -44,8 +44,10 @@ extension ExpanRowCell {
         collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor                  = .systemBackground
         collectionView.showsHorizontalScrollIndicator   = false
+        collectionView.dataSource                       = self
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
 
         addSubview(collectionView)
         
@@ -65,5 +67,19 @@ extension ExpanRowCell {
         flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         flowLayout.minimumInteritemSpacing  = 15
         return flowLayout
+    }
+}
+
+
+// MARK: - Collection View Data Source
+extension ExpanRowCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 5 }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
+        return cell
     }
 }
