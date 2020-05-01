@@ -56,7 +56,7 @@ extension ExploreVC {
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(RowCell.self, forCellWithReuseIdentifier: RowCell.reuseID)
+        collectionView.register(ExploreRowCell.self, forCellWithReuseIdentifier: ExploreRowCell.reuseID)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
@@ -88,7 +88,7 @@ extension ExploreVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RowCell.reuseID, for: indexPath) as! RowCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreRowCell.reuseID, for: indexPath) as! ExploreRowCell
 
         switch viewModel.sections[indexPath.section].sectionType {
         case .recentlyPlayed:

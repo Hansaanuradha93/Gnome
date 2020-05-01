@@ -1,6 +1,6 @@
 import UIKit
 
-class RowCell: UICollectionViewCell {
+class ExploreRowCell: UICollectionViewCell {
     
     // MARK: - Properties
     static let reuseID                  = "RowCell"
@@ -33,7 +33,7 @@ class RowCell: UICollectionViewCell {
 
 
 // MARK: - Methods
-extension RowCell {
+extension ExploreRowCell {
     
     func setup(cellType: RowCellType) {
         
@@ -122,7 +122,7 @@ extension RowCell {
 
 
 // MARK: - Collection View Data Source
-extension RowCell: UICollectionViewDataSource {
+extension ExploreRowCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -177,7 +177,7 @@ extension RowCell: UICollectionViewDataSource {
 
 
 // MARK: - Collection View Delegate
-extension RowCell: UICollectionViewDelegate {
+extension ExploreRowCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -196,7 +196,7 @@ extension RowCell: UICollectionViewDelegate {
 
 
 // MARK: - FlowLayout Delegate
-extension RowCell: UICollectionViewDelegateFlowLayout {
+extension ExploreRowCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
