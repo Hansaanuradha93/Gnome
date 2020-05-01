@@ -3,6 +3,7 @@ import Foundation
 class ExpanVM {
     
     enum SectionType: Int {
+        
         case thumbnail             = 0
         case popularSongs          = 1
         case albums                = 2

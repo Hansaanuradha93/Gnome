@@ -2,13 +2,13 @@ import UIKit
 
 class ExpanArtistThumbnailCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID              = "ExpanArtistCell"
     private let thumbnailImageView  = GNThumbnaiImageView(radius: 0)
     private let playButton          = GNAssertButton(assert: Asserts.pause)
     
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         

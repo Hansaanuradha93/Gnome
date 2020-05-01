@@ -2,7 +2,7 @@ import UIKit
 
 class ExploreRowCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID                  = "RowCell"
     private let titleLabel              = GNTitleLabel(fontSize: 22)
     private var recentlyPlayedSongs     = [Song]()
@@ -14,7 +14,7 @@ class ExploreRowCell: UICollectionViewCell {
     private var collectionView          : UICollectionView!
     
     
-    // MARK: - Initializers
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         

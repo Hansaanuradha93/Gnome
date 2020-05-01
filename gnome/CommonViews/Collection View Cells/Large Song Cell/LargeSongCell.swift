@@ -2,14 +2,14 @@ import UIKit
 
 class LargeSongCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID              = "LargeSongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
     private let artistLabel         = GNBodyLabel(fontSize: 13)
     
     
-    // MARK: - Initializers
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         

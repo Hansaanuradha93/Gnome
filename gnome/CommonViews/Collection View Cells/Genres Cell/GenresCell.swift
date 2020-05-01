@@ -2,12 +2,12 @@ import UIKit
 
 class GenresCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID      = "GenresCell"
     private let titleLabel  = GNTitleLabel(fontSize: 20, textColour: .white, alignment: .center)
     
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         

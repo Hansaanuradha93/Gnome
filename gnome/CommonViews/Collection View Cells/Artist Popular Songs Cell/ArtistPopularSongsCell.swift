@@ -2,13 +2,13 @@ import UIKit
 
 class ArtistPopularSongsCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID              = "ArtistSongCell"
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private var collectionView      : UICollectionView!
     
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         

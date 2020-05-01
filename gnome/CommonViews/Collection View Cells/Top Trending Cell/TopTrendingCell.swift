@@ -2,7 +2,7 @@ import UIKit
 
 class TopTrendingCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID                  = "TopTrendingCell"
     private let trendingContainer       = UIView()
     private let smallPlayImageView      = UIImageView(frame: .zero)
@@ -14,7 +14,7 @@ class TopTrendingCell: UICollectionViewCell {
     private let trendingNumberLabel     = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         

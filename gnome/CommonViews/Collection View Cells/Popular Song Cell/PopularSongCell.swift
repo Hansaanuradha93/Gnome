@@ -2,7 +2,7 @@ import UIKit
 
 class PopularSongCell: UICollectionViewCell {
     
-    // MARK: - Properties
+    // MARK: Properties
     static let reuseID              = "PopularSongCell"
     private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
     private let titleLabel          = GNTitleLabel(fontSize: 20)
@@ -10,7 +10,7 @@ class PopularSongCell: UICollectionViewCell {
     private let moreButton          = GNAssertButton(assert: Asserts.more)
     
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         
