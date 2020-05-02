@@ -26,9 +26,11 @@ class ArtistPopularSongsCell: UICollectionViewCell {
 extension ArtistPopularSongsCell {
     
     func setup(songs: [Song]) {
+        
         self.songs = songs
         self.collectionView.reloadData()
     }
+    
     
     private func configureTitleLabel() {
         

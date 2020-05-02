@@ -29,14 +29,15 @@ class PopularSongCell: UICollectionViewCell {
 extension PopularSongCell {
     
     func setup(song: Song) {
+        
         thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
         titleLabel.text             = song.title
-        numberOfPlaysLabel.text     = "\(song.numberOfPlays)"
+        numberOfPlaysLabel.text     = "\(song.numberOfPlays / 1000)K"
     }
+    
     
     private func configureThumbnailImageView() {
         
-        thumbnailImageView.image = UIImage(named: Temporary.song1)
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
