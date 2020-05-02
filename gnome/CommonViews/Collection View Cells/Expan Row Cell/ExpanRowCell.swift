@@ -6,6 +6,7 @@ class ExpanRowCell: UICollectionViewCell {
     static let reuseID                  = "ExpanRowCell"
     private let titleLabel              = GNTitleLabel(fontSize: 20)
     private var collectionView          : UICollectionView!
+    private var albums                  = [Album]()
     
     
     // MARK: Initializers
@@ -23,6 +24,12 @@ class ExpanRowCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension ExpanRowCell {
+    
+    func setup(albums: [Album]) {
+        self.albums = albums
+        self.collectionView.reloadData()
+    }
+    
     
     private func configureTitleLabel() {
         
@@ -73,12 +80,13 @@ extension ExpanRowCell {
 // MARK: - Collection View Data Source
 extension ExpanRowCell: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 5 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return albums.count }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
+        cell.setup(album: albums[indexPath.item])
         return cell
     }
 }
