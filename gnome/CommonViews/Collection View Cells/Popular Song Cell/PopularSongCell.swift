@@ -28,6 +28,12 @@ class PopularSongCell: UICollectionViewCell {
 // MARK: - Methods
 extension PopularSongCell {
     
+    func setup(song: Song) {
+        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
+        titleLabel.text             = song.title
+        numberOfPlaysLabel.text     = "\(song.numberOfPlays)"
+    }
+    
     private func configureThumbnailImageView() {
         
         thumbnailImageView.image = UIImage(named: Temporary.song1)
@@ -44,7 +50,6 @@ extension PopularSongCell {
     
     private func configureTitleLabel() {
         
-        titleLabel.text = "Title"
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -57,7 +62,6 @@ extension PopularSongCell {
     
     private func configureNumberOfPlaysLabel() {
         
-        numberOfPlaysLabel.text = "1.6M plays"
         addSubview(numberOfPlaysLabel)
         
         NSLayoutConstraint.activate([
