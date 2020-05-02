@@ -6,7 +6,8 @@ class ExpanVC: UIViewController {
     private let backButton      = GNTransparentButton(assert: Asserts.back, color: .black, transparency: 0.25, dimensions: 44)
     private var collectionView  : UICollectionView!
     private var artist          : Artist!
-    private var popularSongs    : [Song]!
+    private var popularSongs    = [Song]()
+    private var albums          = [Album]()
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
@@ -44,7 +45,9 @@ extension ExpanVC {
     
     private func fetchPopularSongs() {
         popularSongs = Song.fetchSongs()
+        collectionView.reloadData()
     }
+    
     
     private func configureViewController() {
         
