@@ -28,6 +28,7 @@ class ExpanVC: UIViewController {
         
         configureCollectionView()
         fetchPopularSongs()
+        fetchAlbums()
     }
     
     
@@ -45,6 +46,12 @@ extension ExpanVC {
     
     private func fetchPopularSongs() {
         popularSongs = Song.fetchSongs()
+        collectionView.reloadData()
+    }
+    
+    
+    private func fetchAlbums() {
+        albums      = Album.fetchAlbums()
         collectionView.reloadData()
     }
     
@@ -130,6 +137,7 @@ extension ExpanVC: UICollectionViewDataSource {
             return cell
         case .albums:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanRowCell.reuseID, for: indexPath) as! ExpanRowCell
+            cell.setup(albums: albums)
             return cell
         }
     }
