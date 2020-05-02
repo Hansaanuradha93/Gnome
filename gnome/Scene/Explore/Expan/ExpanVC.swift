@@ -123,6 +123,7 @@ extension ExpanVC: UICollectionViewDataSource {
             return cell
         case .popularSongs:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistPopularSongsCell.reuseID, for: indexPath) as! ArtistPopularSongsCell
+            cell.setup(songs: popularSongs)
             return cell
         case .albums:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanRowCell.reuseID, for: indexPath) as! ExpanRowCell
