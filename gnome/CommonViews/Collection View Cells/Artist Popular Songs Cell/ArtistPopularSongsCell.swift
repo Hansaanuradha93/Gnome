@@ -6,6 +6,7 @@ class ArtistPopularSongsCell: UICollectionViewCell {
     static let reuseID              = "ArtistSongCell"
     private let titleLabel          = GNTitleLabel(fontSize: 20)
     private var collectionView      : UICollectionView!
+    private var songs               = [Song]()
     
     
     // MARK: Initializer
@@ -23,6 +24,11 @@ class ArtistPopularSongsCell: UICollectionViewCell {
 
 // MARK: - Methods
 extension ArtistPopularSongsCell {
+    
+    func setup(songs: [Song]) {
+        self.songs = songs
+        self.collectionView.reloadData()
+    }
     
     private func configureTitleLabel() {
         
@@ -70,11 +76,12 @@ extension ArtistPopularSongsCell {
 // MARK: - Collection View Data Source
 extension ArtistPopularSongsCell: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 7 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return songs.count }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularSongCell.reuseID, for: indexPath) as! PopularSongCell
+        cell.setup(song: songs[indexPath.item])
         return cell
     }
 }
