@@ -54,7 +54,11 @@ extension ExpanVC {
         albums      = Album.fetchAlbums()
         collectionView.reloadData()
     }
-    
+}
+
+
+// MARK: - UI Implamentation
+extension ExpanVC {
     
     private func configureViewController() {
         
