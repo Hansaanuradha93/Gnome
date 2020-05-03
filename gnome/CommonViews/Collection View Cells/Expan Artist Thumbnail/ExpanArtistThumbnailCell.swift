@@ -30,6 +30,7 @@ extension ExpanArtistThumbnailCell {
     
     func setup(artist: Artist) {
         thumbnailImageView.image    = UIImage(named: artist.largeThumbnailUrl)
+        titleLabel.text             = Titles.artist
         nameLabel.text              = artist.name
     }
     
@@ -49,7 +50,6 @@ extension ExpanArtistThumbnailCell {
     
     private func configureTitleLabel() {
         
-        titleLabel.text = "Title"
         thumbnailImageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([

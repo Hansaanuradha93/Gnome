@@ -45,6 +45,7 @@ enum Titles {
     // MARK: Explore Scene
     static let popular      = "Popular"
     static let albums       = "Albums"
+    static let artist       = "Artist"
     
     // MARK: Trending Scene
     static let topTrending  = "Top Trending - 2020"
