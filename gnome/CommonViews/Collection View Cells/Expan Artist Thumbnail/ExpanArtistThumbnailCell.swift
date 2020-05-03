@@ -29,6 +29,7 @@ class ExpanArtistThumbnailCell: UICollectionViewCell {
 extension ExpanArtistThumbnailCell {
     
     func setup(artist: Artist) {
+        
         thumbnailImageView.image    = UIImage(named: artist.largeThumbnailUrl)
         titleLabel.text             = Titles.artist
         nameLabel.text              = artist.name
@@ -54,7 +55,8 @@ extension ExpanArtistThumbnailCell {
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.leadingAnchor, constant: 16),
-            titleLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -12),
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: thumbnailImageView.trailingAnchor, constant: -16),
+            titleLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -12)
         ])
     }
     
@@ -65,6 +67,7 @@ extension ExpanArtistThumbnailCell {
         
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(lessThanOrEqualTo: thumbnailImageView.leadingAnchor, constant: 16),
+            nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: thumbnailImageView.trailingAnchor, constant: -16),
             nameLabel.bottomAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: -32)
         ])
     }
