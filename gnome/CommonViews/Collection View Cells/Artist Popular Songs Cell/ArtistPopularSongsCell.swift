@@ -67,7 +67,7 @@ extension ArtistPopularSongsCell {
     private func createFlowLayout() -> UICollectionViewFlowLayout {
         
         let flowLayout                  = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection      = .horizontal
+        flowLayout.scrollDirection      = .vertical
         flowLayout.sectionInset         = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         flowLayout.minimumLineSpacing   = 20.7
         return flowLayout
