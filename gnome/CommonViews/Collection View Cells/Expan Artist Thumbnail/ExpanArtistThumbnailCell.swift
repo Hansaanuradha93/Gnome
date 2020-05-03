@@ -6,7 +6,7 @@ class ExpanArtistThumbnailCell: UICollectionViewCell {
     static let reuseID              = "ExpanArtistCell"
     private let thumbnailImageView  = GNThumbnaiImageView(radius: 0)
     private let playButton          = GNAssertButton(assert: Asserts.pause)
-    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 15, fontColor: .white)
+    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 14, fontColor: .white)
     private let nameLabel           = GNTitleLabel(fontSize: 32, textColour: .white)
     
     
@@ -51,12 +51,13 @@ extension ExpanArtistThumbnailCell {
     
     private func configureTitleLabel() {
         
+        titleLabel.alpha            = 0.85
         thumbnailImageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: thumbnailImageView.trailingAnchor, constant: -16),
-            titleLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -12)
+            titleLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor)
         ])
     }
     
