@@ -46,10 +46,11 @@ extension ArtistPopularSongsCell {
     
     private func configureCollectionView() {
         
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor                  = .systemBackground
+        collectionView.showsVerticalScrollIndicator     = false
+        collectionView.dataSource                       = self
+        collectionView.delegate                         = self
         
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
