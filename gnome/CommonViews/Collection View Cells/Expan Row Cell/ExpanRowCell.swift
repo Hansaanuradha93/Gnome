@@ -3,22 +3,21 @@ import UIKit
 class ExpanRowCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID                  = "ExpanRowCell"
-    private let titleLabel              = GNTitleLabel(fontSize: 20)
-    private var collectionView          : UICollectionView!
-    private var albums                  = [Album]()
+    static let reuseID = "ExpanRowCell"
+    private let titleLabel = GNTitleLabel(fontSize: 20)
+    private var collectionView : UICollectionView!
+    private var albums = [Album]()
     
     
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureTitleLabel()
         configureCollectionView()
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -32,7 +31,6 @@ extension ExpanRowCell {
     
     
     private func configureTitleLabel() {
-        
         titleLabel.text = Titles.albums
         addSubview(titleLabel)
         
@@ -45,16 +43,14 @@ extension ExpanRowCell {
     
     
     private func configureCollectionView() {
-        
-        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor                  = .systemBackground
-        collectionView.showsHorizontalScrollIndicator   = false
-        collectionView.dataSource                       = self
-        collectionView.delegate                         = self
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
-
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -67,11 +63,10 @@ extension ExpanRowCell {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout                      = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection          = .horizontal
-        flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        flowLayout.minimumInteritemSpacing  = 15
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        flowLayout.minimumInteritemSpacing = 15
         return flowLayout
     }
 }
@@ -84,7 +79,6 @@ extension ExpanRowCell: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
         cell.setup(album: albums[indexPath.item])
         return cell
