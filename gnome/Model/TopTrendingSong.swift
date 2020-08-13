@@ -1,13 +1,11 @@
 import Foundation
 
 struct TopTrendingSong {
-    
     let rank: Int
     let song: Song
     
     
     static func fetchTopTrendingSongs() -> [TopTrendingSong] {
-        
         var rank: Int                           = 1
         var topTrendingSongs: [TopTrendingSong] = []
         
@@ -15,7 +13,6 @@ struct TopTrendingSong {
             topTrendingSongs.append(TopTrendingSong(rank: rank, song: song))
             rank = rank + 1
         }
-        
         return topTrendingSongs
     }
 }

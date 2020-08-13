@@ -1,7 +1,6 @@
 import Foundation
 
 struct Song {
-    
     let title: String
     let artist: String
     let thumbnailUrl: String
@@ -11,7 +10,6 @@ struct Song {
     
     
     static func fetchSongs() -> [Song] {
-        
         return [
             Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.song1, numberOfPlays: 500000, album: "Raja Baja",file: File(name: "nuclea", type: FileType.mp3.rawValue)),
             Song(title: "Gully Boy", artist: "Various Artists", thumbnailUrl: Temporary.song2, numberOfPlays: 600000, album: "The GaryVee Audio Experience",file: File(name: "gullboy", type: FileType.mp3.rawValue)),
@@ -24,7 +22,6 @@ struct Song {
     
     
     static func fetchRecommendedForYouSongs() -> [Song] {
-        
         return [
             Song(title: "Kohinoor", artist: "DIVINE", thumbnailUrl: Temporary.largeSong1, numberOfPlays: 1100000, album: "The GaryVee Audio Experience", file: File(name: "nuclea", type: FileType.mp3.rawValue)),
             Song(title: "Bass Rani", artist: "Nucleya", thumbnailUrl: Temporary.largeSong2, numberOfPlays: 5300000, album: "Wireframe", file: File(name: "nuclea", type: FileType.mp3.rawValue)),

@@ -1,13 +1,11 @@
 import Foundation
 
 struct Artist {
-    
     let name: String
     let thumbnailUrl: String
     let largeThumbnailUrl: String
     
     static func fetchAllArtists() -> [Artist] {
-        
         return [
             Artist(name: "DIVINE", thumbnailUrl: Temporary.artist1, largeThumbnailUrl: Temporary.artistLarge1),
             Artist(name: "DJ Snake", thumbnailUrl: Temporary.artist2, largeThumbnailUrl: Temporary.artistLarge1),
