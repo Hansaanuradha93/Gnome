@@ -2,11 +2,13 @@ import UIKit
 
 class GNAssertButton: UIView {
 
-    let button                  = UIButton(frame: .zero)
-    let placeholderImageView    = UIImageView(frame: .zero)
+    // MARK: Properties
+    let button = UIButton(frame: .zero)
+    let placeholderImageView = UIImageView(frame: .zero)
     var action: (() -> Void)?
     
     
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -15,28 +17,30 @@ class GNAssertButton: UIView {
     
     convenience init(assert: UIImage, contentMode: UIView.ContentMode = .scaleAspectFit) {
         self.init(frame: .zero)
-        
-        placeholderImageView.image          = assert
-        placeholderImageView.contentMode    = contentMode
+        placeholderImageView.image = assert
+        placeholderImageView.contentMode = contentMode
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+    required init?(coder: NSCoder) { fatalError() }
+}
+
+
+// MARK: - Methods
+extension GNAssertButton {
     
     @objc func buttonPressed() { action?() }
-    
+
     
     private func configure() {
-                
         addSubview(placeholderImageView)
         addSubview(button)
         
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
-        translatesAutoresizingMaskIntoConstraints                           = false
-        button.translatesAutoresizingMaskIntoConstraints                    = false
-        placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
+        translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        placeholderImageView.translatesAutoresizingMaskIntoConstraints = false
                         
         NSLayoutConstraint.activate([
             placeholderImageView.topAnchor.constraint(equalTo: topAnchor),

@@ -2,11 +2,13 @@ import UIKit
 
 class GNTransparentButton: UIView {
 
-    let button                  = UIButton(frame: .zero)
-    let placeholderImageView    = UIImageView(frame: .zero)
+    // MARK: Properties
+    let button = UIButton(frame: .zero)
+    let placeholderImageView = UIImageView(frame: .zero)
     var action: (() -> Void)?
     
     
+    // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -15,33 +17,35 @@ class GNTransparentButton: UIView {
     
     convenience init(assert: UIImage, color: UIColor, transparency: CGFloat, dimensions: CGFloat) {
         self.init(frame: .zero)
-        
-        alpha                               = transparency
-        backgroundColor                     = color
-        layer.cornerRadius                  = dimensions / 2
-        placeholderImageView.image          = assert
+        alpha = transparency
+        backgroundColor = color
+        layer.cornerRadius = dimensions / 2
+        placeholderImageView.image = assert
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+    required init?(coder: NSCoder) { fatalError() }
+}
+
+
+// MARK: - Methods
+extension GNTransparentButton {
     
     @objc func buttonPressed() { action?() }
     
     
     private func configure() {
-                
-        let dimensions: CGFloat             = 22.5
-        placeholderImageView.contentMode    = .scaleAspectFit
+        let dimensions: CGFloat = 22.5
+        placeholderImageView.contentMode = .scaleAspectFit
         
         addSubview(placeholderImageView)
         addSubview(button)
         
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
-        translatesAutoresizingMaskIntoConstraints                           = false
-        button.translatesAutoresizingMaskIntoConstraints                    = false
-        placeholderImageView.translatesAutoresizingMaskIntoConstraints      = false
+        translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        placeholderImageView.translatesAutoresizingMaskIntoConstraints = false
                         
         NSLayoutConstraint.activate([
             placeholderImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
