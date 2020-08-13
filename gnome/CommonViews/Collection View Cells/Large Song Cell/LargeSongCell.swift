@@ -3,21 +3,20 @@ import UIKit
 class LargeSongCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID              = "LargeSongCell"
-    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
-    private let artistLabel         = GNBodyLabel(fontSize: 13)
+    static let reuseID = "LargeSongCell"
+    private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
+    private let titleLabel = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
+    private let artistLabel = GNBodyLabel(fontSize: 13)
     
     
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configure()
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -25,15 +24,13 @@ class LargeSongCell: UICollectionViewCell {
 extension LargeSongCell {
     
     func setup(song: Song) {
-        
-        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
-        titleLabel.text             = song.title
-        artistLabel.text            = song.artist
+        thumbnailImageView.image = UIImage(named: song.thumbnailUrl)
+        titleLabel.text = song.title
+        artistLabel.text = song.artist
     }
     
     
     private func configure() {
-        
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
         addSubview(artistLabel)

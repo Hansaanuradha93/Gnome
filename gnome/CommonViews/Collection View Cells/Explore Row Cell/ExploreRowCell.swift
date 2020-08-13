@@ -3,21 +3,20 @@ import UIKit
 class ExploreRowCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID                  = "RowCell"
-    private let titleLabel              = GNTitleLabel(fontSize: 22)
-    private var recentlyPlayedSongs     = [Song]()
-    private var recommendedForYouSongs  = [Song]()
-    private var genres                  = [Genre]()
-    private var albums                  = [Album]()
-    private var artists                 = [Artist]()
-    private var cellType                : RowCellType!
-    private var collectionView          : UICollectionView!
+    static let reuseID = "RowCell"
+    private let titleLabel = GNTitleLabel(fontSize: 22)
+    private var recentlyPlayedSongs = [Song]()
+    private var recommendedForYouSongs = [Song]()
+    private var genres = [Genre]()
+    private var albums = [Album]()
+    private var artists = [Artist]()
+    private var cellType : RowCellType!
+    private var collectionView: UICollectionView!
     
     
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         fetchSongs()
         fetchRecommendedForYouSongs()
         fetchGenres()
@@ -28,7 +27,7 @@ class ExploreRowCell: UICollectionViewCell {
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -36,7 +35,6 @@ class ExploreRowCell: UICollectionViewCell {
 extension ExploreRowCell {
     
     func setup(cellType: RowCellType) {
-        
         self.cellType           = cellType
         titleLabel.text         = cellType.rawValue
     }
@@ -58,7 +56,6 @@ extension ExploreRowCell {
     
     
     private func configureTitleLabel() {
-        
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -71,12 +68,11 @@ extension ExploreRowCell {
     
     
     private func configureCollectionView() {
-        
-        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor                  = .systemBackground
-        collectionView.showsHorizontalScrollIndicator   = false
-        collectionView.dataSource                       = self
-        collectionView.delegate                         = self
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
@@ -96,17 +92,15 @@ extension ExploreRowCell {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout                      = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection          = .horizontal
-        flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing  = 12.7
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 12.7
         return flowLayout
     }
     
     
     func showModal(with songs: [Song], index: Int) {
-        
         let controller = MusicPlayerVC(songs: songs, index: index)
         controller.modalPresentationStyle = .overCurrentContext
         self.window?.rootViewController?.present(controller, animated: true, completion: nil)
@@ -114,7 +108,6 @@ extension ExploreRowCell {
     
     
     func navigateTo(viewCotroller: UIViewController) {
-        
         viewCotroller.modalPresentationStyle = .overCurrentContext
         self.window?.rootViewController?.present(viewCotroller, animated: true, completion: nil)
     }
@@ -125,9 +118,7 @@ extension ExploreRowCell {
 extension ExploreRowCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         switch cellType {
-            
         case .recentlyPlayed:
             return recentlyPlayedSongs.count
         case .recommendedForYou:
@@ -145,9 +136,7 @@ extension ExploreRowCell: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         switch cellType {
-            
         case .recentlyPlayed:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongCell.reuseID, for: indexPath) as! SongCell
             cell.setup(item: recentlyPlayedSongs[indexPath.item], cellType: .recentlyPlayed)
@@ -180,16 +169,13 @@ extension ExploreRowCell: UICollectionViewDataSource {
 extension ExploreRowCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         switch cellType {
-            
         case .recentlyPlayed:
             showModal(with: recentlyPlayedSongs, index: indexPath.item)
         case .popularArtists:
             let controller = ExpanVC(artist: artists[indexPath.item])
             navigateTo(viewCotroller: controller)
-        default:
-            break
+        default: break
         }
     }
 }
@@ -199,9 +185,7 @@ extension ExploreRowCell: UICollectionViewDelegate {
 extension ExploreRowCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         switch cellType {
-            
         case .recentlyPlayed:
             return CGSize(width: 114.5, height: 140)
         case .recommendedForYou:

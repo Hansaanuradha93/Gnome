@@ -3,20 +3,19 @@ import UIKit
 class AlbumCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID              = "AlbumCell"
-    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
+    static let reuseID = "AlbumCell"
+    private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
+    private let titleLabel = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
     
     
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configure()
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -25,13 +24,12 @@ extension AlbumCell {
     
     func setup(album: Album) {
         
-        titleLabel.text             = album.title
-        thumbnailImageView.image    = UIImage(named: album.thumbnailUrl)
+        titleLabel.text = album.title
+        thumbnailImageView.image = UIImage(named: album.thumbnailUrl)
     }
     
     
     private func configure() {
-        
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
         titleLabel.numberOfLines = 2
