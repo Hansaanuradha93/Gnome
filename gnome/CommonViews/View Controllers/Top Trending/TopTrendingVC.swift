@@ -2,13 +2,15 @@ import UIKit
 
 class TopTrendingVC: UIViewController {
 
-    private let viewModel           = TopTrendingVM()
-    private var collectionView      : UICollectionView!
-    private var topTrendingSongs    : [TopTrendingSong] = []
+    // MARK: Properties
+    private let viewModel = TopTrendingVM()
     
+    private var collectionView: UICollectionView!
+    private var topTrendingSongs: [TopTrendingSong] = []
+    
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
         fetchTopTrendingSongs()
     }
@@ -22,11 +24,10 @@ extension TopTrendingVC {
 
     
     private func configureCollectionView() {
-        
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,11 +43,10 @@ extension TopTrendingVC {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout                  = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection      = .vertical
-        flowLayout.sectionInset         = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumLineSpacing   = 20.7
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumLineSpacing = 20.7
         return flowLayout
     }
 }
@@ -62,7 +62,6 @@ extension TopTrendingVC: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopTrendingCell.reuseID, for: indexPath) as! TopTrendingCell
         cell.setup(topTrendingSong: topTrendingSongs[indexPath.item])
         return cell
