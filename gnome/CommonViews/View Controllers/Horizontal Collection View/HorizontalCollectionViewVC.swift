@@ -2,11 +2,14 @@ import UIKit
 
 class HorizontalCollectionViewVC: UIViewController {
 
-    private let viewModel       = HorizontalCollectionViewVM()
-    private var genres          = [Genre]()
-    private var collectionView  : UICollectionView!
+    // MARK: Properties
+    private let viewModel = HorizontalCollectionViewVM()
+    
+    private var genres = [Genre]()
+    private var collectionView: UICollectionView!
 
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -22,12 +25,11 @@ extension HorizontalCollectionViewVC {
     private func fetchGenres() { genres = Genre.fetchGenres() }
     
     private func configureCollectionView() {
-        
-        collectionView                                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor                  = .systemBackground
-        collectionView.showsHorizontalScrollIndicator   = false
-        collectionView.dataSource                       = self
-        collectionView.delegate                         = self
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,11 +45,10 @@ extension HorizontalCollectionViewVC {
         
 
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout                      = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection          = .horizontal
-        flowLayout.sectionInset             = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing  = 2.7
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 2.7
         return flowLayout
     }
 }
@@ -60,7 +61,6 @@ extension HorizontalCollectionViewVC: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenresCell.reuseID, for: indexPath) as! GenresCell
         cell.setup(genre: genres[indexPath.item])
         return cell
