@@ -3,17 +3,16 @@ import UIKit
 class ExpanArtistThumbnailCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID              = "ExpanArtistCell"
-    private let thumbnailImageView  = GNThumbnaiImageView(radius: 0)
-    private let playButton          = GNAssertButton(assert: Asserts.pause)
-    private let titleLabel          = GNSecondaryTitleLabel(fontSize: 14, fontColor: .white)
-    private let nameLabel           = GNTitleLabel(fontSize: 32, textColour: .white)
+    static let reuseID = "ExpanArtistCell"
+    private let thumbnailImageView = GNThumbnaiImageView(radius: 0)
+    private let playButton = GNAssertButton(assert: Asserts.pause)
+    private let titleLabel = GNSecondaryTitleLabel(fontSize: 14, fontColor: .white)
+    private let nameLabel = GNTitleLabel(fontSize: 32, textColour: .white)
     
     
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureThumbnailImage()
         setupNameLabel()
         configureTitleLabel()
@@ -21,7 +20,7 @@ class ExpanArtistThumbnailCell: UICollectionViewCell {
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -29,15 +28,13 @@ class ExpanArtistThumbnailCell: UICollectionViewCell {
 extension ExpanArtistThumbnailCell {
     
     func setup(artist: Artist) {
-        
-        thumbnailImageView.image    = UIImage(named: artist.largeThumbnailUrl)
-        titleLabel.text             = Titles.artist
-        nameLabel.text              = artist.name
+        thumbnailImageView.image = UIImage(named: artist.largeThumbnailUrl)
+        titleLabel.text = Titles.artist
+        nameLabel.text = artist.name
     }
     
     
     private func configureThumbnailImage() {
-                    
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
@@ -50,7 +47,6 @@ extension ExpanArtistThumbnailCell {
     
     
     private func configureTitleLabel() {
-        
         titleLabel.alpha            = 0.85
         thumbnailImageView.addSubview(titleLabel)
         
@@ -63,7 +59,6 @@ extension ExpanArtistThumbnailCell {
     
     
     private func setupNameLabel() {
-        
         thumbnailImageView.addSubview(nameLabel)
         
         NSLayoutConstraint.activate([
@@ -75,7 +70,6 @@ extension ExpanArtistThumbnailCell {
     
     
     private func configurePlayButton() {
-        
         let dimensions: CGFloat = 70
         addSubview(playButton)
         
