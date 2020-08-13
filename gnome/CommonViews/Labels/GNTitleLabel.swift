@@ -28,9 +28,9 @@ class GNTitleLabel: UILabel {
 extension GNTitleLabel {
     
     private func configure() {
-        adjustsFontSizeToFitWidth   = true
-        minimumScaleFactor          = 0.9
-        lineBreakMode               = .byTruncatingTail
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.9
+        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
