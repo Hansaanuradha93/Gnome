@@ -3,21 +3,20 @@ import UIKit
 class TopTrendingCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID                  = "TopTrendingCell"
-    private let trendingContainer       = UIView()
-    private let smallPlayImageView      = UIImageView(frame: .zero)
-    private let thumbnailImageView      = GNThumbnaiImageView(frame: .zero)
-    private let moreButton              = GNAssertButton(assert: Asserts.more)
-    private let titleLabel              = GNTitleLabel(fontSize: 20)
-    private let artistLabel             = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
-    private let numberOfPlaysLabel      = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey))
-    private let trendingNumberLabel     = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
+    static let reuseID = "TopTrendingCell"
+    private let trendingContainer = UIView()
+    private let smallPlayImageView = UIImageView(frame: .zero)
+    private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
+    private let moreButton = GNAssertButton(assert: Asserts.more)
+    private let titleLabel = GNTitleLabel(fontSize: 20)
+    private let artistLabel = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
+    private let numberOfPlaysLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .left, fontColor: UIColor.appColor(.Grey))
+    private let trendingNumberLabel = GNSecondaryTitleLabel(fontSize: 13, alignment: .center, fontColor: .white)
     
     
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureThumbnailImageView()
         configureTrendingContainer()
         configureTitleLabel()
@@ -28,7 +27,7 @@ class TopTrendingCell: UICollectionViewCell {
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -36,17 +35,15 @@ class TopTrendingCell: UICollectionViewCell {
 extension TopTrendingCell {
     
     func setup(topTrendingSong: TopTrendingSong) {
-        
-        thumbnailImageView.image    = UIImage(named: topTrendingSong.song.thumbnailUrl)
-        trendingNumberLabel.text    = "# \(topTrendingSong.rank)"
-        titleLabel.text             = topTrendingSong.song.title
-        artistLabel.text            = topTrendingSong.song.artist
-        numberOfPlaysLabel.text     = "\(topTrendingSong.song.numberOfPlays / 1000000) plays"
+        thumbnailImageView.image = UIImage(named: topTrendingSong.song.thumbnailUrl)
+        trendingNumberLabel.text = "# \(topTrendingSong.rank)"
+        titleLabel.text = topTrendingSong.song.title
+        artistLabel.text = topTrendingSong.song.artist
+        numberOfPlaysLabel.text = "\(topTrendingSong.song.numberOfPlays / 1000000) plays"
     }
     
     
     private func configureThumbnailImageView() {
-        
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
@@ -59,13 +56,11 @@ extension TopTrendingCell {
     
     
     private func configureTrendingContainer() {
-        
         addSubview(trendingContainer)
         
         trendingContainer.translatesAutoresizingMaskIntoConstraints = false
         trendingContainer.addCornerRadius(of: 12)
-        trendingContainer.backgroundColor   = UIColor.appColor(.Pretty_Pink)
-
+        trendingContainer.backgroundColor = UIColor.appColor(.Pretty_Pink)
         trendingContainer.addSubview(trendingNumberLabel)
         
         NSLayoutConstraint.activate([
@@ -83,7 +78,6 @@ extension TopTrendingCell {
     
     
     private func configureTitleLabel() {
-        
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -96,7 +90,6 @@ extension TopTrendingCell {
     
     
     private func configureArtistLabel() {
-        
         addSubview(artistLabel)
         
         NSLayoutConstraint.activate([
@@ -109,7 +102,6 @@ extension TopTrendingCell {
     
     
     private func configureSmallPlayImageView() {
-        
         addSubview(smallPlayImageView)
         smallPlayImageView.translatesAutoresizingMaskIntoConstraints = false
         smallPlayImageView.image = Asserts.smallPlay
@@ -124,7 +116,6 @@ extension TopTrendingCell {
     
     
     private func configureNumberOfPlaysLabel() {
-        
         addSubview(numberOfPlaysLabel)
         
         NSLayoutConstraint.activate([
@@ -137,7 +128,6 @@ extension TopTrendingCell {
     
     
     private func configureMoreButton() {
-        
         addSubview(moreButton)
         
         NSLayoutConstraint.activate([
