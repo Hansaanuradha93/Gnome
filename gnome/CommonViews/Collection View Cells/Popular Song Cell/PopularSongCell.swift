@@ -3,17 +3,16 @@ import UIKit
 class PopularSongCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID              = "PopularSongCell"
-    private let thumbnailImageView  = GNThumbnaiImageView(frame: .zero)
-    private let titleLabel          = GNTitleLabel(fontSize: 20)
-    private let numberOfPlaysLabel  = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
-    private let moreButton          = GNAssertButton(assert: Asserts.more)
+    static let reuseID = "PopularSongCell"
+    private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
+    private let titleLabel = GNTitleLabel(fontSize: 20)
+    private let numberOfPlaysLabel = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))
+    private let moreButton = GNAssertButton(assert: Asserts.more)
     
     
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureThumbnailImageView()
         configureTitleLabel()
         configureNumberOfPlaysLabel()
@@ -21,7 +20,7 @@ class PopularSongCell: UICollectionViewCell {
     }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
 }
 
 
@@ -29,15 +28,13 @@ class PopularSongCell: UICollectionViewCell {
 extension PopularSongCell {
     
     func setup(song: Song) {
-        
-        thumbnailImageView.image    = UIImage(named: song.thumbnailUrl)
-        titleLabel.text             = song.title
-        numberOfPlaysLabel.text     = "\(song.numberOfPlays / 1000)K"
+        thumbnailImageView.image = UIImage(named: song.thumbnailUrl)
+        titleLabel.text = song.title
+        numberOfPlaysLabel.text = "\(song.numberOfPlays / 1000)K"
     }
     
     
     private func configureThumbnailImageView() {
-        
         addSubview(thumbnailImageView)
         
         NSLayoutConstraint.activate([
@@ -50,7 +47,6 @@ extension PopularSongCell {
     
     
     private func configureTitleLabel() {
-        
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -62,7 +58,6 @@ extension PopularSongCell {
     
     
     private func configureNumberOfPlaysLabel() {
-        
         addSubview(numberOfPlaysLabel)
         
         NSLayoutConstraint.activate([
@@ -74,7 +69,6 @@ extension PopularSongCell {
     
     
     private func configureMoreButton() {
-        
         let dimensions: CGFloat = 32
         addSubview(moreButton)
         
@@ -83,7 +77,6 @@ extension PopularSongCell {
             moreButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             moreButton.widthAnchor.constraint(equalToConstant: dimensions),
             moreButton.heightAnchor.constraint(equalToConstant: dimensions)
-        
         ])
     }
 }
