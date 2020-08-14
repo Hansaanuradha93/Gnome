@@ -11,7 +11,7 @@ class GNTransparentButton: UIView {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureUI()
     }
     
     
@@ -34,7 +34,7 @@ extension GNTransparentButton {
     @objc func buttonPressed() { action?() }
     
     
-    private func configure() {
+    private func configureUI() {
         let dimensions: CGFloat = 22.5
         placeholderImageView.contentMode = .scaleAspectFit
         
@@ -44,19 +44,7 @@ extension GNTransparentButton {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
-        placeholderImageView.translatesAutoresizingMaskIntoConstraints = false
-                        
-        NSLayoutConstraint.activate([
-            placeholderImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            placeholderImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            placeholderImageView.widthAnchor.constraint(equalToConstant: dimensions),
-            placeholderImageView.heightAnchor.constraint(equalToConstant: dimensions),
-
-            button.topAnchor.constraint(equalTo: topAnchor),
-            button.leadingAnchor.constraint(equalTo: leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        placeholderImageView.centerInSuperview(size: .init(width: dimensions, height: dimensions))
+        button.fillSuperview()
     }
 }
