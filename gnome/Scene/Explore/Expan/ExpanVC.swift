@@ -2,30 +2,32 @@ import UIKit
 
 class ExpanVC: UIViewController {
 
-    private let viewModel       = ExpanVM()
-    private let backButton      = GNTransparentButton(assert: Asserts.back, color: .black, transparency: 0.25, dimensions: 44)
-    private var collectionView  : UICollectionView!
-    private var artist          : Artist!
-    private var popularSongs    = [Song]()
-    private var albums          = [Album]()
+    // MARK: Properties
+    private let viewModel = ExpanVM()
+    
+    private let backButton = GNTransparentButton(assert: Asserts.back, color: .black, transparency: 0.25, dimensions: 44)
+    private var collectionView : UICollectionView!
+    private var artist : Artist!
+    private var popularSongs = [Song]()
+    private var albums = [Album]()
     
     
+    // MARK: Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) { super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil) }
     
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) { fatalError() }
     
     
     convenience init(artist: Artist) {
         self.init()
-        
         self.artist = artist
     }
     
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionView()
         fetchPopularSongs()
         fetchAlbums()
@@ -34,7 +36,6 @@ class ExpanVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         configureViewController()
         configureBackButton()
     }
@@ -51,7 +52,7 @@ extension ExpanVC {
     
     
     private func fetchAlbums() {
-        albums      = Album.fetchAlbums()
+        albums = Album.fetchAlbums()
         collectionView.reloadData()
     }
 }
@@ -61,18 +62,16 @@ extension ExpanVC {
 extension ExpanVC {
     
     private func configureViewController() {
-        
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
     private func configureCollectionView() {
-        
-        collectionView                  = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +79,6 @@ extension ExpanVC {
         collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
         collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
         collectionView.register(ExpanRowCell.self, forCellWithReuseIdentifier: ExpanRowCell.reuseID)
-
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -92,18 +90,16 @@ extension ExpanVC {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout              = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection  = .vertical
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
         return flowLayout
     }
     
     
     private func configureBackButton() {
+         backButton.action = { () in self.dismiss(animated: true) }
         
-        backButton.action               = { () in self.dismiss(animated: true) }
-        
-        let dimensions: CGFloat         = 44
+        let dimensions: CGFloat = 44
         view.addSubview(backButton)
         
         NSLayoutConstraint.activate([
@@ -126,11 +122,9 @@ extension ExpanVC: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let section = viewModel.sections[indexPath.section]
         
         switch section.sectionType {
-            
         case .thumbnail:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpanArtistThumbnailCell.reuseID, for: indexPath) as! ExpanArtistThumbnailCell
             cell.setup(artist: artist!)
@@ -159,14 +153,11 @@ extension ExpanVC: UICollectionViewDelegate {
 extension ExpanVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let section             = viewModel.sections[indexPath.section]
-
-        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        let section = viewModel.sections[indexPath.section]
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
         
         switch section.sectionType {
-            
         case .thumbnail:
             return CGSize(width: UIScreen.main.bounds.size.width, height: 390)
         case .popularSongs:
