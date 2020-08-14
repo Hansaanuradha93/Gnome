@@ -12,8 +12,8 @@ class ExpanRowCell: UICollectionViewCell {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureUI()
         configureCollectionView()
+        configureUI()
     }
     
     
