@@ -5,7 +5,7 @@ class AlbumCell: UICollectionViewCell {
     // MARK: Properties
     static let reuseID = "AlbumCell"
     private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
-    private let titleLabel = GNSecondaryTitleLabel(fontSize: 17, alignment: .center)
+    private let titleLabel = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
     
     
     // MARK: Initializer
@@ -23,7 +23,6 @@ class AlbumCell: UICollectionViewCell {
 extension AlbumCell {
     
     func setup(album: Album) {
-        
         titleLabel.text = album.title
         thumbnailImageView.image = UIImage(named: album.thumbnailUrl)
     }
@@ -42,8 +41,7 @@ extension AlbumCell {
             
             titleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }
