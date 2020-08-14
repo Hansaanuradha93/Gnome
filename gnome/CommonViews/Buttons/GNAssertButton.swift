@@ -39,19 +39,7 @@ extension GNAssertButton {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
-        placeholderImageView.translatesAutoresizingMaskIntoConstraints = false
-                        
-        NSLayoutConstraint.activate([
-            placeholderImageView.topAnchor.constraint(equalTo: topAnchor),
-            placeholderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            placeholderImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            placeholderImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            button.topAnchor.constraint(equalTo: topAnchor),
-            button.leadingAnchor.constraint(equalTo: leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        placeholderImageView.fillSuperview()
+        button.fillSuperview()
     }
 }
