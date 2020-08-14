@@ -39,7 +39,6 @@ extension PopularSongCell {
         addSubview(numberOfPlaysLabel)
         addSubview(moreButton)
 
-
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, size: .init(width: self.frame.height, height: 0))
         titleLabel.anchor(top: topAnchor, leading: thumbnailImageView.trailingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 15, bottom: 0, right: 30))
         numberOfPlaysLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: nil, trailing: titleLabel.trailingAnchor)

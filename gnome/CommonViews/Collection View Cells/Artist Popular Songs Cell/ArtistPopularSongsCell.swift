@@ -12,8 +12,8 @@ class ArtistPopularSongsCell: UICollectionViewCell {
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureTitleLabel()
         configureCollectionView()
+        configureUI()
     }
     
     
@@ -30,14 +30,14 @@ extension ArtistPopularSongsCell {
     }
     
     
-    private func configureTitleLabel() {
+    private func configureUI() {
         titleLabel.text = Titles.popular
-        addSubview(titleLabel)
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
-        ])
+        addSubview(titleLabel)
+        addSubview(collectionView)
+        
+        titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 16, bottom: 0, right: 0))
+        collectionView.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 22, left: 0, bottom: 0, right: 0))
     }
     
     
@@ -48,16 +48,7 @@ extension ArtistPopularSongsCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(PopularSongCell.self, forCellWithReuseIdentifier: PopularSongCell.reuseID)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
     }
     
     
