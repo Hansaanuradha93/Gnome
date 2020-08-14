@@ -13,10 +13,7 @@ class PopularSongCell: UICollectionViewCell {
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureThumbnailImageView()
-        configureTitleLabel()
-        configureNumberOfPlaysLabel()
-        configureMoreButton()
+        configureUI()
     }
     
     
@@ -34,49 +31,19 @@ extension PopularSongCell {
     }
     
     
-    private func configureThumbnailImageView() {
-        addSubview(thumbnailImageView)
-        
-        NSLayoutConstraint.activate([
-            thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
-            thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            thumbnailImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            thumbnailImageView.widthAnchor.constraint(equalTo: heightAnchor)
-        ])
-    }
-    
-    
-    private func configureTitleLabel() {
-        addSubview(titleLabel)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.trailingAnchor, constant: 15),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)
-        ])
-    }
-    
-    
-    private func configureNumberOfPlaysLabel() {
-        addSubview(numberOfPlaysLabel)
-        
-        NSLayoutConstraint.activate([
-            numberOfPlaysLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            numberOfPlaysLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            numberOfPlaysLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
-        ])
-    }
-    
-    
-    private func configureMoreButton() {
+    private func configureUI() {
         let dimensions: CGFloat = 32
+
+        addSubview(thumbnailImageView)
+        addSubview(titleLabel)
+        addSubview(numberOfPlaysLabel)
         addSubview(moreButton)
-        
-        NSLayoutConstraint.activate([
-            moreButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            moreButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            moreButton.widthAnchor.constraint(equalToConstant: dimensions),
-            moreButton.heightAnchor.constraint(equalToConstant: dimensions)
-        ])
+
+
+        thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, size: .init(width: self.frame.height, height: 0))
+        titleLabel.anchor(top: topAnchor, leading: thumbnailImageView.trailingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 15, bottom: 0, right: 30))
+        numberOfPlaysLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: nil, trailing: titleLabel.trailingAnchor)
+        moreButton.centerVerticallyInSuperView()
+        moreButton.anchor(top: nil, leading: nil, bottom: nil, trailing: trailingAnchor, size: .init(width: dimensions, height: dimensions))
     }
 }
