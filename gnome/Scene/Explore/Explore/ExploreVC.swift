@@ -2,14 +2,16 @@ import UIKit
 
 class ExploreVC: UIViewController {
 
-    private let viewModel       = ExploreVM()
-    private let titleLabel      = GNTitleLabel(fontSize: 34)
-    private var collectionView  : UICollectionView!
+    // MARK: Properties
+    private let viewModel = ExploreVM()
+    
+    private let titleLabel = GNTitleLabel(fontSize: 34)
+    private var collectionView : UICollectionView!
     
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTitleLabel()
         configureCollectionView()
     }
@@ -17,7 +19,6 @@ class ExploreVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         configureViewController()
     }
 }
@@ -27,14 +28,12 @@ class ExploreVC: UIViewController {
 extension ExploreVC {
     
     private func configureViewController() {
-        
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
     private func configureTitleLabel() {
-        
         view.addSubview(titleLabel)
         titleLabel.text = Titles.explore
         
@@ -48,11 +47,10 @@ extension ExploreVC {
 
     
     private func configureCollectionView() {
-        
-        collectionView                  = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.dataSource       = self
-        collectionView.delegate         = self
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+        collectionView.backgroundColor = .systemBackground
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,10 +66,9 @@ extension ExploreVC {
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        
-        let flowLayout              = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection  = .vertical
-        flowLayout.sectionInset     = UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
         return flowLayout
     }
 }
@@ -87,7 +84,6 @@ extension ExploreVC: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExploreRowCell.reuseID, for: indexPath) as! ExploreRowCell
 
         switch viewModel.sections[indexPath.section].sectionType {
@@ -111,10 +107,9 @@ extension ExploreVC: UICollectionViewDataSource {
 extension ExploreVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let flowLayout          = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width               = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
-        let padding: CGFloat    = 0
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = UIScreen.main.bounds.size.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        let padding: CGFloat = 0
         
         switch viewModel.sections[indexPath.section].sectionType {
         case .recentlyPlayed:
