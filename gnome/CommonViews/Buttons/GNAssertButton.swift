@@ -11,7 +11,7 @@ class GNAssertButton: UIView {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureUI()
     }
     
     
@@ -32,7 +32,7 @@ extension GNAssertButton {
     @objc func buttonPressed() { action?() }
 
     
-    private func configure() {
+    private func configureUI() {
         addSubview(placeholderImageView)
         addSubview(button)
         

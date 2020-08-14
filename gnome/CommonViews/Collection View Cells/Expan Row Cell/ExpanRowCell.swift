@@ -12,7 +12,7 @@ class ExpanRowCell: UICollectionViewCell {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureTitleLabel()
+        configureUI()
         configureCollectionView()
     }
     
@@ -30,15 +30,14 @@ extension ExpanRowCell {
     }
     
     
-    private func configureTitleLabel() {
-        titleLabel.text = Titles.albums
+    private func configureUI() {
         addSubview(titleLabel)
+        addSubview(collectionView)
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+        titleLabel.text = Titles.albums
+
+        titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 0))
+        collectionView.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 22, left: 0, bottom: 0, right: 0))
     }
     
     
@@ -49,16 +48,7 @@ extension ExpanRowCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
-        addSubview(collectionView)
-        
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
     }
     
     
