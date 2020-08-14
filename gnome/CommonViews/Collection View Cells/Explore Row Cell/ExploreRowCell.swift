@@ -35,8 +35,8 @@ class ExploreRowCell: UICollectionViewCell {
 extension ExploreRowCell {
     
     func setup(cellType: RowCellType) {
-        self.cellType           = cellType
-        titleLabel.text         = cellType.rawValue
+        self.cellType = cellType
+        titleLabel.text = cellType.rawValue
     }
     
     
