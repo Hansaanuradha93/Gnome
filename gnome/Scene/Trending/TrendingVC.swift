@@ -2,16 +2,18 @@ import UIKit
 
 class TrendingVC: UIViewController {
 
-    private let viewModel               = TrendingVM()
-    private let titleLabel              = GNTitleLabel(fontSize: 34)
-    private let topTrendingTitleLabel   = GNTitleLabel(fontSize: 22)
-    private let genresContainer         = UIView()
-    private let topTrendingContainer    = UIView()
+    // MARK: Properties
+    private let viewModel = TrendingVM()
+    
+    private let titleLabel = GNTitleLabel(fontSize: 34)
+    private let topTrendingTitleLabel = GNTitleLabel(fontSize: 22)
+    private let genresContainer = UIView()
+    private let topTrendingContainer = UIView()
     
     
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewController()
         configureTitleLabel()
         configureGenresContainer()
@@ -26,14 +28,12 @@ class TrendingVC: UIViewController {
 extension TrendingVC {
     
     private func configureViewController() {
-        
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
     private func configureTitleLabel() {
-        
         view.addSubview(titleLabel)
         titleLabel.text = Titles.trending
         
@@ -47,7 +47,6 @@ extension TrendingVC {
     
     
     private func configureGenresContainer() {
-        
         view.addSubview(genresContainer)
         genresContainer.translatesAutoresizingMaskIntoConstraints = false
         
@@ -61,7 +60,6 @@ extension TrendingVC {
     
     
     private func configureTopTrendingTitleLabel() {
-        
         view.addSubview(topTrendingTitleLabel)
         topTrendingTitleLabel.text = Titles.topTrending
         
@@ -75,7 +73,6 @@ extension TrendingVC {
     
     
     private func configureTopTrendingContainer() {
-        
         view.addSubview(topTrendingContainer)
         topTrendingContainer.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,7 +86,6 @@ extension TrendingVC {
     
     
     private func add(childVC: UIViewController, to containerView: UIView) {
-        
         self.addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
@@ -98,7 +94,6 @@ extension TrendingVC {
     
     
     private func configureUIElements() {
-        
         add(childVC: HorizontalCollectionViewVC(), to: genresContainer)
         add(childVC: TopTrendingVC(), to: topTrendingContainer)
     }
