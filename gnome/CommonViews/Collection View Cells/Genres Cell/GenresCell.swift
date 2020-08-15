@@ -10,8 +10,7 @@ class GenresCell: UICollectionViewCell {
     // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureTitleLabel()
-        configureBackground()
+        configureUI()
     }
     
     
@@ -25,20 +24,11 @@ extension GenresCell {
     func setup(genre: Genre) { titleLabel.text = genre.title }
     
     
-    private func configureBackground() {
+    private func configureUI() {
         backgroundColor = UIColor.appColor(.Pretty_Pink)
         addCornerRadius(of: 12)
-    }
-    
-    
-    private func configureTitleLabel() {
         addSubview(titleLabel)
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        titleLabel.fillSuperview()
     }
 }
