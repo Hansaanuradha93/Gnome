@@ -10,20 +10,16 @@ class ExploreRowCell: UICollectionViewCell {
     private var genres = [Genre]()
     private var albums = [Album]()
     private var artists = [Artist]()
-    private var cellType : RowCellType!
+    private var cellType: RowCellType!
     private var collectionView: UICollectionView!
     
     
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fetchSongs()
-        fetchRecommendedForYouSongs()
-        fetchGenres()
-        fetchAlbums()
-        fetchArtists()
-        configureTitleLabel()
+        fetchData()
         configureCollectionView()
+        configureUI()
     }
     
     
@@ -40,30 +36,21 @@ extension ExploreRowCell {
     }
     
     
-    private func fetchSongs() { recentlyPlayedSongs = Song.fetchSongs() }
+    private func fetchData() {
+        recentlyPlayedSongs = Song.fetchSongs()
+        recommendedForYouSongs = Song.fetchRecommendedForYouSongs()
+        albums = Album.fetchAlbums()
+        artists = Artist.fetchAllArtists()
+        genres = Genre.fetchGenres()
+    }
     
     
-    private func fetchRecommendedForYouSongs() { recommendedForYouSongs = Song.fetchRecommendedForYouSongs() }
-    
-    
-    private func fetchGenres() { genres = Genre.fetchGenres() }
-    
-    
-    private func fetchAlbums() { albums = Album.fetchAlbums() }
-    
-    
-    private func fetchArtists() { artists = Artist.fetchAllArtists() }
-    
-    
-    private func configureTitleLabel() {
+    private func configureUI() {
         addSubview(titleLabel)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 22),
-        ])
+        addSubview(collectionView)
+
+        titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: 22))
+        collectionView.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 18, left: 0, bottom: 0, right: 0))
     }
     
     
@@ -74,20 +61,10 @@ extension ExploreRowCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SongCell.self, forCellWithReuseIdentifier: SongCell.reuseID)
         collectionView.register(LargeSongCell.self, forCellWithReuseIdentifier: LargeSongCell.reuseID)
         collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.reuseID)
         collectionView.register(GenresCell.self, forCellWithReuseIdentifier: GenresCell.reuseID)
-
-        addSubview(collectionView)
-        
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
     }
     
     
