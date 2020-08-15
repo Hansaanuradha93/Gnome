@@ -12,7 +12,7 @@ class LargeSongCell: UICollectionViewCell {
     // MARK: Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureUI()
     }
     
     
@@ -30,26 +30,13 @@ extension LargeSongCell {
     }
     
     
-    private func configure() {
+    private func configureUI() {
         addSubview(thumbnailImageView)
         addSubview(titleLabel)
         addSubview(artistLabel)
         
-        NSLayoutConstraint.activate([
-            thumbnailImageView.topAnchor.constraint(equalTo: topAnchor),
-            thumbnailImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            thumbnailImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            thumbnailImageView.heightAnchor.constraint(equalTo: thumbnailImageView.widthAnchor),
-            
-            titleLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 24),
-            
-            artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 1),
-            artistLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            artistLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            artistLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: self.frame.width))
+        titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 24))
+        artistLabel.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 1, left: 0, bottom: 0, right: 0))
     }
 }
