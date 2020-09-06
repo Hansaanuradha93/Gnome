@@ -28,17 +28,10 @@ extension TopTrendingVC {
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(TopTrendingCell.self, forCellWithReuseIdentifier: TopTrendingCell.reuseID)
         
         view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(TopTrendingCell.self, forCellWithReuseIdentifier: TopTrendingCell.reuseID)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        collectionView.fillSuperview()
     }
     
     
