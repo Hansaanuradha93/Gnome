@@ -16,7 +16,6 @@ class ExpanVM {
     
     
     lazy var sections: [Section] = {
-        
         var data = [Section]()
         
         let thumbnailSection = Section(sectionType: .thumbnail, index: 0)
