@@ -28,7 +28,8 @@ class ExpanVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCollectionView()
+        configureUI()
+//        configureCollectionView()
         fetchPopularSongs()
         fetchAlbums()
     }
@@ -36,8 +37,8 @@ class ExpanVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureViewController()
-        configureBackButton()
+//        configureViewController()
+//        configureBackButton()
     }
 }
 
@@ -61,32 +62,50 @@ extension ExpanVC {
 // MARK: - UI Implamentation
 extension ExpanVC {
     
-    private func configureViewController() {
+    private func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    
-    private func configureCollectionView() {
+        
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
         collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
         collectionView.register(ExpanRowCell.self, forCellWithReuseIdentifier: ExpanRowCell.reuseID)
+        
+        let dimensions: CGFloat = 44
+        backButton.action = { () in self.dismiss(animated: true) }
 
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        view.addSubview(collectionView)
+        view.addSubview(backButton)
+
+        collectionView.fillSuperview()
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 16, left: 16, bottom: 0, right: 0), size: .init(width: dimensions, height: dimensions))
     }
+    
+    
+//    private func configureCollectionView() {
+//        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
+//        collectionView.backgroundColor = .systemBackground
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
+//
+//        view.addSubview(collectionView)
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        collectionView.register(ExpanArtistThumbnailCell.self, forCellWithReuseIdentifier: ExpanArtistThumbnailCell.reuseID)
+//        collectionView.register(ArtistPopularSongsCell.self, forCellWithReuseIdentifier: ArtistPopularSongsCell.reuseID)
+//        collectionView.register(ExpanRowCell.self, forCellWithReuseIdentifier: ExpanRowCell.reuseID)
+//
+//        NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//        ])
+//    }
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
@@ -96,19 +115,19 @@ extension ExpanVC {
     }
     
     
-    private func configureBackButton() {
-         backButton.action = { () in self.dismiss(animated: true) }
-        
-        let dimensions: CGFloat = 44
-        view.addSubview(backButton)
-        
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backButton.heightAnchor.constraint(equalToConstant: dimensions),
-            backButton.widthAnchor.constraint(equalToConstant: dimensions)
-        ])
-    }
+//    private func configureBackButton() {
+//        backButton.action = { () in self.dismiss(animated: true) }
+//        
+//        let dimensions: CGFloat = 44
+//        view.addSubview(backButton)
+//        
+//        NSLayoutConstraint.activate([
+//            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+//            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            backButton.heightAnchor.constraint(equalToConstant: dimensions),
+//            backButton.widthAnchor.constraint(equalToConstant: dimensions)
+//        ])
+//    }
 }
 
 
