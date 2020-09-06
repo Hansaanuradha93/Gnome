@@ -12,9 +12,8 @@ class HorizontalCollectionViewVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         fetchGenres()
-        configureCollectionView()
+        configureUI()
     }
 }
 
@@ -24,23 +23,16 @@ extension HorizontalCollectionViewVC {
     
     private func fetchGenres() { genres = Genre.fetchGenres() }
     
-    private func configureCollectionView() {
+    private func configureUI() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(GenresCell.self, forCellWithReuseIdentifier: GenresCell.reuseID)
         
         view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(GenresCell.self, forCellWithReuseIdentifier: GenresCell.reuseID)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        collectionView.fillSuperview()
     }
         
 

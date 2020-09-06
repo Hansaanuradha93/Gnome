@@ -11,7 +11,7 @@ class TopTrendingVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCollectionView()
+        configureUI()
         fetchTopTrendingSongs()
     }
 }
@@ -23,7 +23,7 @@ extension TopTrendingVC {
     private func fetchTopTrendingSongs() { topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs() }
 
     
-    private func configureCollectionView() {
+    private func configureUI() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
