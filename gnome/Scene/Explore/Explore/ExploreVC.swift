@@ -12,14 +12,15 @@ class ExploreVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTitleLabel()
-        configureCollectionView()
+        configureUI()
+//        configureTitleLabel()
+//        configureCollectionView()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureViewController()
+//        configureViewController()
     }
 }
 
@@ -27,42 +28,55 @@ class ExploreVC: UIViewController {
 // MARK: - Methods
 extension ExploreVC {
     
-    private func configureViewController() {
+    private func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    
-    private func configureTitleLabel() {
-        view.addSubview(titleLabel)
-        titleLabel.text = Titles.explore
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 23),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            titleLabel.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-
-    
-    private func configureCollectionView() {
+        titleLabel.text = Titles.explore
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ExploreRowCell.self, forCellWithReuseIdentifier: ExploreRowCell.reuseID)
 
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+        view.addSubview(titleLabel)
+        view.addSubview(collectionView)
+        
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 23, left: 16, bottom: 16, right: 0), size: .init(width: 0, height: 44))
+        collectionView.anchor(top: titleLabel.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0))
     }
+    
+    
+//    private func configureTitleLabel() {
+//        view.addSubview(titleLabel)
+//        titleLabel.text = Titles.explore
+//
+//        NSLayoutConstraint.activate([
+//            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 23),
+//            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+//            titleLabel.heightAnchor.constraint(equalToConstant: 44)
+//        ])
+//    }
+
+    
+//    private func configureCollectionView() {
+//        collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
+//        collectionView.backgroundColor = .systemBackground
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        
+//        view.addSubview(collectionView)
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.register(ExploreRowCell.self, forCellWithReuseIdentifier: ExploreRowCell.reuseID)
+//
+//        NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+//            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+//        ])
+//    }
     
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
