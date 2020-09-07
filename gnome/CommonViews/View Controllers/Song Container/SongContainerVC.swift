@@ -64,10 +64,7 @@ extension SongContainerVC {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        view.addSubview(albumTitleLabel)
-        view.addSubview(thumbnailImageView)
-        view.addSubview(songTitleLabel)
-        view.addSubview(artistLabel)
+        view.addSubviews(albumTitleLabel, thumbnailImageView, songTitleLabel, artistLabel)
         
         artistLabel.alpha = 0.6
         let dimensions: CGFloat = view.frame.width - 60
