@@ -1,7 +1,9 @@
 import UIKit
 import AVFoundation
 
-protocol PlayerContainerDelegate: class { func buttonPressed(index: Int)}
+protocol PlayerContainerDelegate: class {
+    func buttonPressed(index: Int)
+}
 
 
 class PlayerContainerVC: UIViewController {
@@ -47,10 +49,13 @@ class PlayerContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSlider()
-        configureSliderLabels()
-        configurePlayButton()
-        configureRewindButtons()
-        configureStackView()
+        configurePlayerControlButtons()
+
+//        configureSlider()
+//        configureSliderLabels()
+//        configurePlayButton()
+//        configureRewindButtons()
+//        configureStackView()
         configureOtherButtons()
         
         prepareSongSesstion(song: songs[index])
@@ -64,7 +69,6 @@ class PlayerContainerVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureViewController()
     }
 }
 
@@ -202,15 +206,9 @@ extension PlayerContainerVC {
 // MARK: - UI Imaplemetation
 extension PlayerContainerVC {
 
-    private func configureViewController() {
+    private func configureSlider() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    
-    private func configureSlider() {
-        view.addSubview(slider)
-        slider.translatesAutoresizingMaskIntoConstraints = false
         
         slider.minimumValue = 0
         slider.isContinuous = true
@@ -220,76 +218,152 @@ extension PlayerContainerVC {
         slider.setThumbImage(Asserts.sliderThumb, for: .normal)
         slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
-        
-        NSLayoutConstraint.activate([
-            slider.topAnchor.constraint(equalTo: view.topAnchor),
-            slider.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            slider.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            slider.heightAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 12 / 317)
-        ])
-    }
-    
-    
-    private func configureSliderLabels() {
+
+        view.addSubview(slider)
         view.addSubview(sliderMinimumLabel)
         view.addSubview(sliderMaximumLabel)
         
-        NSLayoutConstraint.activate([
-            sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
-            sliderMinimumLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
-            sliderMaximumLabel.topAnchor.constraint(equalTo: sliderMinimumLabel.topAnchor),
-            sliderMaximumLabel.trailingAnchor.constraint(equalTo: slider.trailingAnchor)
-        ])
+        slider.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: view.frame.width * 12 / 317))
+        sliderMinimumLabel.anchor(top: slider.bottomAnchor, leading: slider.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 8, left: 0, bottom: 0, right: 0))
+        sliderMaximumLabel.anchor(top: sliderMinimumLabel.topAnchor, leading: nil, bottom: nil, trailing: slider.trailingAnchor)
     }
     
     
-    private func configurePlayButton() {
-        let dimensions: CGFloat = 70
-        view.addSubview(playButton)
-                
-        NSLayoutConstraint.activate([
-            playButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 25),
-            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            playButton.heightAnchor.constraint(equalToConstant: dimensions),
-            playButton.widthAnchor.constraint(equalToConstant: dimensions)
-        ])
-    }
-    
-    
-    private func configureRewindButtons() {
-        let dimension: CGFloat = 36
+    private func configurePlayerControlButtons() {
+        let playButtonDimensions: CGFloat = 70
+        let backwardButtonDimension: CGFloat = 36
         let dimension30: CGFloat = 24
         
+        view.addSubview(playButton)
         view.addSubview(backwardButton)
         view.addSubview(rewind30Button)
         view.addSubview(forwadButton)
         view.addSubview(forward30Button)
         
-        NSLayoutConstraint.activate([
-            backwardButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
-            backwardButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
-            backwardButton.widthAnchor.constraint(equalToConstant: dimension),
-            backwardButton.heightAnchor.constraint(equalToConstant: dimension),
-            
-            rewind30Button.centerYAnchor.constraint(equalTo: backwardButton.centerYAnchor),
-            rewind30Button.trailingAnchor.constraint(equalTo: backwardButton.leadingAnchor, constant: -30),
-            rewind30Button.widthAnchor.constraint(equalToConstant: dimension30),
-            rewind30Button.heightAnchor.constraint(equalToConstant: dimension30),
-            
-            forwadButton.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 25),
-            forwadButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
-            forwadButton.widthAnchor.constraint(equalToConstant: dimension),
-            forwadButton.heightAnchor.constraint(equalToConstant: dimension),
-            
-            forward30Button.centerYAnchor.constraint(equalTo: forwadButton.centerYAnchor),
-            forward30Button.leadingAnchor.constraint(equalTo: forwadButton.trailingAnchor, constant: 30),
-            forward30Button.widthAnchor.constraint(equalToConstant: dimension30),
-            forward30Button.heightAnchor.constraint(equalToConstant: dimension30)
-        ])
+        playButton.anchor(top: slider.bottomAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 25, left: 0, bottom: 0, right: 0), size: .init(width: playButtonDimensions, height: playButtonDimensions))
+        playButton.centerHorizontallyInSuperView()
+        backwardButton.anchor(top: nil, leading: nil, bottom: nil, trailing: playButton.leadingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 25), size: .init(width: backwardButtonDimension, height: backwardButtonDimension))
+        backwardButton.centerVertically(in: playButton)
+        rewind30Button.anchor(top: nil, leading: nil, bottom: nil, trailing: backwardButton.leadingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 30), size: .init(width: dimension30, height: dimension30))
+        rewind30Button.centerVertically(in: backwardButton)
+        forwadButton.anchor(top: nil, leading: playButton.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 25, bottom: 0, right: 0), size: .init(width: backwardButtonDimension, height: backwardButtonDimension))
+        forwadButton.centerVertically(in: playButton)
+        forward30Button.anchor(top: nil, leading: forwadButton.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 30, bottom: 0, right: 0), size: .init(width: dimension30, height: dimension30))
+        forward30Button.centerVertically(in: forwadButton)
     }
     
     
-    private func configureStackView() {
+//    private func configureSlider() {
+//        view.addSubview(slider)
+//        slider.translatesAutoresizingMaskIntoConstraints = false
+//
+//        slider.minimumValue = 0
+//        slider.isContinuous = true
+//        slider.layer.cornerRadius = 30
+//        slider.tintColor = UIColor.appColor(.Pretty_Pink)
+//
+//        slider.setThumbImage(Asserts.sliderThumb, for: .normal)
+//        slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
+//        slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
+//
+//        NSLayoutConstraint.activate([
+//            slider.topAnchor.constraint(equalTo: view.topAnchor),
+//            slider.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            slider.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            slider.heightAnchor.constraint(equalTo: slider.widthAnchor, multiplier: 12 / 317)
+//        ])
+//    }
+    
+    
+//    private func configureSliderLabels() {
+//        view.addSubview(sliderMinimumLabel)
+//        view.addSubview(sliderMaximumLabel)
+//
+//        NSLayoutConstraint.activate([
+//            sliderMinimumLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 8),
+//            sliderMinimumLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
+//            sliderMaximumLabel.topAnchor.constraint(equalTo: sliderMinimumLabel.topAnchor),
+//            sliderMaximumLabel.trailingAnchor.constraint(equalTo: slider.trailingAnchor)
+//        ])
+//    }
+    
+    
+//    private func configurePlayButton() {
+//        let dimensions: CGFloat = 70
+//        view.addSubview(playButton)
+//
+//        NSLayoutConstraint.activate([
+//            playButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 25),
+//            playButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            playButton.heightAnchor.constraint(equalToConstant: dimensions),
+//            playButton.widthAnchor.constraint(equalToConstant: dimensions)
+//        ])
+//    }
+    
+    
+//    private func configureRewindButtons() {
+//        let dimension: CGFloat = 36
+//        let dimension30: CGFloat = 24
+        
+//        view.addSubview(backwardButton)
+//        view.addSubview(rewind30Button)
+//        view.addSubview(forwadButton)
+//        view.addSubview(forward30Button)
+        
+//        NSLayoutConstraint.activate([
+//            backwardButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: -25),
+//            backwardButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+//            backwardButton.widthAnchor.constraint(equalToConstant: dimension),
+//            backwardButton.heightAnchor.constraint(equalToConstant: dimension),
+            
+//            rewind30Button.centerYAnchor.constraint(equalTo: backwardButton.centerYAnchor),
+//            rewind30Button.trailingAnchor.constraint(equalTo: backwardButton.leadingAnchor, constant: -30),
+//            rewind30Button.widthAnchor.constraint(equalToConstant: dimension30),
+//            rewind30Button.heightAnchor.constraint(equalToConstant: dimension30),
+            
+//            forwadButton.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 25),
+//            forwadButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor),
+//            forwadButton.widthAnchor.constraint(equalToConstant: dimension),
+//            forwadButton.heightAnchor.constraint(equalToConstant: dimension),
+            
+//            forward30Button.centerYAnchor.constraint(equalTo: forwadButton.centerYAnchor),
+//            forward30Button.leadingAnchor.constraint(equalTo: forwadButton.trailingAnchor, constant: 30),
+//            forward30Button.widthAnchor.constraint(equalToConstant: dimension30),
+//            forward30Button.heightAnchor.constraint(equalToConstant: dimension30)
+//        ])
+//    }
+    
+    
+//    private func configureStackView() {
+//        stackView.axis = .horizontal
+//        stackView.distribution  = .fillEqually
+//
+//        stackView.addArrangedSubview(favouriteButton)
+//        stackView.addArrangedSubview(shuffleButton)
+//        stackView.addArrangedSubview(repeatButton)
+//        stackView.addArrangedSubview(queueMusicButton)
+//
+//        view.addSubview(stackView)
+////        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.anchor(top: playButton.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 25, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 45))
+//
+////        NSLayoutConstraint.activate([
+////            stackView.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 25),
+////            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+////            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+////            stackView.heightAnchor.constraint(equalToConstant: 45)
+////        ])
+//
+////    }
+    
+    
+    private func configureOtherButtons() {
+        let value: CGFloat = 0.5
+        favouriteButton.alpha = value
+        shuffleButton.alpha = value
+        repeatButton.alpha = value
+        queueMusicButton.alpha = value
+        
         stackView.axis = .horizontal
         stackView.distribution  = .fillEqually
         
@@ -299,24 +373,6 @@ extension PlayerContainerVC {
         stackView.addArrangedSubview(queueMusicButton)
         
         view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: 25),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 45)
-        ])
-
-    }
-    
-    
-    private func configureOtherButtons() {
-        let value: CGFloat = 0.5
-        
-        favouriteButton.alpha = value
-        shuffleButton.alpha = value
-        repeatButton.alpha = value
-        queueMusicButton.alpha = value
+        stackView.anchor(top: playButton.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 25, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 45))
     }
 }
