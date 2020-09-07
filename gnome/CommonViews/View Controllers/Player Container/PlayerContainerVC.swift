@@ -206,9 +206,7 @@ extension PlayerContainerVC {
         slider.setThumbImage(Asserts.sliderThumb, for: .highlighted)
         slider.addTarget(self, action: #selector(sliderChanged),for: .valueChanged)
 
-        view.addSubview(slider)
-        view.addSubview(sliderMinimumLabel)
-        view.addSubview(sliderMaximumLabel)
+        view.addSubviews(slider, sliderMinimumLabel, sliderMaximumLabel)
         
         slider.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: view.frame.width * 12 / 317))
         sliderMinimumLabel.anchor(top: slider.bottomAnchor, leading: slider.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 8, left: 0, bottom: 0, right: 0))
@@ -221,11 +219,7 @@ extension PlayerContainerVC {
         let backwardButtonDimension: CGFloat = 36
         let dimension30: CGFloat = 24
         
-        view.addSubview(playButton)
-        view.addSubview(backwardButton)
-        view.addSubview(rewind30Button)
-        view.addSubview(forwadButton)
-        view.addSubview(forward30Button)
+        view.addSubviews(playButton, backwardButton, rewind30Button, forwadButton, forward30Button)
         
         playButton.anchor(top: slider.bottomAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 25, left: 0, bottom: 0, right: 0), size: .init(width: playButtonDimensions, height: playButtonDimensions))
         playButton.centerHorizontallyInSuperView()
@@ -248,7 +242,7 @@ extension PlayerContainerVC {
         queueMusicButton.alpha = value
         
         stackView.axis = .horizontal
-        stackView.distribution  = .fillEqually
+        stackView.distribution = .fillEqually
         
         stackView.addArrangedSubview(favouriteButton)
         stackView.addArrangedSubview(shuffleButton)
