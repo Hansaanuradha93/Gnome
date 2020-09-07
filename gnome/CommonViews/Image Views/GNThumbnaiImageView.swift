@@ -31,6 +31,5 @@ extension GNThumbnaiImageView {
         clipsToBounds = true
         image = placeholderImage
         contentMode = .scaleAspectFit
-        translatesAutoresizingMaskIntoConstraints = false
     }
 }
