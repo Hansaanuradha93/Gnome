@@ -7,6 +7,11 @@ struct AnchoredConstraints {
 
 extension UIView {
     
+    func addSubviews(_ views: UIView...) {
+        for view in views {addSubview(view) }
+    }
+    
+    
     func addCornerRadius(of value: CGFloat) { self.layer.cornerRadius = value }
     
     
