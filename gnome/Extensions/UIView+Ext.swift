@@ -137,6 +137,23 @@ extension UIView {
     }
     
     
+    func centerVertically(in view: UIView?, size: CGSize = .zero) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let superviewCenterYAnchor = view?.centerYAnchor {
+            centerYAnchor.constraint(equalTo: superviewCenterYAnchor).isActive = true
+        }
+        
+        if size.width != 0 {
+            widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        }
+        
+        if size.height != 0 {
+            heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        }
+    }
+    
+    
     @discardableResult
     func alignLeadingInSuperView(leading: NSLayoutXAxisAnchor?, paddingLeading: CGFloat = .zero) -> AnchoredConstraints {
         translatesAutoresizingMaskIntoConstraints = false
