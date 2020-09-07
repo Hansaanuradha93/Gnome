@@ -31,6 +31,5 @@ extension GNBodyLabel {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
         lineBreakMode = .byTruncatingTail
-        translatesAutoresizingMaskIntoConstraints = false
     }
 }

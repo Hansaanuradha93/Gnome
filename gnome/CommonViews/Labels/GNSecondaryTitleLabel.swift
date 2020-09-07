@@ -31,6 +31,5 @@ extension GNSecondaryTitleLabel {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.85
         lineBreakMode = .byTruncatingTail
-        translatesAutoresizingMaskIntoConstraints = false
     }
 }
