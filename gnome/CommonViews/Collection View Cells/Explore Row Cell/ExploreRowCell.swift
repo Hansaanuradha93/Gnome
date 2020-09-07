@@ -46,8 +46,7 @@ extension ExploreRowCell {
     
     
     private func configureUI() {
-        addSubview(titleLabel)
-        addSubview(collectionView)
+        addSubviews(titleLabel, collectionView)
 
         titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: 22))
         collectionView.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 18, left: 0, bottom: 0, right: 0))

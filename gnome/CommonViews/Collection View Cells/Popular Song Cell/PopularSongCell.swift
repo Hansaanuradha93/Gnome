@@ -33,11 +33,7 @@ extension PopularSongCell {
     
     private func configureUI() {
         let dimensions: CGFloat = 32
-
-        addSubview(thumbnailImageView)
-        addSubview(titleLabel)
-        addSubview(numberOfPlaysLabel)
-        addSubview(moreButton)
+        addSubviews(thumbnailImageView, titleLabel, numberOfPlaysLabel, moreButton)
 
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, size: .init(width: self.frame.height, height: 0))
         titleLabel.anchor(top: topAnchor, leading: thumbnailImageView.trailingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 10, left: 15, bottom: 0, right: 30))

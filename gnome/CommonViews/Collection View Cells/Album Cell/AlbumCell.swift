@@ -30,9 +30,7 @@ extension AlbumCell {
     
     private func configureUI() {
         titleLabel.numberOfLines = 2
-
-        addSubview(thumbnailImageView)
-        addSubview(titleLabel)
+        addSubviews(thumbnailImageView, titleLabel)
         
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: self.frame.width))
         titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 8, left: 0, bottom: 0, right: 0))

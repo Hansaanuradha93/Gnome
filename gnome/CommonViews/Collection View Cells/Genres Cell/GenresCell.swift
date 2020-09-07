@@ -28,7 +28,6 @@ extension GenresCell {
         backgroundColor = UIColor.appColor(.Pretty_Pink)
         addCornerRadius(of: 12)
         addSubview(titleLabel)
-        
         titleLabel.fillSuperview()
     }
 }

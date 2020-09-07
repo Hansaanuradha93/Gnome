@@ -34,11 +34,8 @@ extension ExpanArtistThumbnailCell {
     private func configureUI() {
         let dimensions: CGFloat = 70
         titleLabel.alpha = 0.85
-
-        addSubview(thumbnailImageView)
-        thumbnailImageView.addSubview(nameLabel)
-        thumbnailImageView.addSubview(titleLabel)
-        addSubview(playButton)
+        addSubviews(thumbnailImageView, playButton)
+        thumbnailImageView.addSubviews(nameLabel, titleLabel)
         
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 35, right: 0))
         nameLabel.anchor(top: nil, leading: thumbnailImageView.leadingAnchor, bottom: thumbnailImageView.bottomAnchor, trailing: thumbnailImageView.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 32, right: 16))

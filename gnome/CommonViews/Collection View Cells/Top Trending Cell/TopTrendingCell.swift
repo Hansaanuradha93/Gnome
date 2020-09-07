@@ -44,14 +44,8 @@ extension TopTrendingCell {
         trendingContainer.backgroundColor = UIColor.appColor(.Pretty_Pink)
         smallPlayImageView.image = Asserts.smallPlay
         
-        addSubview(thumbnailImageView)
-        addSubview(trendingContainer)
-        trendingContainer.addSubview(trendingNumberLabel)
-        addSubview(titleLabel)
-        addSubview(artistLabel)
-        addSubview(smallPlayImageView)
-        addSubview(numberOfPlaysLabel)
-        addSubview(moreButton)
+        addSubviews(thumbnailImageView, trendingContainer, titleLabel, artistLabel, smallPlayImageView, numberOfPlaysLabel, moreButton)
+        trendingContainer.addSubviews(trendingNumberLabel)
 
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, size: .init(width: self.frame.height, height: 0))
         trendingContainer.anchor(top: topAnchor, leading: thumbnailImageView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 20.7, bottom: 0, right: 0), size: .init(width: 43, height: 24))

@@ -38,9 +38,9 @@ extension SongCell {
     
     
     private func configureUI() {
-        addSubview(thumbnailImageView)
-        addSubview(titleLabel)
+        addSubviews(thumbnailImageView, titleLabel)
         
         thumbnailImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, size: .init(width: 0, height: self.frame.width))
-        titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 4.7, left: 0, bottom: 0, right: 0))    }
+        titleLabel.anchor(top: thumbnailImageView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 4.7, left: 0, bottom: 0, right: 0))
+    }
 }

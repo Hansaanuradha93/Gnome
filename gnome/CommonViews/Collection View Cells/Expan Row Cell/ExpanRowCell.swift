@@ -31,11 +31,9 @@ extension ExpanRowCell {
     
     
     private func configureUI() {
-        addSubview(titleLabel)
-        addSubview(collectionView)
-        
         titleLabel.text = Titles.albums
-
+        addSubviews(titleLabel, collectionView)
+        
         titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 0))
         collectionView.anchor(top: titleLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 22, left: 0, bottom: 0, right: 0))
     }
