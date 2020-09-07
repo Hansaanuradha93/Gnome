@@ -33,12 +33,8 @@ extension GNAssertButton {
 
     
     private func configureUI() {
-        addSubview(placeholderImageView)
-        addSubview(button)
-        
+        addSubviews(placeholderImageView, button)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
-        translatesAutoresizingMaskIntoConstraints = false
         placeholderImageView.fillSuperview()
         button.fillSuperview()
     }

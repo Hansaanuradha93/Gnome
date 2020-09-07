@@ -38,12 +38,8 @@ extension GNTransparentButton {
         let dimensions: CGFloat = 22.5
         placeholderImageView.contentMode = .scaleAspectFit
         
-        addSubview(placeholderImageView)
-        addSubview(button)
-        
+        addSubviews(placeholderImageView, button)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
-        translatesAutoresizingMaskIntoConstraints = false
         placeholderImageView.centerInSuperview(size: .init(width: dimensions, height: dimensions))
         button.fillSuperview()
     }
