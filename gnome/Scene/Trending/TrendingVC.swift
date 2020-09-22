@@ -29,10 +29,7 @@ extension TrendingVC {
         titleLabel.text = Titles.trending
         topTrendingTitleLabel.text = Titles.topTrending
         
-        view.addSubview(titleLabel)
-        view.addSubview(genresContainer)
-        view.addSubview(topTrendingTitleLabel)
-        view.addSubview(topTrendingContainer)
+        view.addSubviews(titleLabel, genresContainer, topTrendingTitleLabel, topTrendingContainer)
         
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 23, left: 16, bottom: 16, right: 0), size: .init(width: 0, height: 44))
         genresContainer.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: nil, trailing: titleLabel.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 50))
