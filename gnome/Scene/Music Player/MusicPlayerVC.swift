@@ -62,11 +62,7 @@ extension MusicPlayerVC {
     
     
     private func configureUI() {
-        view.addSubview(collapseButton)
-        view.addSubview(optionButton)
-        view.addSubview(nowPlayingLabel)
-        view.addSubview(songContainer)
-        view.addSubview(playContainer)
+        view.addSubviews(collapseButton, optionButton, nowPlayingLabel, songContainer, playContainer)
 
         optionButton.alpha = 0.5
         let topPadding: CGFloat = 69
