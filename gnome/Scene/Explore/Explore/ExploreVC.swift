@@ -31,8 +31,7 @@ extension ExploreVC {
         collectionView.delegate = self
         collectionView.register(ExploreRowCell.self, forCellWithReuseIdentifier: ExploreRowCell.reuseID)
 
-        view.addSubview(titleLabel)
-        view.addSubview(collectionView)
+        view.addSubviews(titleLabel, collectionView)
         
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 23, left: 16, bottom: 16, right: 0), size: .init(width: 0, height: 44))
         collectionView.anchor(top: titleLabel.bottomAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0))
