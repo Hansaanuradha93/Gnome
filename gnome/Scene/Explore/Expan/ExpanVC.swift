@@ -70,8 +70,7 @@ extension ExpanVC {
         let dimensions: CGFloat = 44
         backButton.action = { () in self.dismiss(animated: true) }
 
-        view.addSubview(collectionView)
-        view.addSubview(backButton)
+        view.addSubviews(collectionView, backButton)
 
         collectionView.fillSuperview()
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 16, left: 16, bottom: 0, right: 0), size: .init(width: dimensions, height: dimensions))
