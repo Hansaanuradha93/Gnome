@@ -40,6 +40,7 @@ extension TopTrendingCell {
     private func configureUI() {
         let dimensions: CGFloat = 12
         let moreButtonDimensions: CGFloat = 32
+        
         trendingContainer.addCornerRadius(of: 12)
         trendingContainer.backgroundColor = UIColor.appColor(.Pretty_Pink)
         smallPlayImageView.image = Asserts.smallPlay
