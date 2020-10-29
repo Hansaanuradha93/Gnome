@@ -26,13 +26,13 @@ class GNAssertButton: UIView {
 }
 
 
-// MARK: - Methods
-extension GNAssertButton {
+// MARK: - Fileprivate Methods
+fileprivate extension GNAssertButton {
     
     @objc func buttonPressed() { action?() }
 
     
-    private func configureUI() {
+    func configureUI() {
         addSubviews(placeholderImageView, button)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         placeholderImageView.fillSuperview()

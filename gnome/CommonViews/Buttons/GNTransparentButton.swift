@@ -28,13 +28,13 @@ class GNTransparentButton: UIView {
 }
 
 
-// MARK: - Methods
-extension GNTransparentButton {
+// MARK: - Fileprivate Methods
+fileprivate extension GNTransparentButton {
     
     @objc func buttonPressed() { action?() }
     
     
-    private func configureUI() {
+    func configureUI() {
         let dimensions: CGFloat = 22.5
         placeholderImageView.contentMode = .scaleAspectFit
         
