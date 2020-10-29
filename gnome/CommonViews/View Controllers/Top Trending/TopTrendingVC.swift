@@ -8,6 +8,7 @@ class TopTrendingVC: UIViewController {
     private var collectionView: UICollectionView!
     private var topTrendingSongs: [TopTrendingSong] = []
     
+    
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +18,15 @@ class TopTrendingVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension TopTrendingVC {
+// MARK: - Fileprivate Methods
+fileprivate extension TopTrendingVC {
     
-    private func fetchTopTrendingSongs() { topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs() }
+    func fetchTopTrendingSongs() {
+        topTrendingSongs = TopTrendingSong.fetchTopTrendingSongs()
+    }
 
     
-    private func configureUI() {
+    func configureUI() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
@@ -35,7 +38,7 @@ extension TopTrendingVC {
     }
     
     
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    func createFlowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

@@ -45,13 +45,15 @@ class SongContainerVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension SongContainerVC {
+// MARK: - Fileprivate Methods
+fileprivate extension SongContainerVC {
     
-    private func configurePlayerContainerVC() { playerContainerVC.playerContainerDelegate = self }
+    func configurePlayerContainerVC() {
+        playerContainerVC.playerContainerDelegate = self
+    }
     
     
-    private func setupUI(with song: Song?) {
+    func setupUI(with song: Song?) {
         guard let song = song else { return }
         albumTitleLabel.text = song.album
         thumbnailImageView.image = UIImage(named: song.thumbnailUrl)
@@ -60,7 +62,7 @@ extension SongContainerVC {
     }
     
     
-    private func configureUI() {
+    func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -84,5 +86,7 @@ extension SongContainerVC {
 // MARK: - PlayerContainerDelegate
 extension SongContainerVC: PlayerContainerDelegate {
     
-    func buttonPressed(index: Int) { setupUI(with: songs[index]) }
+    func buttonPressed(index: Int) {
+        setupUI(with: songs[index])
+    }
 }

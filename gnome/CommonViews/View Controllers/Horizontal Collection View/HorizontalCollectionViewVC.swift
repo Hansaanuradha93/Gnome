@@ -18,12 +18,15 @@ class HorizontalCollectionViewVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension HorizontalCollectionViewVC {
+// MARK: - Fileprivate Methods
+fileprivate extension HorizontalCollectionViewVC {
     
-    private func fetchGenres() { genres = Genre.fetchGenres() }
+    func fetchGenres() {
+        genres = Genre.fetchGenres()
+    }
     
-    private func configureUI() {
+    
+    func configureUI() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createFlowLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
@@ -36,7 +39,7 @@ extension HorizontalCollectionViewVC {
     }
         
 
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    func createFlowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

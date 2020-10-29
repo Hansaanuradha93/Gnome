@@ -62,8 +62,8 @@ class PlayerContainerVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension PlayerContainerVC {
+// MARK: - Objc Methods
+fileprivate extension PlayerContainerVC {
     
     @objc func sliderChanged() {
         sliderMinimumLabel.text = Double(slider.value).getTimeFormat()
@@ -79,9 +79,13 @@ extension PlayerContainerVC {
             slider.value = Float(Int(player.currentTime))
         }
     }
+}
+
+
+// MARK: - Fileprivate Methods
+fileprivate extension PlayerContainerVC {
     
-    
-    private func prepareSongSesstion(song: Song) {
+    func prepareSongSesstion(song: Song) {
         guard let urlString = Bundle.main.path(forResource: song.file.name, ofType: song.file.type), let url = URL(string: urlString) else  { return }
         
         do {
@@ -97,7 +101,7 @@ extension PlayerContainerVC {
     }
 
     
-    private func configureSongPlayer() {
+    func configureSongPlayer() {
         player.play()
         
         slider.maximumValue = Float(Int(player.duration))
@@ -118,7 +122,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureForwardButtonAction() {
+    func configureForwardButtonAction() {
         forwadButton.action = { () in
             if self.index == self.songs.count - 1 {
                 self.index = 0
@@ -131,7 +135,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureBackwardButtonAction() {
+    func configureBackwardButtonAction() {
         backwardButton.action = { () in
             if self.index != 0 { self.index = self.index - 1 }
             self.playerContainerDelegate?.buttonPressed(index: self.index)
@@ -140,7 +144,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func playNextSong() {
+    func playNextSong() {
         player.stop()
         prepareSongSesstion(song: self.songs[self.index])
         player.play()
@@ -149,7 +153,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureRewind30Button() {
+    func configureRewind30Button() {
         rewind30Button.action = { () in
             self.player.stop()
             var time = self.player.currentTime
@@ -168,7 +172,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureForward30Button() {
+    func configureForward30Button() {
         forward30Button.action = { () in
             self.player.stop()
             var time = self.player.currentTime
@@ -191,9 +195,9 @@ extension PlayerContainerVC {
 
 
 // MARK: - UI Imaplemetation
-extension PlayerContainerVC {
+fileprivate extension PlayerContainerVC {
 
-    private func configureSlider() {
+    func configureSlider() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -214,7 +218,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configurePlayerControlButtons() {
+    func configurePlayerControlButtons() {
         let playButtonDimensions: CGFloat = 70
         let backwardButtonDimension: CGFloat = 36
         let dimension30: CGFloat = 24
@@ -234,7 +238,7 @@ extension PlayerContainerVC {
     }
     
     
-    private func configureOtherButtons() {
+    func configureOtherButtons() {
         let value: CGFloat = 0.5
         favouriteButton.alpha = value
         shuffleButton.alpha = value
