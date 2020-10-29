@@ -32,7 +32,6 @@ enum CommonImages {
 
 
 enum Titles {
-    
     // MARK: Tab Bar
     static let explore = "Explore"
     static let trending = "Trending"
