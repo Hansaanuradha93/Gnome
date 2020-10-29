@@ -15,17 +15,17 @@ class GNBodyLabel: UILabel {
     convenience init(fontSize: CGFloat) {
         self.init(frame: .zero)
         let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.regular]
-        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Poppins"])
+        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: Fonts.poppins])
         descriptor = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         font = UIFont(descriptor: descriptor, size: fontSize)
     }
 }
 
 
-// MARK: - Methods
-extension GNBodyLabel {
+// MARK: - Fileprivate Methods
+fileprivate extension GNBodyLabel {
     
-    private func configure() {
+    func configure() {
         textColor = .black
         textAlignment = .left
         adjustsFontSizeToFitWidth = true

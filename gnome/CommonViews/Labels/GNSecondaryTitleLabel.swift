@@ -15,7 +15,7 @@ class GNSecondaryTitleLabel: UILabel {
     convenience init(fontSize: CGFloat, alignment: NSTextAlignment = .left , fontColor: UIColor = .black) {
         self.init(frame: .zero)
         let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.semibold]
-        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: "Poppins"])
+        var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: Fonts.poppins])
         descriptor = descriptor.addingAttributes([UIFontDescriptor.AttributeName.traits: traits])
         font = UIFont(descriptor: descriptor, size: fontSize)
         textAlignment = alignment
@@ -24,10 +24,10 @@ class GNSecondaryTitleLabel: UILabel {
 }
 
 
-// MARK: - Methods
-extension GNSecondaryTitleLabel {
+// MARK: - Fileprivate Methods
+fileprivate extension GNSecondaryTitleLabel {
     
-    private func configure() {
+    func configure() {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.85
         lineBreakMode = .byTruncatingTail
