@@ -4,6 +4,7 @@ class ExpanArtistThumbnailCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "ExpanArtistCell"
+    
     private let thumbnailImageView = GNThumbnaiImageView(radius: 0)
     private let playButton = GNAssertButton(assert: Asserts.pause)
     private let titleLabel = GNSecondaryTitleLabel(fontSize: 14, fontColor: .white)

@@ -4,6 +4,7 @@ class PopularSongCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "PopularSongCell"
+    
     private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
     private let titleLabel = GNTitleLabel(fontSize: 20)
     private let numberOfPlaysLabel = GNSecondaryBodyLabel(fontSize: 15, fontColor: UIColor.appColor(.Grey))

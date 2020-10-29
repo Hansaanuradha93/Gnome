@@ -4,8 +4,10 @@ class TopTrendingCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "TopTrendingCell"
+    
     private let trendingContainer = UIView()
     private let smallPlayImageView = UIImageView(frame: .zero)
+    
     private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
     private let moreButton = GNAssertButton(assert: Asserts.more)
     private let titleLabel = GNTitleLabel(fontSize: 20)

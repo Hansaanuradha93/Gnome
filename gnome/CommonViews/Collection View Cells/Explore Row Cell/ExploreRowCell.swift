@@ -4,14 +4,16 @@ class ExploreRowCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "RowCell"
+    
     private let titleLabel = GNTitleLabel(fontSize: 22)
+    private var collectionView: UICollectionView!
+
     private var recentlyPlayedSongs = [Song]()
     private var recommendedForYouSongs = [Song]()
     private var genres = [Genre]()
     private var albums = [Album]()
     private var artists = [Artist]()
     private var cellType: RowCellType!
-    private var collectionView: UICollectionView!
     
     
     // MARK: Initializers

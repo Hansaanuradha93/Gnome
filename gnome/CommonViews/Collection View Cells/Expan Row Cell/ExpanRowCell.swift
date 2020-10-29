@@ -4,6 +4,7 @@ class ExpanRowCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "ExpanRowCell"
+    
     private let titleLabel = GNTitleLabel(fontSize: 20)
     private var collectionView : UICollectionView!
     private var albums = [Album]()

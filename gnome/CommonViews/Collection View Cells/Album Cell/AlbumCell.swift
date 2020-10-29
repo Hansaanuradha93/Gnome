@@ -4,6 +4,7 @@ class AlbumCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "AlbumCell"
+    
     private let thumbnailImageView = GNThumbnaiImageView(frame: .zero)
     private let titleLabel = GNSecondaryTitleLabel(fontSize: 17, alignment: .left)
     

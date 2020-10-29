@@ -4,6 +4,7 @@ class ArtistPopularSongsCell: UICollectionViewCell {
     
     // MARK: Properties
     static let reuseID = "ArtistSongCell"
+    
     private let titleLabel = GNTitleLabel(fontSize: 20)
     private var collectionView: UICollectionView!
     private var songs = [Song]()
