@@ -53,6 +53,11 @@ enum Titles {
 }
 
 
+enum Fonts {
+    static let poppins = "Poppins"
+}
+
+
 enum Temporary {
     static let song1 = "song_1"
     static let song2 = "song_2"
