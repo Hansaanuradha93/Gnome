@@ -23,10 +23,10 @@ class GNThumbnaiImageView: UIImageView {
 }
 
 
-// MARK: - Methods
-extension GNThumbnaiImageView {
+// MARK: - Fileprivate Methods
+fileprivate extension GNThumbnaiImageView {
     
-    private func configure() {
+    func configure() {
         layer.cornerRadius = 15
         clipsToBounds = true
         image = placeholderImage
