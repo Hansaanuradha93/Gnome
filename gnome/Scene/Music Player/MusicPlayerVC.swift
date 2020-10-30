@@ -44,16 +44,16 @@ class MusicPlayerVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension MusicPlayerVC {
+// MARK: - Fileprivate Methods
+fileprivate extension MusicPlayerVC {
     
-    private func configureViewController() {
+    func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
-    private func add(childVC: UIViewController, to containerView: UIView) {
+    func add(childVC: UIViewController, to containerView: UIView) {
         self.addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
@@ -61,7 +61,7 @@ extension MusicPlayerVC {
     }
     
     
-    private func configureUI() {
+    func configureUI() {
         view.addSubviews(collapseButton, optionButton, nowPlayingLabel, songContainer, playContainer)
 
         optionButton.alpha = 0.5
