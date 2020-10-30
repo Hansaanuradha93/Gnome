@@ -17,10 +17,10 @@ class ExploreVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension ExploreVC {
+// MARK: - Fileprivate Methods
+fileprivate extension ExploreVC {
     
-    private func configureUI() {
+    func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -38,7 +38,7 @@ extension ExploreVC {
     }
     
     
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    func createFlowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 28, right: 16)
