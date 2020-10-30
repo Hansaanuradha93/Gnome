@@ -19,10 +19,10 @@ class TrendingVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension TrendingVC {
+// MARK: - Fileprivate Methods
+fileprivate extension TrendingVC {
     
-    private func configureUI() {
+    func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -41,7 +41,7 @@ extension TrendingVC {
     }
     
     
-    private func add(childVC: UIViewController, to containerView: UIView) {
+    func add(childVC: UIViewController, to containerView: UIView) {
         self.addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
