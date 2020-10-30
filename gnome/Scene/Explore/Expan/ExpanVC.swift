@@ -35,16 +35,16 @@ class ExpanVC: UIViewController {
 }
 
 
-// MARK: - Methods
-extension ExpanVC {
+// MARK: - Fileprivate Methods
+fileprivate extension ExpanVC {
     
-    private func fetchPopularSongs() {
+    func fetchPopularSongs() {
         popularSongs = Song.fetchSongs()
         collectionView.reloadData()
     }
     
     
-    private func fetchAlbums() {
+    func fetchAlbums() {
         albums = Album.fetchAlbums()
         collectionView.reloadData()
     }
@@ -142,7 +142,6 @@ extension ExpanVC: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
         let section = viewModel.sections[section]
         
         switch section.sectionType {
