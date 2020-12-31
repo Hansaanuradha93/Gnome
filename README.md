@@ -16,8 +16,6 @@ Gnome is an iOS app that features offline music. Users will be able to listen to
 <br/><br/>
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
 
 ## Getting Started
 
