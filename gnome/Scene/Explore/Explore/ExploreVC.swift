@@ -18,7 +18,7 @@ class ExploreVC: UIViewController {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension ExploreVC {
+private extension ExploreVC {
     
     func configureUI() {
         view.backgroundColor = .systemBackground

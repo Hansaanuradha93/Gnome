@@ -45,7 +45,7 @@ class MusicPlayerVC: UIViewController {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension MusicPlayerVC {
+private extension MusicPlayerVC {
     
     func configureViewController() {
         view.backgroundColor = .systemBackground

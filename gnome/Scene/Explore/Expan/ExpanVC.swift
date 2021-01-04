@@ -36,7 +36,7 @@ class ExpanVC: UIViewController {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension ExpanVC {
+private extension ExpanVC {
     
     func fetchPopularSongs() {
         popularSongs = Song.fetchSongs()
@@ -52,7 +52,7 @@ fileprivate extension ExpanVC {
 
 
 // MARK: - UI Implamentation
-fileprivate extension ExpanVC {
+private extension ExpanVC {
     
     func configureUI() {
         view.backgroundColor = .systemBackground

@@ -20,7 +20,7 @@ class TrendingVC: UIViewController {
 
 
 // MARK: - Fileprivate Methods
-fileprivate extension TrendingVC {
+private extension TrendingVC {
     
     func configureUI() {
         view.backgroundColor = .systemBackground
