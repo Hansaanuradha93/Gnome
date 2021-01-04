@@ -52,9 +52,9 @@ fileprivate extension ExpanVC {
 
 
 // MARK: - UI Implamentation
-extension ExpanVC {
+fileprivate extension ExpanVC {
     
-    private func configureUI() {
+    func configureUI() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -77,7 +77,7 @@ extension ExpanVC {
     }
     
     
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    func createFlowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         return flowLayout
