@@ -35,7 +35,7 @@ class ExpanVC: UIViewController {
 }
 
 
-// MARK: - Fileprivate Methods
+// MARK: - Private Methods
 private extension ExpanVC {
     
     func fetchPopularSongs() {
