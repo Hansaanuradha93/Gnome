@@ -17,7 +17,7 @@ class ExploreVC: UIViewController {
 }
 
 
-// MARK: - Fileprivate Methods
+// MARK: - Private Methods
 private extension ExploreVC {
     
     func configureUI() {
