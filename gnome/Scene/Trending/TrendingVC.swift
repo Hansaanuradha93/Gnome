@@ -19,7 +19,7 @@ class TrendingVC: UIViewController {
 }
 
 
-// MARK: - Fileprivate Methods
+// MARK: - Private Methods
 private extension TrendingVC {
     
     func configureUI() {
